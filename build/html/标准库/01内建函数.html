@@ -1,0 +1,884 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>内建函数 &mdash; My_Study_Python v0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="My_Study_Python v0.1 documentation" href="../index.html"/>
+        <link rel="next" title="内置常量" href="02内置常量.html"/>
+        <link rel="prev" title="&lt;no title&gt;" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+  <script src="../_static/js/baidu.js"></script>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> My_Study_Python
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">内建函数</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">常用内置函数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#abs-x">abs(x)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#all-iterable">all(iterable)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#any-iterable">any(iterable)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bool-x">bool(x)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#callable-object">callable(object)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chr-i">chr(i)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#classmethod">classmethod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delattr-object-name">delattr(object,name)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dict-kwarg">dict(**kwarg)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dir-x">dir(x)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enumerate-iterable-start-0">enumerate(iterable, start=0)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#eval-expression-globals-none-locals-none">eval(expression, globals=None, locals=None)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#float-x">float(x)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getattr-object-name-default">getattr(object, name[, default])</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hasattr-object-name">hasattr(object, name)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hex-x">hex(x)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#input-prompt">input(prompt)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#isinstance-object-classinfo">isinstance(object,classinfo)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#issubclass-class-classinfo">issubclass(class, classinfo)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#iter-object-sentinel">iter(object[, sentinel])</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#len-x">len(x)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#open-file-mode-r-buffering-1-encoding-none-errors-none-newline-none-closefd-true-opener-none">open(file, mode=’r’, buffering=-1, encoding=None, errors=None, newline=None, closefd=True, opener=None)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#powpow-x-y-z">powpow(x, y[, z])</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#range-start-stop-step">range(start,stop,step)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#repr-object">repr(object)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reversed-seq">reversed(seq)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#round-number-ndigits">round(number[, ndigits])</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setattr-object-name-value">setattr(object,name,value)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#class-slice-start-stop-step">class slice(start, stop[, step])</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sorted-iterable-key-none-reverse-false">sorted(iterable, *, key=None, reverse=False)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#staticmethod">&#64;staticmethod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sum-iterable-start">sum(iterable[, start])</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#super-type-object-or-type">super([type[, object-or-type]])</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tuple-iteerable">tuple(iteerable)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#type-object">type(object)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zip-iterables">zip(*iterables)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="02内置常量.html">内置常量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04内置类型.html">内置类型</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="04内置类型.html#id2">真值测试</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04内置类型.html#boolean">boolean操作符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04内置类型.html#id3">比较操作符号</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04内置类型.html#id4">数据类型</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="05内置异常.html">内置异常</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06文本处理.html">文本处理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07二进制处理.html">二进制处理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08数据处理.html">数据处理</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">My_Study_Python</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>内建函数</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/标准库/01内建函数.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="02内置常量.html" class="btn btn-neutral float-right" title="内置常量" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="&lt;no title&gt;" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>内建函数<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>常用内置函数<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="abs-x">
+<h3>abs(x)<a class="headerlink" href="#abs-x" title="Permalink to this headline">¶</a></h3>
+<p>功能：就绝对值</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="all-iterable">
+<h3>all(iterable)<a class="headerlink" href="#all-iterable" title="Permalink to this headline">¶</a></h3>
+<p>功能：返回true，如果所有元素都是true。</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">a</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="nb">all</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="bp">True</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">a</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="bp">None</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="nb">all</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="bp">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="any-iterable">
+<h3>any(iterable)<a class="headerlink" href="#any-iterable" title="Permalink to this headline">¶</a></h3>
+<p>功能：返回true,只要任何一个元素为true。</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="n">a</span><span class="p">,</span><span class="bp">None</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="nb">any</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="bp">True</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="bp">None</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="nb">any</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="bp">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="bool-x">
+<h3>bool(x)<a class="headerlink" href="#bool-x" title="Permalink to this headline">¶</a></h3>
+<p>功能：返回值是不是true</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="nb">bool</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="bp">False</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="nb">bool</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="bp">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="callable-object">
+<h3>callable(object)<a class="headerlink" href="#callable-object" title="Permalink to this headline">¶</a></h3>
+<p>功能：判断对象是不是可调用</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="nb">callable</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="o">.</span><span class="n">upper</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="bp">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="chr-i">
+<h3>chr(i)<a class="headerlink" href="#chr-i" title="Permalink to this headline">¶</a></h3>
+<p>功能：数值转ascii</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">26</span><span class="p">]:</span> <span class="nb">chr</span><span class="p">(</span><span class="mi">97</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">26</span><span class="p">]:</span> <span class="s1">&#39;a&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">27</span><span class="p">]:</span> <span class="nb">chr</span><span class="p">(</span><span class="mi">98</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">27</span><span class="p">]:</span> <span class="s1">&#39;b&#39;</span>
+</pre></div>
+</div>
+<p>与这个函数相对的就是ord了，从字符转数值。</p>
+</div>
+<div class="section" id="classmethod">
+<h3>classmethod<a class="headerlink" href="#classmethod" title="Permalink to this headline">¶</a></h3>
+<p>功能： 转化方法成类方法</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">C</span><span class="p">:</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span><span class="n">arg1</span><span class="p">,</span><span class="n">arg2</span><span class="p">):</span>
+        <span class="k">pass</span>
+<span class="c1"># 调用方式</span>
+<span class="n">C</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
+<span class="n">C</span><span class="p">()</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="delattr-object-name">
+<h3>delattr(object,name)<a class="headerlink" href="#delattr-object-name" title="Permalink to this headline">¶</a></h3>
+<p>功能：删除对象的属性</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">30</span><span class="p">]:</span> <span class="k">class</span> <span class="nc">People</span><span class="p">:</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="k">pass</span>
+    <span class="o">...</span><span class="p">:</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">31</span><span class="p">]:</span> <span class="n">p</span><span class="o">=</span><span class="n">People</span><span class="p">()</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">32</span><span class="p">]:</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;zhaojiedi&quot;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">33</span><span class="p">]:</span> <span class="n">p</span><span class="o">.</span><span class="n">age</span><span class="o">=</span><span class="s2">&quot;20&quot;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">34</span><span class="p">]:</span> <span class="n">p</span><span class="o">.</span><span class="n">age</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">34</span><span class="p">]:</span> <span class="s1">&#39;20&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">35</span><span class="p">]:</span> <span class="nb">delattr</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="s2">&quot;age&quot;</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">35</span><span class="p">]:</span> <span class="n">p</span><span class="o">.</span><span class="n">age</span>
+<span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span>                            <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">40</span><span class="o">-</span><span class="n">ebe3f80b9437</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">()</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="n">p</span><span class="o">.</span><span class="n">age</span>
+
+<span class="ne">AttributeError</span><span class="p">:</span> <span class="s1">&#39;People&#39;</span> <span class="nb">object</span> <span class="n">has</span> <span class="n">no</span> <span class="n">attribute</span> <span class="s1">&#39;age&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dict-kwarg">
+<h3>dict(<a href="#id3"><span class="problematic" id="id4">**</span></a>kwarg)<a class="headerlink" href="#dict-kwarg" title="Permalink to this headline">¶</a></h3>
+<p>功能：转化为一个字典</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">42</span><span class="p">]:</span> <span class="n">p</span> <span class="o">=</span><span class="nb">dict</span> <span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;zhaojiedi&quot;</span><span class="p">,</span><span class="n">age</span><span class="o">=</span><span class="mi">26</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">43</span><span class="p">]:</span> <span class="n">p</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">43</span><span class="p">]:</span> <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;zhaojiedi&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dir-x">
+<h3>dir(x)<a class="headerlink" href="#dir-x" title="Permalink to this headline">¶</a></h3>
+<p>功能：如果没有参数，返回本地作用域的名称列表，如果有参数，返回有效属性列表</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">46</span><span class="p">]:</span> <span class="nb">dir</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">46</span><span class="p">]:</span>
+<span class="p">[</span><span class="s1">&#39;Formatter&#39;</span><span class="p">,</span>
+<span class="s1">&#39;Template&#39;</span><span class="p">,</span>
+<span class="s1">&#39;_ChainMap&#39;</span><span class="p">,</span>
+<span class="s1">&#39;_TemplateMetaclass&#39;</span><span class="p">,</span>
+<span class="s1">&#39;__all__&#39;</span><span class="p">,</span>
+<span class="s1">&#39;__builtins__&#39;</span><span class="p">,</span>
+<span class="s1">&#39;__cached__&#39;</span><span class="p">,</span>
+<span class="s1">&#39;__doc__&#39;</span><span class="p">,</span>
+<span class="s1">&#39;__file__&#39;</span><span class="p">,</span>
+<span class="s1">&#39;__loader__&#39;</span><span class="p">,</span>
+<span class="s1">&#39;__name__&#39;</span><span class="p">,</span>
+<span class="s1">&#39;__package__&#39;</span><span class="p">,</span>
+<span class="s1">&#39;__spec__&#39;</span><span class="p">,</span>
+<span class="s1">&#39;_re&#39;</span><span class="p">,</span>
+<span class="s1">&#39;_string&#39;</span><span class="p">,</span>
+<span class="s1">&#39;ascii_letters&#39;</span><span class="p">,</span>
+<span class="s1">&#39;ascii_lowercase&#39;</span><span class="p">,</span>
+<span class="s1">&#39;ascii_uppercase&#39;</span><span class="p">,</span>
+<span class="s1">&#39;capwords&#39;</span><span class="p">,</span>
+<span class="s1">&#39;digits&#39;</span><span class="p">,</span>
+<span class="s1">&#39;hexdigits&#39;</span><span class="p">,</span>
+<span class="s1">&#39;octdigits&#39;</span><span class="p">,</span>
+<span class="s1">&#39;printable&#39;</span><span class="p">,</span>
+<span class="s1">&#39;punctuation&#39;</span><span class="p">,</span>
+<span class="s1">&#39;whitespace&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="enumerate-iterable-start-0">
+<h3>enumerate(iterable, start=0)<a class="headerlink" href="#enumerate-iterable-start-0" title="Permalink to this headline">¶</a></h3>
+<p>功能：返回一个枚举对象</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">49</span><span class="p">]:</span> <span class="n">seasons</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;spring&#39;</span><span class="p">,</span><span class="s1">&#39;summer&#39;</span><span class="p">,</span><span class="s1">&#39;fall&#39;</span><span class="p">,</span><span class="s1">&#39;winter&#39;</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">50</span><span class="p">]:</span> <span class="nb">list</span><span class="p">(</span><span class="n">seasons</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">50</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;spring&#39;</span><span class="p">,</span> <span class="s1">&#39;summer&#39;</span><span class="p">,</span> <span class="s1">&#39;fall&#39;</span><span class="p">,</span> <span class="s1">&#39;winter&#39;</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">51</span><span class="p">]:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">seasons</span><span class="p">))</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">51</span><span class="p">]:</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;spring&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;summer&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;fall&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;winter&#39;</span><span class="p">)]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">52</span><span class="p">]:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">seasons</span><span class="p">,</span><span class="n">start</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">52</span><span class="p">]:</span> <span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;spring&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;summer&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;fall&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;winter&#39;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="eval-expression-globals-none-locals-none">
+<h3>eval(expression, globals=None, locals=None)<a class="headerlink" href="#eval-expression-globals-none-locals-none" title="Permalink to this headline">¶</a></h3>
+<p>功能：用于计算表达式</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">53</span><span class="p">]:</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">54</span><span class="p">]:</span> <span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;x+1&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">54</span><span class="p">]:</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="float-x">
+<h3>float(x)<a class="headerlink" href="#float-x" title="Permalink to this headline">¶</a></h3>
+<p>功能：</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">57</span><span class="p">]:</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;-00.1&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">57</span><span class="p">]:</span> <span class="o">-</span><span class="mf">0.1</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">58</span><span class="p">]:</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;1e6&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">58</span><span class="p">]:</span> <span class="mf">1000000.0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="getattr-object-name-default">
+<h3>getattr(object, name[, default])<a class="headerlink" href="#getattr-object-name-default" title="Permalink to this headline">¶</a></h3>
+<p>功能：读取属性值</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">59</span><span class="p">]:</span> <span class="k">class</span> <span class="nc">p2</span><span class="p">:</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="k">pass</span>
+    <span class="o">...</span><span class="p">:</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">60</span><span class="p">]:</span> <span class="n">p</span><span class="o">=</span><span class="n">p2</span><span class="p">()</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">61</span><span class="p">]:</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;zhaojiedi&quot;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">62</span><span class="p">]:</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">62</span><span class="p">]:</span> <span class="s1">&#39;zhaojiedi&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">63</span><span class="p">]:</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="s2">&quot;age&quot;</span><span class="p">,</span><span class="mi">26</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">63</span><span class="p">]:</span> <span class="mi">26</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="hasattr-object-name">
+<h3>hasattr(object, name)<a class="headerlink" href="#hasattr-object-name" title="Permalink to this headline">¶</a></h3>
+<p>功能：判断是否有特定属性</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">65</span><span class="p">]:</span> <span class="n">p</span><span class="o">=</span><span class="n">p2</span><span class="p">()</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">66</span><span class="p">]:</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">66</span><span class="p">]:</span> <span class="bp">False</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">67</span><span class="p">]:</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;zhaojiedi&quot;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">68</span><span class="p">]:</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">68</span><span class="p">]:</span> <span class="bp">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="hex-x">
+<h3>hex(x)<a class="headerlink" href="#hex-x" title="Permalink to this headline">¶</a></h3>
+<p>功能：转化一个整数为16进制</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">69</span><span class="p">]:</span> <span class="nb">hex</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">69</span><span class="p">]:</span> <span class="s1">&#39;0xb&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">70</span><span class="p">]:</span> <span class="nb">hex</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">70</span><span class="p">]:</span> <span class="s1">&#39;0xa&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">71</span><span class="p">]:</span> <span class="nb">hex</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">71</span><span class="p">]:</span> <span class="s1">&#39;0x9&#39;</span>
+</pre></div>
+</div>
+<p>这是转16进制的，当然还有oct转8进制的。</p>
+</div>
+<div class="section" id="input-prompt">
+<h3>input(prompt)<a class="headerlink" href="#input-prompt" title="Permalink to this headline">¶</a></h3>
+<p>功能：接受输入参数，将输入赋值给变量</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">73</span><span class="p">]:</span> <span class="n">s</span><span class="o">=</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;please input a string:&quot;</span><span class="p">)</span>
+<span class="n">please</span> <span class="nb">input</span> <span class="n">a</span> <span class="n">string</span><span class="p">:</span><span class="n">zhaojiedi</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">74</span><span class="p">]:</span> <span class="n">s</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">74</span><span class="p">]:</span> <span class="s1">&#39;zhaojiedi&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="isinstance-object-classinfo">
+<h3>isinstance(object,classinfo)<a class="headerlink" href="#isinstance-object-classinfo" title="Permalink to this headline">¶</a></h3>
+<p>功能：判断对象是不是特定类</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">79</span><span class="p">]:</span> <span class="nb">isinstance</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">79</span><span class="p">]:</span> <span class="bp">True</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">80</span><span class="p">]:</span> <span class="nb">isinstance</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="nb">list</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">80</span><span class="p">]:</span> <span class="bp">False</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">82</span><span class="p">]:</span> <span class="nb">isinstance</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,(</span><span class="nb">list</span><span class="p">,</span><span class="nb">str</span><span class="p">))</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">82</span><span class="p">]:</span> <span class="bp">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="issubclass-class-classinfo">
+<h3>issubclass(class, classinfo)<a class="headerlink" href="#issubclass-class-classinfo" title="Permalink to this headline">¶</a></h3>
+<p>功能：是否是子类的</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">90</span><span class="p">]:</span> <span class="k">class</span> <span class="nc">p5</span><span class="p">():</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="k">pass</span>
+    <span class="o">...</span><span class="p">:</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">91</span><span class="p">]:</span> <span class="k">class</span> <span class="nc">p6</span><span class="p">(</span><span class="n">p5</span><span class="p">):</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="k">pass</span>
+    <span class="o">...</span><span class="p">:</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">92</span><span class="p">]:</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">p6</span><span class="p">,</span><span class="n">p5</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">92</span><span class="p">]:</span> <span class="bp">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="iter-object-sentinel">
+<h3>iter(object[, sentinel])<a class="headerlink" href="#iter-object-sentinel" title="Permalink to this headline">¶</a></h3>
+<p>功能：返回一个迭代对象</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">96</span><span class="p">]:</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">iter</span><span class="p">(</span><span class="n">fp</span><span class="o">.</span><span class="n">readline</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+    <span class="o">...</span><span class="p">:</span>         <span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="len-x">
+<h3>len(x)<a class="headerlink" href="#len-x" title="Permalink to this headline">¶</a></h3>
+<p>功能：获取长度</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">97</span><span class="p">]:</span> <span class="nb">len</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">97</span><span class="p">]:</span> <span class="mi">3</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">98</span><span class="p">]:</span> <span class="nb">len</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">98</span><span class="p">]:</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="open-file-mode-r-buffering-1-encoding-none-errors-none-newline-none-closefd-true-opener-none">
+<h3>open(file, mode=’r’, buffering=-1, encoding=None, errors=None, newline=None, closefd=True, opener=None)<a class="headerlink" href="#open-file-mode-r-buffering-1-encoding-none-errors-none-newline-none-closefd-true-opener-none" title="Permalink to this headline">¶</a></h3>
+<p>功能：打开文件</p>
+<p>模式</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">字符</th>
+<th class="head">描述</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>r</td>
+<td>读取，这是默认值</td>
+</tr>
+<tr class="row-odd"><td>w</td>
+<td>写文件</td>
+</tr>
+<tr class="row-even"><td>x</td>
+<td>打开去执行创建</td>
+</tr>
+<tr class="row-odd"><td>a</td>
+<td>追加</td>
+</tr>
+<tr class="row-even"><td>b</td>
+<td>二进制模式</td>
+</tr>
+<tr class="row-odd"><td>t</td>
+<td>文本模式，默认值</td>
+</tr>
+<tr class="row-even"><td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>读写模式</td>
+</tr>
+</tbody>
+</table>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">101</span><span class="p">]:</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;a.txt&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;this is a test&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="powpow-x-y-z">
+<h3>powpow(x, y[, z])<a class="headerlink" href="#powpow-x-y-z" title="Permalink to this headline">¶</a></h3>
+<p>功能： 字符计算的，如果有z值指定，就是x的y次方对z求余数。</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">102</span><span class="p">]:</span> <span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">102</span><span class="p">]:</span> <span class="mi">8</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">103</span><span class="p">]:</span> <span class="nb">pow</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">103</span><span class="p">]:</span> <span class="mi">9</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">104</span><span class="p">]:</span> <span class="nb">pow</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">104</span><span class="p">]:</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="range-start-stop-step">
+<h3>range(start,stop,step)<a class="headerlink" href="#range-start-stop-step" title="Permalink to this headline">¶</a></h3>
+<p>功能：生成一组连续的数值</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">106</span><span class="p">]:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">106</span><span class="p">]:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">107</span><span class="p">]:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">107</span><span class="p">]:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">108</span><span class="p">]:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">108</span><span class="p">]:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="repr-object">
+<h3>repr(object)<a class="headerlink" href="#repr-object" title="Permalink to this headline">¶</a></h3>
+<p>功能：得到对象的打印信息</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">113</span><span class="p">]:</span> <span class="k">class</span> <span class="nc">p8</span><span class="p">():</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="o">...</span><span class="p">:</span>         <span class="k">return</span> <span class="s2">&quot; this is a test&quot;</span>
+    <span class="o">...</span><span class="p">:</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">114</span><span class="p">]:</span> <span class="n">p</span><span class="o">=</span><span class="n">p8</span><span class="p">()</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">115</span><span class="p">]:</span> <span class="n">p</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">115</span><span class="p">]:</span>  <span class="n">this</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">test</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">116</span><span class="p">]:</span> <span class="nb">repr</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">116</span><span class="p">]:</span> <span class="s1">&#39; this is a test&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="reversed-seq">
+<h3>reversed(seq)<a class="headerlink" href="#reversed-seq" title="Permalink to this headline">¶</a></h3>
+<p>功能：反转一个对象</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">117</span><span class="p">]:</span> <span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">118</span><span class="p">]:</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">118</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">list_reverseiterator</span> <span class="n">at</span> <span class="mh">0x2480c111320</span><span class="o">&gt;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">119</span><span class="p">]:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">119</span><span class="p">]:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="round-number-ndigits">
+<h3>round(number[, ndigits])<a class="headerlink" href="#round-number-ndigits" title="Permalink to this headline">¶</a></h3>
+<p>功能：四舍五入功能</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">121</span><span class="p">]:</span> <span class="nb">round</span><span class="p">(</span><span class="mi">101</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">121</span><span class="p">]:</span> <span class="mi">100</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">122</span><span class="p">]:</span> <span class="nb">round</span><span class="p">(</span><span class="mf">101.667</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">122</span><span class="p">]:</span> <span class="mf">101.67</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">123</span><span class="p">]:</span> <span class="nb">round</span><span class="p">(</span><span class="mf">101.667</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">123</span><span class="p">]:</span> <span class="mf">101.7</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setattr-object-name-value">
+<h3>setattr(object,name,value)<a class="headerlink" href="#setattr-object-name-value" title="Permalink to this headline">¶</a></h3>
+<p>功能：用于设置对象的特定属性为value值。</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">125</span><span class="p">]:</span> <span class="n">p</span><span class="o">=</span><span class="n">p9</span><span class="p">()</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">126</span><span class="p">]:</span> <span class="n">p</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">126</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">p9</span> <span class="n">at</span> <span class="mh">0x2480c1c40f0</span><span class="o">&gt;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">127</span><span class="p">]:</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span>
+<span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span>                            <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">127</span><span class="o">-</span><span class="mi">1</span><span class="n">c57ed665d7c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">()</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span>
+
+<span class="ne">AttributeError</span><span class="p">:</span> <span class="s1">&#39;p9&#39;</span> <span class="nb">object</span> <span class="n">has</span> <span class="n">no</span> <span class="n">attribute</span> <span class="s1">&#39;name&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">128</span><span class="p">]:</span> <span class="nb">setattr</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="s2">&quot;name&quot;</span><span class="p">,</span><span class="s2">&quot;zhaojiedi&quot;</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">129</span><span class="p">]:</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">129</span><span class="p">]:</span> <span class="s1">&#39;zhaojiedi&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="class-slice-start-stop-step">
+<h3>class slice(start, stop[, step])<a class="headerlink" href="#class-slice-start-stop-step" title="Permalink to this headline">¶</a></h3>
+<p>功能：分片功能，用于提取迭代对象的一部分</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">130</span><span class="p">]:</span> <span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">131</span><span class="p">]:</span> <span class="nb">slice</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">131</span><span class="p">]:</span> <span class="nb">slice</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">132</span><span class="p">]:</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">132</span><span class="p">]:</span> <span class="mi">2</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">133</span><span class="p">]:</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">133</span><span class="p">]:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">134</span><span class="p">]:</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">134</span><span class="p">]:</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sorted-iterable-key-none-reverse-false">
+<h3>sorted(iterable, <a href="#id5"><span class="problematic" id="id6">*</span></a>, key=None, reverse=False)<a class="headerlink" href="#sorted-iterable-key-none-reverse-false" title="Permalink to this headline">¶</a></h3>
+<p>功能： 排序功能</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">137</span><span class="p">]:</span> <span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;aAbc&quot;</span><span class="p">,</span><span class="s2">&quot;bC&quot;</span><span class="p">,</span><span class="s2">&quot;Bc&quot;</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">138</span><span class="p">]:</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">key</span><span class="o">=</span><span class="nb">str</span><span class="o">.</span><span class="n">upper</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">138</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;aAbc&#39;</span><span class="p">,</span> <span class="s1">&#39;bC&#39;</span><span class="p">,</span> <span class="s1">&#39;Bc&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="staticmethod">
+<h3>&#64;staticmethod<a class="headerlink" href="#staticmethod" title="Permalink to this headline">¶</a></h3>
+<p>功能：转化一个方法为静态方法</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">C</span><span class="p">:</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span><span class="n">arg2</span><span class="p">):</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sum-iterable-start">
+<h3>sum(iterable[, start])<a class="headerlink" href="#sum-iterable-start" title="Permalink to this headline">¶</a></h3>
+<p>功能：求和</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">139</span><span class="p">]:</span> <span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">140</span><span class="p">]:</span> <span class="nb">sum</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">140</span><span class="p">]:</span> <span class="mi">10</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">141</span><span class="p">]:</span> <span class="nb">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">141</span><span class="p">]:</span> <span class="mi">11</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">142</span><span class="p">]:</span> <span class="nb">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">142</span><span class="p">]:</span> <span class="mi">110</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="super-type-object-or-type">
+<h3>super([type[, object-or-type]])<a class="headerlink" href="#super-type-object-or-type" title="Permalink to this headline">¶</a></h3>
+<p>功能：返回一个将方法调用委托给父类或兄弟类的代理对象。 这对访问在类中被覆盖的继承方法很有用</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">B</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">method</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tuple-iteerable">
+<h3>tuple(iteerable)<a class="headerlink" href="#tuple-iteerable" title="Permalink to this headline">¶</a></h3>
+<p>功能：转化为元组</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">143</span><span class="p">]:</span> <span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">144</span><span class="p">]:</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">144</span><span class="p">]:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="type-object">
+<h3>type(object)<a class="headerlink" href="#type-object" title="Permalink to this headline">¶</a></h3>
+<p>功能：获取对象的类型</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">145</span><span class="p">]:</span> <span class="nb">type</span><span class="p">(</span><span class="s2">&quot;aaa&quot;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">145</span><span class="p">]:</span> <span class="nb">str</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">146</span><span class="p">]:</span> <span class="nb">type</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">146</span><span class="p">]:</span> <span class="nb">list</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="zip-iterables">
+<h3>zip(*iterables)<a class="headerlink" href="#zip-iterables" title="Permalink to this headline">¶</a></h3>
+<p>功能：获取对象的类型</p>
+<p>样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">148</span><span class="p">]:</span> <span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">149</span><span class="p">]:</span> <span class="n">b</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">,</span><span class="s2">&quot;d&quot;</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">150</span><span class="p">]:</span> <span class="n">c</span><span class="o">=</span><span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">151</span><span class="p">]:</span> <span class="nb">list</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">151</span><span class="p">]:</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="02内置常量.html" class="btn btn-neutral float-right" title="内置常量" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, zhaojiedi1992@outlook.com.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'v0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

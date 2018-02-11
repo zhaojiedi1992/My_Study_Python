@@ -5,6 +5,7 @@
 
 .. toctree::
    :maxdepth: 2
+   :numbered:
    :glob:
 
    标准库/*

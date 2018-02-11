@@ -148,7 +148,7 @@ delattr(object,name)
 
     AttributeError: 'People' object has no attribute 'age'
 
-dict(**kwarg)
+dict(\*\*kwarg)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 功能：转化为一个字典
  
@@ -547,7 +547,7 @@ class slice(start, stop[, step])
     In [134]: a[1:2]
     Out[134]: [2]
 
-sorted(iterable, *, key=None, reverse=False)
+sorted(iterable, \*, key=None, reverse=False)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 功能： 排序功能
  

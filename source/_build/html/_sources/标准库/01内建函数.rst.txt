@@ -219,7 +219,7 @@ enumerate(iterable, start=0)
     Out[52]: [(2, 'spring'), (3, 'summer'), (4, 'fall'), (5, 'winter')]
 
 eval(expression, globals=None, locals=None)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 功能：用于计算表达式
  
 样例： 
@@ -548,7 +548,7 @@ class slice(start, stop[, step])
     Out[134]: [2]
 
 sorted(iterable, *, key=None, reverse=False)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 功能： 排序功能
  
 样例： 
@@ -631,7 +631,7 @@ type(object)
     In [146]: type([1,2,3])
     Out[146]: list
 
-zip(*iterables)
+zip(\*iterables)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 功能：获取对象的类型
  

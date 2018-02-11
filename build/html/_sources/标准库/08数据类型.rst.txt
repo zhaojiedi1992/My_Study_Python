@@ -126,9 +126,9 @@ time
 格式控制
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-日期的格式控制符_
+日期格式控制符_
 
-.. _日志的格式控制符: https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
+.. _日期格式控制符: https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
 
 calendar
 ---------------------------------------------------------

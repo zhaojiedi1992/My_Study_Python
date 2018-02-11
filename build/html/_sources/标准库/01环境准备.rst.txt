@@ -13,7 +13,7 @@ anaconda下载python_
 ipython的安装
 ----------------------------------------------
 
-.. code-block:: cmd
+.. code-block:: text 
 
     C:\Users\Administrator>pip install ipython
 

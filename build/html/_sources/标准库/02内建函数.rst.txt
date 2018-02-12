@@ -148,6 +148,8 @@ delattr(object,name)
 
     AttributeError: 'People' object has no attribute 'age'
 
+删除了属性后再去访问这个属性，就会触发属性错误异常。
+
 dict(\*\*kwarg)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 功能：转化为一个字典
@@ -268,6 +270,8 @@ getattr(object, name[, default])
 
     In [63]: getattr(p,"age",26)
     Out[63]: 26
+
+不提供默认值去访问一个不存在的属性，会抛出属性错误的。
 
 hasattr(object, name)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -400,7 +404,7 @@ open(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, clo
    "a","追加"
    "b","二进制模式"
    "t","文本模式，默认值"
-   "+","读写模式"
+   "\+","读写模式"
 
  
 样例： 
@@ -604,7 +608,7 @@ super([type[, object-or-type]])
         def method(self, arg):
             super().method(arg)
 
-tuple(iteerable)
+tuple(iterable)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 功能：转化为元组
  

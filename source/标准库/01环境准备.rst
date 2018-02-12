@@ -6,9 +6,9 @@
 
 anaconda下载python_
 
-.. _anaconda下载python: http://docs.continuum.io/anaconda/index
+.. _anaconda下载python: https://www.anaconda.com/download/
 
-.. note:: 安装过程请勾选添加到环境变量的选项。
+.. note:: 安装过程请勾选添加到环境变量的选项，不然后续的命令没法直接使用。
 
 ipython的安装
 ----------------------------------------------

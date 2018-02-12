@@ -3,8 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+我自己的python学习笔记
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
 .. toctree::
    :maxdepth: 2
+   :caption: 基础库
    :numbered:
    :glob:
 

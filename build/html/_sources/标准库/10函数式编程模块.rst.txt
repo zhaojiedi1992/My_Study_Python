@@ -1,0 +1,51 @@
+函数式编程模块
+==========================================
+
+itertools
+-------------------------------------------
+该模块标准化了一套核心的快速、内存有效的工具，它们本身或组合使用都是有用的。
+
+.. code-block:: python 
+
+    In [1]: import itertools
+
+    In [3]: import operator
+
+    # 累加的
+    In [5]: list(itertools.accumulate([1,2,3,4,5],operator.add))
+    Out[5]: [1, 3, 6, 10, 15]
+
+    # 累乘的
+    In [6]: list(itertools.accumulate([1,2,3,4,5],operator.mul))
+    Out[6]: [1, 2, 6, 24, 120]
+
+functools
+-------------------------------------------
+functools模块是高阶函数：函数法或返回等功能。一般来说，为了这个模块的目的，
+任何可调用对象都可以被当作一个函数处理。
+
+operator
+-------------------------------------------
+定义写操作方法
+
+.. code-block:: python
+
+    In [1]: import operator
+
+    In [2]: operator.abs
+                abs()         concat()      eq()          gt()          ifloordiv()   imul()        invert()      is_()        
+                add()         contains()    floordiv()    iadd()        ilshift()     index()       ior()         is_not()      
+                and_()        countOf()     ge()          iand()        imatmul()     indexOf()     ipow()        isub()        
+                attrgetter    delitem()     getitem()     iconcat()     imod()        inv()         irshift()     itemgetter    
+                itruediv()    lshift()      mod()         not_()        rshift()      truth()
+                ixor()        lt()          mul()         or_()         setitem()     xor()
+                le()          matmul()      ne()          pos()         sub()
+                length_hint() methodcaller  neg()         pow()         truediv()
+                function
+
+
+
+
+
+
+

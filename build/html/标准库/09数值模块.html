@@ -36,7 +36,7 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="My_Study_Python v0.1 documentation" href="../index.html"/>
-        <link rel="next" title="10. 函数模块" href="10函数模块.html"/>
+        <link rel="next" title="10. 函数式编程模块" href="10函数式编程模块.html"/>
         <link rel="prev" title="8. 数据类型" href="08数据类型.html"/> 
 
   
@@ -233,8 +233,22 @@
 <li class="toctree-l2"><a class="reference internal" href="08数据类型.html#flag">8.14. Flag</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">9. 数值模块</a></li>
-<li class="toctree-l1"><a class="reference internal" href="10函数模块.html">10. 函数模块</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">9. 数值模块</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#numbers">9.1. numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#math">9.2. math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cmath">9.3. cmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#decimal">9.4. decimal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fractions">9.5. fractions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#random">9.6. random</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#statistics">9.7. statistics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="10函数式编程模块.html">10. 函数式编程模块</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="10函数式编程模块.html#itertools">10.1. itertools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10函数式编程模块.html#functools">10.2. functools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10函数式编程模块.html#operator">10.3. operator</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -298,7 +312,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="10函数模块.html" class="btn btn-neutral float-right" title="10. 函数模块" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="10函数式编程模块.html" class="btn btn-neutral float-right" title="10. 函数式编程模块" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="08数据类型.html" class="btn btn-neutral" title="8. 数据类型" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -312,6 +326,243 @@
             
   <div class="section" id="id1">
 <h1>9. 数值模块<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="numbers">
+<h2>9.1. numbers<a class="headerlink" href="#numbers" title="Permalink to this headline">¶</a></h2>
+<p>定义了数字抽象基类的层次结构，在这个模块中定义的任何类型都不能实例化。</p>
+</div>
+<div class="section" id="math">
+<h2>9.2. math<a class="headerlink" href="#math" title="Permalink to this headline">¶</a></h2>
+<p>这个模块提供了数学函数功能。</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># 导入</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">math</span>
+<span class="c1">##################基础的####################################</span>
+<span class="c1"># 向上取整数</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mf">4.3</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="mi">5</span>
+
+<span class="c1"># 向下取整</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="mf">4.3</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="mi">4</span>
+
+<span class="c1"># 绝对值</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">math</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="o">-</span><span class="mf">4.3</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="mf">4.3</span>
+
+<span class="c1"># 获取数值的整数部分</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="n">math</span><span class="o">.</span><span class="n">trunc</span><span class="p">(</span><span class="mf">4.3</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="mi">4</span>
+
+<span class="c1"># 余数</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">math</span><span class="o">.</span><span class="n">fmod</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="mf">1.0</span>
+
+<span class="c1"># 求和，有浮点误差的</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span>  <span class="nb">sum</span><span class="p">([</span><span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">])</span>
+<span class="o">...</span><span class="p">:</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="mf">0.9999999999999999</span>
+
+<span class="c1"># 使用math.fsum没有误差</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">math</span><span class="o">.</span><span class="n">fsum</span><span class="p">([</span><span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">])</span>
+<span class="o">...</span><span class="p">:</span>
+<span class="o">...</span><span class="p">:</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="mf">1.0</span>
+
+<span class="c1"># 求解最大公约数</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="n">math</span><span class="o">.</span><span class="n">gcd</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="mi">2</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="n">math</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="o">-</span><span class="mf">4.2</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="bp">True</span>
+
+<span class="c1"># 判定是不是非inf结果</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="n">math</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">inf</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="bp">False</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">inf</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="bp">False</span>
+<span class="c1">##################次方和求对数的##########################</span>
+<span class="c1"># e^4</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="mf">54.598150033144236</span>
+<span class="c1"># e^ - 1</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">18</span><span class="p">]:</span> <span class="n">math</span><span class="o">.</span><span class="n">expm1</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">18</span><span class="p">]:</span> <span class="mf">53.598150033144236</span>
+
+<span class="c1"># log(2)/log(4)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">19</span><span class="p">]:</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">19</span><span class="p">]:</span> <span class="mf">0.5</span>
+
+<span class="c1"># log(9)/log(3)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="mf">2.0</span>
+
+<span class="c1"># log(x+1)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="n">math</span><span class="o">.</span><span class="n">log1p</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">e</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="mf">1.0</span>
+
+<span class="c1"># 以2为基数</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">25</span><span class="p">]:</span> <span class="n">math</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">25</span><span class="p">]:</span> <span class="mf">2.0</span>
+
+<span class="c1"># 以10为基数</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">26</span><span class="p">]:</span> <span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">26</span><span class="p">]:</span> <span class="mf">1.0</span>
+
+<span class="c1"># 求解次方</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">27</span><span class="p">]:</span> <span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">27</span><span class="p">]:</span> <span class="mf">32.0</span>
+
+<span class="c1"># 平方</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">28</span><span class="p">]:</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">28</span><span class="p">]:</span> <span class="mf">10.0</span>
+
+<span class="c1">##################三角函数##########################</span>
+<span class="c1"># cos函数，当然还有其他的sin,tan,acos,asin等</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">34</span><span class="p">]:</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">34</span><span class="p">]:</span> <span class="o">-</span><span class="mf">1.0</span>
+<span class="c1"># sqrt(x^2 + y^2）</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">37</span><span class="p">]:</span> <span class="n">math</span><span class="o">.</span><span class="n">hypot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">37</span><span class="p">]:</span> <span class="mf">5.0</span>
+<span class="c1">##################角度和弧度转换##########################</span>
+<span class="c1"># 弧度转化为角度</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">39</span><span class="p">]:</span> <span class="n">math</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">39</span><span class="p">]:</span> <span class="mf">180.0</span>
+<span class="c1"># 角度转化为弧度，360转化为2pi</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">40</span><span class="p">]:</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">360</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">40</span><span class="p">]:</span> <span class="mf">6.283185307179586</span>
+
+<span class="c1">##################常量##########################</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">41</span><span class="p">]:</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">41</span><span class="p">]:</span> <span class="mf">3.141592653589793</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">42</span><span class="p">]:</span> <span class="n">math</span><span class="o">.</span><span class="n">e</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">42</span><span class="p">]:</span> <span class="mf">2.718281828459045</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">43</span><span class="p">]:</span> <span class="n">math</span><span class="o">.</span><span class="n">tau</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">43</span><span class="p">]:</span> <span class="mf">6.283185307179586</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">46</span><span class="p">]:</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">==</span> <span class="n">math</span><span class="o">.</span><span class="n">tau</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">46</span><span class="p">]:</span> <span class="bp">True</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">44</span><span class="p">]:</span> <span class="n">math</span><span class="o">.</span><span class="n">inf</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">44</span><span class="p">]:</span> <span class="n">inf</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">45</span><span class="p">]:</span> <span class="n">math</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">45</span><span class="p">]:</span> <span class="n">nan</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cmath">
+<h2>9.3. cmath<a class="headerlink" href="#cmath" title="Permalink to this headline">¶</a></h2>
+<p>复数函数，用户和math基本相同</p>
+</div>
+<div class="section" id="decimal">
+<h2>9.4. decimal<a class="headerlink" href="#decimal" title="Permalink to this headline">¶</a></h2>
+<p>decimal提供高精度运算的，有些数据库使用number,float都是decimal的。</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">53</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">54</span><span class="p">]:</span> <span class="n">getcontext</span><span class="p">()</span><span class="o">.</span><span class="n">prec</span><span class="o">=</span><span class="mi">6</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">55</span><span class="p">]:</span> <span class="n">Decimal</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">Decimal</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">55</span><span class="p">]:</span> <span class="n">Decimal</span><span class="p">(</span><span class="s1">&#39;0.142857&#39;</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">56</span><span class="p">]:</span> <span class="n">getcontext</span><span class="p">()</span><span class="o">.</span><span class="n">prec</span><span class="o">=</span><span class="mi">2</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">57</span><span class="p">]:</span> <span class="n">Decimal</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">Decimal</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">57</span><span class="p">]:</span> <span class="n">Decimal</span><span class="p">(</span><span class="s1">&#39;0.14&#39;</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">58</span><span class="p">]:</span> <span class="n">getcontext</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">58</span><span class="p">]:</span> <span class="n">Context</span><span class="p">(</span><span class="n">prec</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">rounding</span><span class="o">=</span><span class="n">ROUND_HALF_EVEN</span><span class="p">,</span> <span class="n">Emin</span><span class="o">=-</span><span class="mi">999999</span><span class="p">,</span> <span class="n">Emax</span><span class="o">=</span><span class="mi">999999</span><span class="p">,</span> <span class="n">capitals</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">clamp</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="p">[</span><span class="n">Inexact</span><span class="p">,</span> <span class="n">Rounded</span><span class="p">],</span> <span class="n">traps</span><span class="o">=</span><span class="p">[</span><span class="n">InvalidOperation</span><span class="p">,</span> <span class="n">DivisionByZero</span><span class="p">,</span> <span class="n">Overflow</span><span class="p">])</span>
+
+<span class="c1"># float转decimal</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">59</span><span class="p">]:</span> <span class="n">Decimal</span><span class="o">.</span><span class="n">from_float</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">59</span><span class="p">]:</span> <span class="n">Decimal</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+
+<span class="c1"># 判断是不是0</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">60</span><span class="p">]:</span> <span class="n">Decimal</span><span class="p">(</span><span class="mf">0.00000</span><span class="p">)</span><span class="o">.</span><span class="n">is_zero</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">60</span><span class="p">]:</span> <span class="bp">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="fractions">
+<h2>9.5. fractions<a class="headerlink" href="#fractions" title="Permalink to this headline">¶</a></h2>
+<p>分数</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">62</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">fractions</span> <span class="kn">import</span> <span class="n">Fraction</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">63</span><span class="p">]:</span> <span class="n">Fraction</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">63</span><span class="p">]:</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">64</span><span class="p">]:</span> <span class="n">Fraction</span><span class="p">(</span><span class="mf">2.25</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">64</span><span class="p">]:</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">65</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="n">Decimal</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">66</span><span class="p">]:</span> <span class="n">Fraction</span><span class="p">(</span><span class="n">Decimal</span><span class="p">(</span><span class="s1">&#39;1.1&#39;</span><span class="p">))</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">66</span><span class="p">]:</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="random">
+<h2>9.6. random<a class="headerlink" href="#random" title="Permalink to this headline">¶</a></h2>
+<p>提供随机数功能</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># 导入</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">67</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1"># 得到0-1随机数</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">70</span><span class="p">]:</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">70</span><span class="p">]:</span> <span class="mf">0.021402576679810603</span>
+
+<span class="c1"># 指定范文的随机数</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">71</span><span class="p">]:</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mf">2.1</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">71</span><span class="p">]:</span> <span class="mf">2.0343718601184664</span>
+
+<span class="c1"># 整数随机值，0-9</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">72</span><span class="p">]:</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">72</span><span class="p">]:</span> <span class="mi">6</span>
+
+<span class="c1"># 1,3,5,7,9这些数值取随机值</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">73</span><span class="p">]:</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">73</span><span class="p">]:</span> <span class="mi">5</span>
+
+<span class="c1"># 从集合中取一个</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">75</span><span class="p">]:</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">75</span><span class="p">]:</span> <span class="mi">1</span>
+
+<span class="c1"># 从集合中取样本数据</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">76</span><span class="p">]:</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="s2">&quot;abcdef&quot;</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">76</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="statistics">
+<h2>9.7. statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">¶</a></h2>
+<p>统计功能</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p># 导入
+In [79]: import statistics</p>
+<p>In [80]: a=[1,2,3,4]</p>
+<p># 均值
+In [82]: statistics.mean(a)
+Out[82]: 2.5</p>
+<p># 中值，就是这4个数中间的那一个，如果偶数个，就去中间2个平均数，奇数取中间值
+In [83]: statistics.median(a)
+Out[83]: 2.5</p>
+<p>In [84]: b=[1,2,3,4,5]</p>
+<p>In [85]: b=[1,4,2,0,100]</p>
+<p>In [86]: statistics.median(b)
+Out[86]: 2</p>
+<p># 取中间2个小的那个
+In [87]: statistics.median_low(a)
+Out[87]: 2</p>
+<p># 取中间大的那个
+In [88]: statistics.median_high(a)
+Out[88]: 3</p>
+<p># 标准差
+In [90]: statistics.stdev(a)
+Out[90]: 1.2909944487358056</p>
+</div>
 </div>
 
 
@@ -324,7 +575,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="10函数模块.html" class="btn btn-neutral float-right" title="10. 函数模块" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="10函数式编程模块.html" class="btn btn-neutral float-right" title="10. 函数式编程模块" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="08数据类型.html" class="btn btn-neutral" title="8. 数据类型" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

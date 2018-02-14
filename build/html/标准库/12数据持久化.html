@@ -1,0 +1,575 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>12. 数据持久化 &mdash; My_Study_Python v0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="My_Study_Python v0.1 documentation" href="../index.html"/>
+        <link rel="next" title="&lt;no title&gt;" href="13数据压缩和归档.html"/>
+        <link rel="prev" title="11. 文件和目录访问" href="11文件和目录访问.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+  <script src="../_static/js/baidu.js"></script>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> My_Study_Python
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">基础库</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="01环境准备.html">1. 环境准备</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01环境准备.html#python">1.1. 安装python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01环境准备.html#ipython">1.2. ipython的安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01环境准备.html#id2">1.3. ipython测试</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="02内建函数.html">2. 内建函数</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="02内建函数.html#id2">2.1. 常用内置函数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#abs-x">2.1.1. abs(x)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#all-iterable">2.1.2. all(iterable)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#any-iterable">2.1.3. any(iterable)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#bool-x">2.1.4. bool(x)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#callable-object">2.1.5. callable(object)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#chr-i">2.1.6. chr(i)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#classmethod">2.1.7. classmethod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#delattr-object-name">2.1.8. delattr(object,name)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#dict-kwarg">2.1.9. dict(**kwarg)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#dir-x">2.1.10. dir(x)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#enumerate-iterable-start-0">2.1.11. enumerate(iterable, start=0)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#eval-expression-globals-none-locals-none">2.1.12. eval(expression, globals=None, locals=None)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#float-x">2.1.13. float(x)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#getattr-object-name-default">2.1.14. getattr(object, name[, default])</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#hasattr-object-name">2.1.15. hasattr(object, name)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#hex-x">2.1.16. hex(x)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#input-prompt">2.1.17. input(prompt)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#isinstance-object-classinfo">2.1.18. isinstance(object,classinfo)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#issubclass-class-classinfo">2.1.19. issubclass(class, classinfo)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#iter-object-sentinel">2.1.20. iter(object[, sentinel])</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#len-x">2.1.21. len(x)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#open-file-mode-r-buffering-1-encoding-none-errors-none-newline-none-closefd-true-opener-none">2.1.22. open(file, mode=’r’, buffering=-1, encoding=None, errors=None, newline=None, closefd=True, opener=None)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#powpow-x-y-z">2.1.23. powpow(x, y[, z])</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#range-start-stop-step">2.1.24. range(start,stop,step)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#repr-object">2.1.25. repr(object)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#reversed-seq">2.1.26. reversed(seq)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#round-number-ndigits">2.1.27. round(number[, ndigits])</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#setattr-object-name-value">2.1.28. setattr(object,name,value)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#class-slice-start-stop-step">2.1.29. class slice(start, stop[, step])</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#sorted-iterable-key-none-reverse-false">2.1.30. sorted(iterable, *, key=None, reverse=False)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#staticmethod">2.1.31. &#64;staticmethod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#sum-iterable-start">2.1.32. sum(iterable[, start])</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#super-type-object-or-type">2.1.33. super([type[, object-or-type]])</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#tuple-iterable">2.1.34. tuple(iterable)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#type-object">2.1.35. type(object)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#zip-iterables">2.1.36. zip(*iterables)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="03内置常量.html">3. 内置常量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04内置类型.html">4. 内置类型</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="04内置类型.html#id2">4.1. 真值测试</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04内置类型.html#boolean">4.2. boolean操作符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04内置类型.html#id3">4.3. 比较操作符号</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04内置类型.html#int-float-complex">4.4. 数据类型int,float,complex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04内置类型.html#list-tuple-range">4.5. 数据类型 list, tuple, range</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="04内置类型.html#list">4.5.1. list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04内置类型.html#tuples">4.5.2. Tuples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04内置类型.html#ranges">4.5.3. Ranges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04内置类型.html#text-sequence-type-str">4.5.4. Text Sequence Type - str</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04内置类型.html#string-methods">4.5.5. String Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04内置类型.html#printf">4.5.6. printf</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="04内置类型.html#binary-sequence-types-bytes-bytearray-memoryview">4.6. Binary Sequence Types — bytes, bytearray, memoryview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="04内置类型.html#bytes">4.6.1. bytes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04内置类型.html#bytearray">4.6.2. bytearray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04内置类型.html#memoryview">4.6.3. memoryview</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="04内置类型.html#set-types-set-frozenset">4.7. Set Types — set, frozenset</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="04内置类型.html#mapping-types-dict">4.7.1. Mapping Types — dict</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="05内置异常.html">5. 内置异常</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06文本处理.html">6. 文本处理</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="06文本处理.html#string">6.1. string</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="06文本处理.html#id2">6.1.1. string常量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06文本处理.html#id3">6.1.2. 格式化样例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06文本处理.html#id4">6.1.3. 模板字符串</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="06文本处理.html#re">6.2. re</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="06文本处理.html#id5">6.2.1. 模块内容</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06文本处理.html#id6">6.2.2. 正则表达式对象</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06文本处理.html#id7">6.2.3. 匹配对象</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="06文本处理.html#difflib">6.3. difflib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06文本处理.html#textwrap">6.4. textwrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06文本处理.html#unicodedata">6.5. unicodedata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06文本处理.html#stringprep">6.6. stringprep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06文本处理.html#readline">6.7. readline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06文本处理.html#rlcompleter">6.8. rlcompleter</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="07二进制处理.html">7. 二进制处理</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="07二进制处理.html#struct">7.1. struct</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="07二进制处理.html#id2">7.1.1. 主要函数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="07二进制处理.html#codecs">7.2. codecs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="08数据类型.html">8. 数据类型</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="08数据类型.html#datetime">8.1. datetime</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="08数据类型.html#timedelta">8.1.1. timedelta</a></li>
+<li class="toctree-l3"><a class="reference internal" href="08数据类型.html#date">8.1.2. date</a></li>
+<li class="toctree-l3"><a class="reference internal" href="08数据类型.html#id2">8.1.3. datetime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="08数据类型.html#time">8.1.4. time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="08数据类型.html#id3">8.1.5. 格式控制</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="08数据类型.html#calendar">8.2. calendar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08数据类型.html#collectons">8.3. collectons</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="08数据类型.html#chainmap">8.3.1. ChainMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="08数据类型.html#counter">8.3.2. Counter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="08数据类型.html#deque">8.3.3. deque</a></li>
+<li class="toctree-l3"><a class="reference internal" href="08数据类型.html#defaultdict">8.3.4. defaultdict</a></li>
+<li class="toctree-l3"><a class="reference internal" href="08数据类型.html#namedtuple">8.3.5. namedtuple</a></li>
+<li class="toctree-l3"><a class="reference internal" href="08数据类型.html#ordereddict">8.3.6. OrderedDict</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="08数据类型.html#collections-abc">8.4. collections.abc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08数据类型.html#heapq">8.5. heapq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08数据类型.html#bisect">8.6. bisect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08数据类型.html#array">8.7. array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08数据类型.html#weakref">8.8. weakref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08数据类型.html#types">8.9. types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08数据类型.html#copy">8.10. copy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08数据类型.html#pprint">8.11. pprint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08数据类型.html#reprlib">8.12. reprlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08数据类型.html#enum">8.13. enum</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="08数据类型.html#intenum">8.13.1. IntEnum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="08数据类型.html#intflag">8.13.2. IntFlag</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="08数据类型.html#flag">8.14. Flag</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="09数值模块.html">9. 数值模块</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="09数值模块.html#numbers">9.1. numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09数值模块.html#math">9.2. math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09数值模块.html#cmath">9.3. cmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09数值模块.html#decimal">9.4. decimal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09数值模块.html#fractions">9.5. fractions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09数值模块.html#random">9.6. random</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09数值模块.html#statistics">9.7. statistics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="10函数式编程模块.html">10. 函数式编程模块</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="10函数式编程模块.html#itertools">10.1. itertools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10函数式编程模块.html#functools">10.2. functools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10函数式编程模块.html#operator">10.3. operator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="11文件和目录访问.html">11. 文件和目录访问</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="11文件和目录访问.html#pathlib">11.1. pathlib</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="11文件和目录访问.html#id2">11.1.1. 基本使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11文件和目录访问.html#pure">11.1.2. pure路径</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11文件和目录访问.html#concrete">11.1.3. Concrete路径</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="11文件和目录访问.html#os-path">11.2. os.path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11文件和目录访问.html#fileinput">11.3. fileinput</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11文件和目录访问.html#stat">11.4. stat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11文件和目录访问.html#filecmp">11.5. filecmp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11文件和目录访问.html#tempfile">11.6. tempfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11文件和目录访问.html#glob">11.7. glob</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11文件和目录访问.html#fnmatch">11.8. fnmatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11文件和目录访问.html#linecache">11.9. linecache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11文件和目录访问.html#shutil">11.10. shutil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11文件和目录访问.html#macpath">11.11. macpath</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">12. 数据持久化</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pickle">12.1. pickle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#copyreg">12.2. copyreg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shelve">12.3. shelve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#marshal">12.4. marshal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dbm">12.5. dbm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sqllite">12.6. sqllite</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">My_Study_Python</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>12. 数据持久化</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/zhaojiedi1992/My_Study_Python/blob/../edit/master/source/标准库/12数据持久化.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="13数据压缩和归档.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="11文件和目录访问.html" class="btn btn-neutral" title="11. 文件和目录访问" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>12. 数据持久化<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="pickle">
+<h2>12.1. pickle<a class="headerlink" href="#pickle" title="Permalink to this headline">¶</a></h2>
+<p>提供二进制级别的序列化和反序列化。</p>
+<p>和json比较</p>
+<ul class="simple">
+<li>pickle协议和JSON（JavaScript Object Notation）之间有着根本的区别：</li>
+<li>JSON是一种文本序列化格式（它输出unicode文本，虽然大多数时候它被编码为utf-8），而pickle是一种二进制序列化格式。</li>
+<li>JSON是人类可读的，而腌菜不是;</li>
+<li>JSON可以在Python生态系统之外互操作并广泛使用，而pickle则是Python特有的;</li>
+<li>默认情况下，JSON只能表示Python内置类型的一个子集，并且不包含自定义类; pickle可以代表大量的Python类型
+（其中许多是自动的，通过巧妙使用Python的内省设施;复杂的情况可以通过实现特定的对象API来解决）。</li>
+</ul>
+<p>序列化和反序列号样例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># 使用dump来将python对象直接dump到文件中去</span>
+
+<span class="kn">import</span> <span class="nn">pickle</span>
+
+<span class="c1"># 构造一个python对象</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="o">+</span><span class="mi">6j</span><span class="p">],</span>
+    <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;character string&quot;</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;byte string&quot;</span><span class="p">),</span>
+    <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="p">{</span><span class="bp">None</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">}</span>
+<span class="p">}</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.pickle&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">pickle</span><span class="o">.</span><span class="n">HIGHEST_PROTOCOL</span><span class="p">)</span>
+
+<span class="c1"># 使用load来将文件直接load成python对象</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.pickle&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="c1"># 这个地方就不能在指定版本了，会自动识别的，指定了反而不好。</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>load接受的是文件描述符，loads接受的是文件的内容，dump接受文件描述符，dumps默认返回str</p>
+</div>
+<div class="section" id="copyreg">
+<h2>12.2. copyreg<a class="headerlink" href="#copyreg" title="Permalink to this headline">¶</a></h2>
+<p>copyreg模块提供了一种自定义函数来序列和反序列特定对象时使用的函数的机制。</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">copyreg</span><span class="o">,</span><span class="nn">copy</span><span class="o">,</span><span class="nn">pickle</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">14</span><span class="p">]:</span> <span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">a</span><span class="p">):</span>
+    <span class="o">...</span><span class="p">:</span>         <span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="o">=</span><span class="n">a</span>
+    <span class="o">...</span><span class="p">:</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="k">def</span> <span class="nf">pickle_c</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="k">print</span><span class="p">(</span><span class="s2">&quot;picking c instance...&quot;</span><span class="p">)</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="k">return</span> <span class="n">C</span><span class="p">,(</span><span class="n">c</span><span class="o">.</span><span class="n">a</span><span class="p">,)</span>
+    <span class="o">...</span><span class="p">:</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="n">copyreg</span><span class="o">.</span><span class="n">pickle</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="n">pickle_c</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="n">c</span><span class="o">=</span><span class="n">C</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">18</span><span class="p">]:</span> <span class="n">d</span><span class="o">=</span><span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="n">picking</span> <span class="n">c</span> <span class="n">instance</span><span class="o">...</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">19</span><span class="p">]:</span> <span class="n">p</span><span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="n">picking</span> <span class="n">c</span> <span class="n">instance</span><span class="o">...</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="n">p</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x80\x03</span><span class="s1">c__main__</span><span class="se">\n</span><span class="s1">C</span><span class="se">\n</span><span class="s1">q</span><span class="se">\x00</span><span class="s1">K</span><span class="se">\x01\x85</span><span class="s1">q</span><span class="se">\x01</span><span class="s1">Rq</span><span class="se">\x02</span><span class="s1">.&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="shelve">
+<h2>12.3. shelve<a class="headerlink" href="#shelve" title="Permalink to this headline">¶</a></h2>
+<p>shelve是一个持久的，类似字典的对象。</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">shelve</span>
+
+<span class="c1"># 打开一个文件，可以不存在，会创建的</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">22</span><span class="p">]:</span> <span class="n">d</span><span class="o">=</span><span class="n">shelve</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;a.shelve&quot;</span><span class="p">)</span>
+
+<span class="c1"># 设置一些属性值</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">23</span><span class="p">]:</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;zhaojiedi&quot;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span><span class="o">=</span> <span class="mi">26</span>
+
+<span class="c1"># 列出keys</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">26</span><span class="p">]:</span> <span class="nb">list</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">26</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">]</span>
+
+<span class="c1"># 关闭</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">27</span><span class="p">]:</span> <span class="n">d</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1"># 再次打开</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">28</span><span class="p">]:</span> <span class="n">d</span><span class="o">=</span><span class="n">shelve</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;a.shelve&quot;</span><span class="p">)</span>
+
+<span class="c1"># 还是可以获取到原有的数据的</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">29</span><span class="p">]:</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">29</span><span class="p">]:</span> <span class="s1">&#39;zhaojiedi&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="marshal">
+<h2>12.4. marshal<a class="headerlink" href="#marshal" title="Permalink to this headline">¶</a></h2>
+<p>该模块包含可以以二进制格式读取和写入Python值的函数。</p>
+<p>和pickle用法差不多，重要是load,loads,dump,dumps这4个方法。</p>
+<p>简单序列化和反序化样例:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">30</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">marshal</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">31</span><span class="p">]:</span> <span class="n">d</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">33</span><span class="p">]:</span> <span class="n">e</span> <span class="o">=</span> <span class="n">marshal</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">34</span><span class="p">]:</span> <span class="n">e</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">34</span><span class="p">]:</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\xdb\x04\x00\x00\x00\xe9\x01\x00\x00\x00\xe9\x02\x00\x00\x00\xe9\x03\x00\x00\x00\xe9\x04\x00\x00\x00</span><span class="s1">&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">35</span><span class="p">]:</span> <span class="n">f</span> <span class="o">=</span> <span class="n">marshal</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">36</span><span class="p">]:</span> <span class="n">f</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">36</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">37</span><span class="p">]:</span> <span class="nb">id</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="o">==</span> <span class="nb">id</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">37</span><span class="p">]:</span> <span class="bp">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dbm">
+<h2>12.5. dbm<a class="headerlink" href="#dbm" title="Permalink to this headline">¶</a></h2>
+<p>dbm是DBM数据库变体的通用接口,dbm.gnu或dbm.ndbm。 如果没有安装这些模块，
+则将使用模块dbm.dumb中的慢而简单的实现。</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">40</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">dbm</span>
+<span class="c1"># r只读，w写，c读写，且如果不存在创建，n创建一个新的，如果存在就读写打开。</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">41</span><span class="p">]:</span> <span class="k">with</span> <span class="n">dbm</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;cache&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">db</span><span class="p">:</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="n">db</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;zhaojiedi&quot;</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="n">db</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;26&quot;</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="k">print</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">))</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="n">db</span><span class="p">[</span><span class="s2">&quot;weight&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;100&quot;</span>
+</pre></div>
+</div>
+<p>这个和marshal一样，这次修改完毕，下次再次打开还是可以得到上次的数据的。</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">使用dbm的时候value只能是bytes 或者 strings。</p>
+</div>
+</div>
+<div class="section" id="sqllite">
+<h2>12.6. sqllite<a class="headerlink" href="#sqllite" title="Permalink to this headline">¶</a></h2>
+<p>SQLite是一个C库，它提供了一个轻量级的基于磁盘的数据库，它不需要单独的服务器进程，并允许
+使用SQL查询语言的非标准变体访问数据库。 一些应用程序可以使用SQLite进行内部数据存储。
+也可以使用SQLite对应用程序进行原型设计，然后将代码移植到更大的数据库，如PostgreSQL或Oracle。</p>
+<p>这个模块使用起来像我们使用大型数据一样，只是这个数据库比较low而已，没有进程和复杂的数据库管理功能。</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="13数据压缩和归档.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="11文件和目录访问.html" class="btn btn-neutral" title="11. 文件和目录访问" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, zhaojiedi1992@outlook.com.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>  个人博客 <a href="http://blog.linuxpanda.tech/topic/"> LinuxPanda </a> . 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'v0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

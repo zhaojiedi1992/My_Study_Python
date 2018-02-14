@@ -33,15 +33,15 @@ operator
     In [1]: import operator
 
     In [2]: operator.abs
-                abs()         concat()      eq()          gt()          ifloordiv()   imul()        invert()      is_()        
-                add()         contains()    floordiv()    iadd()        ilshift()     index()       ior()         is_not()      
-                and_()        countOf()     ge()          iand()        imatmul()     indexOf()     ipow()        isub()        
-                attrgetter    delitem()     getitem()     iconcat()     imod()        inv()         irshift()     itemgetter    
-                itruediv()    lshift()      mod()         not_()        rshift()      truth()
-                ixor()        lt()          mul()         or_()         setitem()     xor()
-                le()          matmul()      ne()          pos()         sub()
-                length_hint() methodcaller  neg()         pow()         truediv()
-                function
+    In [3]: operator.
+            abs()         eq()          ifloordiv()   invert()      itruediv()    mod()         rshift()
+            add()         floordiv()    ilshift()     ior()         ixor()        mul()         setitem()
+            and_()        ge()          imatmul()     ipow()        le()          ne()          sub()
+            attrgetter    getitem()     imod()        irshift()     length_hint() neg()         truediv()
+            concat()      gt()          imul()        is_()         lshift()      not_()        truth()
+            contains()    iadd()        index()       is_not()      lt()          or_()         xor()
+            countOf()     iand()        indexOf()     isub()        matmul()      pos()
+            delitem()     iconcat()     inv()         itemgetter    methodcaller  pow()
 
 
 

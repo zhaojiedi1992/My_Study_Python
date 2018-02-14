@@ -161,4 +161,94 @@ decimal提供高精度运算的，有些数据库使用number,float都是decimal
     In [60]: Decimal(0.00000).is_zero()
     Out[60]: True
 
+fractions
+-----------------------------------------------------
+分数
+
+.. code-block:: python 
+
+    In [62]: from fractions import Fraction
+
+    In [63]: Fraction(0.5)
+    Out[63]: Fraction(1, 2)
+
+    In [64]: Fraction(2.25)
+    Out[64]: Fraction(9, 4)
+
+    In [65]: from decimal import Decimal
+
+    In [66]: Fraction(Decimal('1.1'))
+    Out[66]: Fraction(11, 10)
+
+random
+------------------------------------------------------------
+提供随机数功能
+
+.. code-block:: python 
+
+    # 导入
+    In [67]: import random
+
+    # 得到0-1随机数
+    In [70]: random.random()
+    Out[70]: 0.021402576679810603
+
+    # 指定范文的随机数
+    In [71]: random.uniform(2,2.1)
+    Out[71]: 2.0343718601184664
+
+    # 整数随机值，0-9
+    In [72]: random.randrange(9)
+    Out[72]: 6
+
+    # 1,3,5,7,9这些数值取随机值
+    In [73]: random.randrange(1,11,2)
+    Out[73]: 5
+
+    # 从集合中取一个
+    In [75]: random.choice([1,2,3])
+    Out[75]: 1
+
+    # 从集合中取样本数据
+    In [76]: random.sample("abcdef",k=3)
+    Out[76]: ['e', 'a', 'f']
+
+statistics
+-----------------------------
+统计功能
+
+.. code-block:: python 
+
+# 导入
+In [79]: import statistics
+
+In [80]: a=[1,2,3,4]
+
+# 均值
+In [82]: statistics.mean(a)
+Out[82]: 2.5
+
+# 中值，就是这4个数中间的那一个，如果偶数个，就去中间2个平均数，奇数取中间值
+In [83]: statistics.median(a)
+Out[83]: 2.5
+
+In [84]: b=[1,2,3,4,5]
+
+In [85]: b=[1,4,2,0,100]
+
+In [86]: statistics.median(b)
+Out[86]: 2
+
+# 取中间2个小的那个
+In [87]: statistics.median_low(a)
+Out[87]: 2
+
+# 取中间大的那个
+In [88]: statistics.median_high(a)
+Out[88]: 3
+
+# 标准差
+In [90]: statistics.stdev(a)
+Out[90]: 1.2909944487358056
+
 

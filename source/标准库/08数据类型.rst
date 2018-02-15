@@ -83,25 +83,27 @@ datetime
 
     In [35]: t = time(12,30)
 
+    # 日期和时间构造一个datetime
     In [36]: datetime.combine(d,t)
     Out[36]: datetime.datetime(2018, 7, 14, 12, 30)
 
+    # 当前时间
     In [37]: datetime.now()
     Out[37]: datetime.datetime(2018, 2, 11, 15, 23, 19, 986889)
 
+    # utc时间，北京和utc时区差8个小时
     In [38]: datetime.utcnow()
     Out[38]: datetime.datetime(2018, 2, 11, 7, 23, 26, 978965)
 
     In [39]: now = datetime.utcnow()
 
+    # 日期转字符串
     In [41]: now.strftime("%Y-%m-%d %H:%M:%S")
     Out[41]: '2018-02-11 07:23:39'
 
-    In [42]: now.strftime("%Y-%m-%d %H:%M:%S")
-    Out[42]: '2018-02-11 07:23:39'
-
     In [43]: now_str = '2018-02-11 07:23:39'
-
+    
+    # 字符串转日期
     In [44]: datetime.strptime(now_str,"%Y-%m-%d %H:%M:%S")
     Out[44]: datetime.datetime(2018, 2, 11, 7, 23, 39)
 
@@ -116,9 +118,11 @@ time
 
     In [47]:  dt = time(hour=12, minute=34, second=56, microsecond=0)
 
+    # 指定下显示的精度程度
     In [48]: dt.isoformat(timespec='microseconds')
     Out[48]: '12:34:56.000000'
 
+    # 默认的，只是显示，时分秒
     In [49]: dt.isoformat(timespec='auto')
     Out[49]: '12:34:56'
 
@@ -717,3 +721,4 @@ Flag
 
 使用Flag，每个item都是按照1，2，4，8，16这样的值。
 
+这种flag的主要用于后续有异或运算的情况下。

@@ -171,7 +171,7 @@ re.splitpattern, string, maxsplit=0, flags=0)
     In [191]: re.split('[a-f]+','0a3B9',flags=re.IGNORECASE)
     Out[191]: ['0', '3', '9']
 
-re.findall(pattern, string, flags=0
+re.findall(pattern, string, flags=0)
 
 .. code-block:: python
 

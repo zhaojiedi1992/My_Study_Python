@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>12. 数据持久化 &mdash; My_Study_Python v0.1 documentation</title>
+  <title>12. 数据持久化 &mdash; My_Study_Python v0.1 文档</title>
   
 
   
@@ -32,10 +32,10 @@
   
 
   
-        <link rel="index" title="Index"
+        <link rel="index" title="索引"
               href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="My_Study_Python v0.1 documentation" href="../index.html"/>
+        <link rel="search" title="搜索" href="../search.html"/>
+    <link rel="top" title="My_Study_Python v0.1 文档" href="../index.html"/>
         <link rel="next" title="&lt;no title&gt;" href="13数据压缩和归档.html"/>
         <link rel="prev" title="11. 文件和目录访问" href="11文件和目录访问.html"/> 
 
@@ -353,9 +353,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>12. 数据持久化<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>12. 数据持久化<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="section" id="pickle">
-<h2>12.1. pickle<a class="headerlink" href="#pickle" title="Permalink to this headline">¶</a></h2>
+<h2>12.1. pickle<a class="headerlink" href="#pickle" title="永久链接至标题">¶</a></h2>
 <p>提供二进制级别的序列化和反序列化。</p>
 <p>和json比较</p>
 <ul class="simple">
@@ -390,7 +390,7 @@
 <p>load接受的是文件描述符，loads接受的是文件的内容，dump接受文件描述符，dumps默认返回str</p>
 </div>
 <div class="section" id="copyreg">
-<h2>12.2. copyreg<a class="headerlink" href="#copyreg" title="Permalink to this headline">¶</a></h2>
+<h2>12.2. copyreg<a class="headerlink" href="#copyreg" title="永久链接至标题">¶</a></h2>
 <p>copyreg模块提供了一种自定义函数来序列和反序列特定对象时使用的函数的机制。</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">copyreg</span><span class="o">,</span><span class="nn">copy</span><span class="o">,</span><span class="nn">pickle</span>
 
@@ -420,7 +420,7 @@
 </div>
 </div>
 <div class="section" id="shelve">
-<h2>12.3. shelve<a class="headerlink" href="#shelve" title="Permalink to this headline">¶</a></h2>
+<h2>12.3. shelve<a class="headerlink" href="#shelve" title="永久链接至标题">¶</a></h2>
 <p>shelve是一个持久的，类似字典的对象。</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">shelve</span>
 
@@ -449,7 +449,7 @@
 </div>
 </div>
 <div class="section" id="marshal">
-<h2>12.4. marshal<a class="headerlink" href="#marshal" title="Permalink to this headline">¶</a></h2>
+<h2>12.4. marshal<a class="headerlink" href="#marshal" title="永久链接至标题">¶</a></h2>
 <p>该模块包含可以以二进制格式读取和写入Python值的函数。</p>
 <p>和pickle用法差不多，重要是load,loads,dump,dumps这4个方法。</p>
 <p>简单序列化和反序化样例:</p>
@@ -473,7 +473,7 @@
 </div>
 </div>
 <div class="section" id="dbm">
-<h2>12.5. dbm<a class="headerlink" href="#dbm" title="Permalink to this headline">¶</a></h2>
+<h2>12.5. dbm<a class="headerlink" href="#dbm" title="永久链接至标题">¶</a></h2>
 <p>dbm是DBM数据库变体的通用接口,dbm.gnu或dbm.ndbm。 如果没有安装这些模块，
 则将使用模块dbm.dumb中的慢而简单的实现。</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">40</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">dbm</span>
@@ -487,12 +487,12 @@
 </div>
 <p>这个和marshal一样，这次修改完毕，下次再次打开还是可以得到上次的数据的。</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
+<p class="first admonition-title">警告</p>
 <p class="last">使用dbm的时候value只能是bytes 或者 strings。</p>
 </div>
 </div>
 <div class="section" id="sqllite">
-<h2>12.6. sqllite<a class="headerlink" href="#sqllite" title="Permalink to this headline">¶</a></h2>
+<h2>12.6. sqllite<a class="headerlink" href="#sqllite" title="永久链接至标题">¶</a></h2>
 <p>SQLite是一个C库，它提供了一个轻量级的基于磁盘的数据库，它不需要单独的服务器进程，并允许
 使用SQL查询语言的非标准变体访问数据库。 一些应用程序可以使用SQLite进行内部数据存储。
 也可以使用SQLite对应用程序进行原型设计，然后将代码移植到更大的数据库，如PostgreSQL或Oracle。</p>
@@ -554,6 +554,7 @@
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
 
   
 

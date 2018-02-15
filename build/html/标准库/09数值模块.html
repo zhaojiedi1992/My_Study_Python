@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>9. 数值模块 &mdash; My_Study_Python v0.1 documentation</title>
+  <title>9. 数值模块 &mdash; My_Study_Python v0.1 文档</title>
   
 
   
@@ -32,10 +32,10 @@
   
 
   
-        <link rel="index" title="Index"
+        <link rel="index" title="索引"
               href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="My_Study_Python v0.1 documentation" href="../index.html"/>
+        <link rel="search" title="搜索" href="../search.html"/>
+    <link rel="top" title="My_Study_Python v0.1 文档" href="../index.html"/>
         <link rel="next" title="10. 函数式编程模块" href="10函数式编程模块.html"/>
         <link rel="prev" title="8. 数据类型" href="08数据类型.html"/> 
 
@@ -353,13 +353,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>9. 数值模块<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>9. 数值模块<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="section" id="numbers">
-<h2>9.1. numbers<a class="headerlink" href="#numbers" title="Permalink to this headline">¶</a></h2>
+<h2>9.1. numbers<a class="headerlink" href="#numbers" title="永久链接至标题">¶</a></h2>
 <p>定义了数字抽象基类的层次结构，在这个模块中定义的任何类型都不能实例化。</p>
 </div>
 <div class="section" id="math">
-<h2>9.2. math<a class="headerlink" href="#math" title="Permalink to this headline">¶</a></h2>
+<h2>9.2. math<a class="headerlink" href="#math" title="永久链接至标题">¶</a></h2>
 <p>这个模块提供了数学函数功能。</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># 导入</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">math</span>
@@ -481,12 +481,16 @@
 </div>
 </div>
 <div class="section" id="cmath">
-<h2>9.3. cmath<a class="headerlink" href="#cmath" title="Permalink to this headline">¶</a></h2>
+<h2>9.3. cmath<a class="headerlink" href="#cmath" title="永久链接至标题">¶</a></h2>
 <p>复数函数，用户和math基本相同</p>
 </div>
 <div class="section" id="decimal">
-<h2>9.4. decimal<a class="headerlink" href="#decimal" title="Permalink to this headline">¶</a></h2>
-<p>decimal提供高精度运算的，有些数据库使用number,float都是decimal的。</p>
+<h2>9.4. decimal<a class="headerlink" href="#decimal" title="永久链接至标题">¶</a></h2>
+<p>decimal提供高精度运算的</p>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">有些数据库使用的所谓number,float类型都是decimal高精度的。</p>
+</div>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">53</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">54</span><span class="p">]:</span> <span class="n">getcontext</span><span class="p">()</span><span class="o">.</span><span class="n">prec</span><span class="o">=</span><span class="mi">6</span>
@@ -513,7 +517,7 @@
 </div>
 </div>
 <div class="section" id="fractions">
-<h2>9.5. fractions<a class="headerlink" href="#fractions" title="Permalink to this headline">¶</a></h2>
+<h2>9.5. fractions<a class="headerlink" href="#fractions" title="永久链接至标题">¶</a></h2>
 <p>分数</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">62</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">fractions</span> <span class="kn">import</span> <span class="n">Fraction</span>
 
@@ -531,7 +535,7 @@
 </div>
 </div>
 <div class="section" id="random">
-<h2>9.6. random<a class="headerlink" href="#random" title="Permalink to this headline">¶</a></h2>
+<h2>9.6. random<a class="headerlink" href="#random" title="永久链接至标题">¶</a></h2>
 <p>提供随机数功能</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># 导入</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">67</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">random</span>
@@ -559,37 +563,53 @@
 <span class="c1"># 从集合中取样本数据</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">76</span><span class="p">]:</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="s2">&quot;abcdef&quot;</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">76</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">]</span>
+
+<span class="c1"># 另一个取样本的方法，不能超过样本个数</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">18</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">19</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">string</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">digits</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">,</span> <span class="s1">&#39;7&#39;</span><span class="p">,</span> <span class="s1">&#39;6&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="statistics">
-<h2>9.7. statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">¶</a></h2>
+<h2>9.7. statistics<a class="headerlink" href="#statistics" title="永久链接至标题">¶</a></h2>
 <p>统计功能</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># 导入</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">79</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">statistics</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">80</span><span class="p">]:</span> <span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+
+<span class="c1"># 均值</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">82</span><span class="p">]:</span> <span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">82</span><span class="p">]:</span> <span class="mf">2.5</span>
+
+<span class="c1"># 中值，就是这4个数中间的那一个，如果偶数个，就去中间2个平均数，奇数取中间值</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">83</span><span class="p">]:</span> <span class="n">statistics</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">83</span><span class="p">]:</span> <span class="mf">2.5</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">84</span><span class="p">]:</span> <span class="n">b</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">85</span><span class="p">]:</span> <span class="n">b</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">86</span><span class="p">]:</span> <span class="n">statistics</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">86</span><span class="p">]:</span> <span class="mi">2</span>
+
+<span class="c1"># 取中间2个小的那个</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">87</span><span class="p">]:</span> <span class="n">statistics</span><span class="o">.</span><span class="n">median_low</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">87</span><span class="p">]:</span> <span class="mi">2</span>
+
+<span class="c1"># 取中间大的那个</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">88</span><span class="p">]:</span> <span class="n">statistics</span><span class="o">.</span><span class="n">median_high</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">88</span><span class="p">]:</span> <span class="mi">3</span>
+
+<span class="c1"># 标准差</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">90</span><span class="p">]:</span> <span class="n">statistics</span><span class="o">.</span><span class="n">stdev</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">90</span><span class="p">]:</span> <span class="mf">1.2909944487358056</span>
 </pre></div>
 </div>
-<p># 导入
-In [79]: import statistics</p>
-<p>In [80]: a=[1,2,3,4]</p>
-<p># 均值
-In [82]: statistics.mean(a)
-Out[82]: 2.5</p>
-<p># 中值，就是这4个数中间的那一个，如果偶数个，就去中间2个平均数，奇数取中间值
-In [83]: statistics.median(a)
-Out[83]: 2.5</p>
-<p>In [84]: b=[1,2,3,4,5]</p>
-<p>In [85]: b=[1,4,2,0,100]</p>
-<p>In [86]: statistics.median(b)
-Out[86]: 2</p>
-<p># 取中间2个小的那个
-In [87]: statistics.median_low(a)
-Out[87]: 2</p>
-<p># 取中间大的那个
-In [88]: statistics.median_high(a)
-Out[88]: 3</p>
-<p># 标准差
-In [90]: statistics.stdev(a)
-Out[90]: 1.2909944487358056</p>
 </div>
 </div>
 
@@ -647,6 +667,7 @@ Out[90]: 1.2909944487358056</p>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
 
   
 

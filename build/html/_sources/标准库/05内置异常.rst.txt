@@ -37,7 +37,7 @@
     "UnicodeTranslateError","unicode转化错误"
     "ValueError","值错误"
     "ZeroDivisionError","除0错误"
-    "EnvironmentError¶","环境错误"
+    "EnvironmentError","环境错误"
     "IOError","io错误"
 
 异常类关系图

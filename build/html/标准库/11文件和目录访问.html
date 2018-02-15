@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>11. 文件和目录访问 &mdash; My_Study_Python v0.1 documentation</title>
+  <title>11. 文件和目录访问 &mdash; My_Study_Python v0.1 文档</title>
   
 
   
@@ -32,10 +32,10 @@
   
 
   
-        <link rel="index" title="Index"
+        <link rel="index" title="索引"
               href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="My_Study_Python v0.1 documentation" href="../index.html"/>
+        <link rel="search" title="搜索" href="../search.html"/>
+    <link rel="top" title="My_Study_Python v0.1 文档" href="../index.html"/>
         <link rel="next" title="12. 数据持久化" href="12数据持久化.html"/>
         <link rel="prev" title="10. 函数式编程模块" href="10函数式编程模块.html"/> 
 
@@ -353,14 +353,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>11. 文件和目录访问<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>11. 文件和目录访问<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>这个模块提供了代表文件系统路径的类，其语义适用于不同的操作系统。</p>
 <p>文件类继承图</p>
 <img alt="../_images/pathlib-inheritance.png" src="../_images/pathlib-inheritance.png" />
 <div class="section" id="pathlib">
-<h2>11.1. pathlib<a class="headerlink" href="#pathlib" title="Permalink to this headline">¶</a></h2>
+<h2>11.1. pathlib<a class="headerlink" href="#pathlib" title="永久链接至标题">¶</a></h2>
 <div class="section" id="id2">
-<h3>11.1.1. 基本使用<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3>11.1.1. 基本使用<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># 列出目录下的所有文件</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
@@ -406,7 +406,7 @@
 </div>
 </div>
 <div class="section" id="pure">
-<h3>11.1.2. pure路径<a class="headerlink" href="#pure" title="Permalink to this headline">¶</a></h3>
+<h3>11.1.2. pure路径<a class="headerlink" href="#pure" title="永久链接至标题">¶</a></h3>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># 路径整合</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">PurePath</span>
 
@@ -474,7 +474,7 @@
 </div>
 </div>
 <div class="section" id="concrete">
-<h3>11.1.3. Concrete路径<a class="headerlink" href="#concrete" title="Permalink to this headline">¶</a></h3>
+<h3>11.1.3. Concrete路径<a class="headerlink" href="#concrete" title="永久链接至标题">¶</a></h3>
 <p>在原有PurePath的基础上又提供了对路径对象执行系统调用的方法。</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># 当前目录，current workspace directory</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">51</span><span class="p">]:</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span>
@@ -499,7 +499,7 @@
 </div>
 </div>
 <div class="section" id="os-path">
-<h2>11.2. os.path<a class="headerlink" href="#os-path" title="Permalink to this headline">¶</a></h2>
+<h2>11.2. os.path<a class="headerlink" href="#os-path" title="永久链接至标题">¶</a></h2>
 <p>这个模块算是用的比较多的，目录判断和文件相关的大部分功能都有。</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span>os.path.abspath(path)                       绝对路径
 os.path.basename(path)                      基名
@@ -534,7 +534,7 @@ os.path.splitext(path)                      扩展，用于提取不带扩展的
 </div>
 </div>
 <div class="section" id="fileinput">
-<h2>11.3. fileinput<a class="headerlink" href="#fileinput" title="Permalink to this headline">¶</a></h2>
+<h2>11.3. fileinput<a class="headerlink" href="#fileinput" title="永久链接至标题">¶</a></h2>
 <p>该模块实现了一个辅助类和函数，可以在标准输入或文件列表上快速编写循环。</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fileinput</span>
 <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fileinput</span><span class="o">.</span><span class="n">input</span><span class="p">():</span>
@@ -543,7 +543,7 @@ os.path.splitext(path)                      扩展，用于提取不带扩展的
 </div>
 </div>
 <div class="section" id="stat">
-<h2>11.4. stat<a class="headerlink" href="#stat" title="Permalink to this headline">¶</a></h2>
+<h2>11.4. stat<a class="headerlink" href="#stat" title="永久链接至标题">¶</a></h2>
 <p>stat模块定义用于解释os.stat()，os.fstat()和os.lstat()（如果它们存在）的结果的常量和函数。</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span>stat.S_ISDIR(mode)              是否是一个目录
 stat.S_ISCHR(mode)              字符设备
@@ -619,7 +619,7 @@ stat.SF_SNAPSHOT
 </div>
 </div>
 <div class="section" id="filecmp">
-<h2>11.5. filecmp<a class="headerlink" href="#filecmp" title="Permalink to this headline">¶</a></h2>
+<h2>11.5. filecmp<a class="headerlink" href="#filecmp" title="永久链接至标题">¶</a></h2>
 <p>这个目录定义了一些文件和目录比较的功能。</p>
 <div class="highlight-text"><div class="highlight"><pre><span></span>report()                    报告比较信息
 report_partial_closure()    报告包括自路径
@@ -681,7 +681,7 @@ Common subdirectories : <span class="o">[</span><span class="s1">&#39;sub1&#39;<
 </div>
 </div>
 <div class="section" id="tempfile">
-<h2>11.6. tempfile<a class="headerlink" href="#tempfile" title="Permalink to this headline">¶</a></h2>
+<h2>11.6. tempfile<a class="headerlink" href="#tempfile" title="永久链接至标题">¶</a></h2>
 <p>从名字上就知道这个是临时文件相关的。</p>
 <p>比较简单，直接上个例子吧。</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># 使用临时文件</span>
@@ -734,7 +734,7 @@ Common subdirectories : <span class="o">[</span><span class="s1">&#39;sub1&#39;<
 </div>
 </div>
 <div class="section" id="glob">
-<h2>11.7. glob<a class="headerlink" href="#glob" title="Permalink to this headline">¶</a></h2>
+<h2>11.7. glob<a class="headerlink" href="#glob" title="永久链接至标题">¶</a></h2>
 <p>提供通配功能去查找文件的。</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">38</span><span class="p">]:</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.zip&#39;</span><span class="p">)</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">38</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;backup.zip&#39;</span><span class="p">]</span>
@@ -744,7 +744,7 @@ Common subdirectories : <span class="o">[</span><span class="s1">&#39;sub1&#39;<
 </div>
 </div>
 <div class="section" id="fnmatch">
-<h2>11.8. fnmatch<a class="headerlink" href="#fnmatch" title="Permalink to this headline">¶</a></h2>
+<h2>11.8. fnmatch<a class="headerlink" href="#fnmatch" title="永久链接至标题">¶</a></h2>
 <p>此模块提供对Unix shell风格通配符的支持，这与正则表达式（在re模块中记录）不同。</p>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
@@ -782,7 +782,7 @@ Common subdirectories : <span class="o">[</span><span class="s1">&#39;sub1&#39;<
 </div>
 </div>
 <div class="section" id="linecache">
-<h2>11.9. linecache<a class="headerlink" href="#linecache" title="Permalink to this headline">¶</a></h2>
+<h2>11.9. linecache<a class="headerlink" href="#linecache" title="永久链接至标题">¶</a></h2>
 <p>linecache模块允许从Python源文件中获取任何行，同时尝试使用缓存进行内部优化，这是
 一种从单个文件中读取多行的常见情况。</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">40</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">linecache</span>
@@ -793,7 +793,7 @@ Common subdirectories : <span class="o">[</span><span class="s1">&#39;sub1&#39;<
 </div>
 </div>
 <div class="section" id="shutil">
-<h2>11.10. shutil<a class="headerlink" href="#shutil" title="Permalink to this headline">¶</a></h2>
+<h2>11.10. shutil<a class="headerlink" href="#shutil" title="永久链接至标题">¶</a></h2>
 <p>这个模块提供高级别的文件操作，比较递归copy文件等。</p>
 <div class="highlight-text"><div class="highlight"><pre><span></span>shutil.copyfile(src, dst, *, follow_symlinks=True)                          复制文件
 shutil.copymode(src, dst, *, follow_symlinks=True)                          复制mode
@@ -830,7 +830,7 @@ shutil.get_terminal_size(fallback=(columns, lines))                         获�
 </div>
 </div>
 <div class="section" id="macpath">
-<h2>11.11. macpath<a class="headerlink" href="#macpath" title="Permalink to this headline">¶</a></h2>
+<h2>11.11. macpath<a class="headerlink" href="#macpath" title="永久链接至标题">¶</a></h2>
 </div>
 </div>
 
@@ -888,6 +888,7 @@ shutil.get_terminal_size(fallback=(columns, lines))                         获�
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
 
   
 

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>6. 文本处理 &mdash; My_Study_Python v0.1 documentation</title>
+  <title>6. 文本处理 &mdash; My_Study_Python v0.1 文档</title>
   
 
   
@@ -32,10 +32,10 @@
   
 
   
-        <link rel="index" title="Index"
+        <link rel="index" title="索引"
               href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="My_Study_Python v0.1 documentation" href="../index.html"/>
+        <link rel="search" title="搜索" href="../search.html"/>
+    <link rel="top" title="My_Study_Python v0.1 文档" href="../index.html"/>
         <link rel="next" title="7. 二进制处理" href="07二进制处理.html"/>
         <link rel="prev" title="5. 内置异常" href="05内置异常.html"/> 
 
@@ -353,11 +353,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>6. 文本处理<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>6. 文本处理<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="section" id="string">
-<h2>6.1. string<a class="headerlink" href="#string" title="Permalink to this headline">¶</a></h2>
+<h2>6.1. string<a class="headerlink" href="#string" title="永久链接至标题">¶</a></h2>
 <div class="section" id="id2">
-<h3>6.1.1. string常量<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3>6.1.1. string常量<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
 <col width="43%" />
@@ -426,7 +426,7 @@
 </div>
 </div>
 <div class="section" id="id3">
-<h3>6.1.2. 格式化样例<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h3>6.1.2. 格式化样例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <p>根据位置格式化</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">166</span><span class="p">]:</span> <span class="s1">&#39;{0},{1},{2}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;a,&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">166</span><span class="p">]:</span> <span class="s1">&#39;a,,b,c&#39;</span>
@@ -469,7 +469,7 @@
 </div>
 </div>
 <div class="section" id="id4">
-<h3>6.1.3. 模板字符串<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3>6.1.3. 模板字符串<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <p>样例：</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">178</span><span class="p">]:</span>  <span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">Template</span>
 
@@ -487,7 +487,7 @@
 </div>
 </div>
 <div class="section" id="re">
-<h2>6.2. re<a class="headerlink" href="#re" title="Permalink to this headline">¶</a></h2>
+<h2>6.2. re<a class="headerlink" href="#re" title="永久链接至标题">¶</a></h2>
 <p>re是regulare expression的简写。</p>
 <p>正则表达式元字符</p>
 <div class="highlight-text"><div class="highlight"><pre><span></span>.           任意单个字符（除了换行），如果想包含换行，指定DOTALL标记
@@ -518,7 +518,7 @@ $           结束位置锚定
 </pre></div>
 </div>
 <div class="section" id="id5">
-<h3>6.2.1. 模块内容<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<h3>6.2.1. 模块内容<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <p>re.splitpattern, string, maxsplit=0, flags=0)</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">190</span><span class="p">]:</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\W+&#39;</span><span class="p">,</span><span class="s1">&#39;words, words, words.&#39;</span><span class="p">)</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">190</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;words&#39;</span><span class="p">,</span> <span class="s1">&#39;words&#39;</span><span class="p">,</span> <span class="s1">&#39;words&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">]</span>
@@ -527,7 +527,7 @@ $           结束位置锚定
 <span class="n">Out</span><span class="p">[</span><span class="mi">191</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;9&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>re.findall(pattern, string, flags=0</p>
+<p>re.findall(pattern, string, flags=0)</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">192</span><span class="p">]:</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&quot;\w+&quot;</span><span class="p">,</span><span class="s1">&#39;words, words, words.&#39;</span><span class="p">)</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">192</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;words&#39;</span><span class="p">,</span> <span class="s1">&#39;words&#39;</span><span class="p">,</span> <span class="s1">&#39;words&#39;</span><span class="p">]</span>
 </pre></div>
@@ -541,7 +541,7 @@ $           结束位置锚定
 <p>如果pattern匹配了string,就把repl的应用替换为string。</p>
 </div>
 <div class="section" id="id6">
-<h3>6.2.2. 正则表达式对象<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<h3>6.2.2. 正则表达式对象<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <p>regex.search(string[, pos[, endpos]])</p>
 <p>功能： 扫描字符串查找正则表达式产生匹配的第一个位置，并返回相应的匹配对象。 如果字符串中没有位置与模式匹配，则返回None;</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">re</span>
@@ -597,7 +597,7 @@ $           结束位置锚定
 </div>
 </div>
 <div class="section" id="id7">
-<h3>6.2.3. 匹配对象<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<h3>6.2.3. 匹配对象<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <p>使用正则表达式匹配有成功有失败，可以使用简单的if判定结果状态。</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
@@ -691,7 +691,7 @@ $           结束位置锚定
 </div>
 </div>
 <div class="section" id="difflib">
-<h2>6.3. difflib<a class="headerlink" href="#difflib" title="Permalink to this headline">¶</a></h2>
+<h2>6.3. difflib<a class="headerlink" href="#difflib" title="永久链接至标题">¶</a></h2>
 <p>类似linux环境下的diff命令。</p>
 <p>diff样例</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">58</span><span class="p">]:</span> <span class="n">text1</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;1. Beautiful is better than ugly.</span>
@@ -724,7 +724,7 @@ $           结束位置锚定
 </div>
 </div>
 <div class="section" id="textwrap">
-<h2>6.4. textwrap<a class="headerlink" href="#textwrap" title="Permalink to this headline">¶</a></h2>
+<h2>6.4. textwrap<a class="headerlink" href="#textwrap" title="永久链接至标题">¶</a></h2>
 <p>textwrap提供一些转化和过滤功能。</p>
 <p>textwrap.shorten(text, width, **kwargs)</p>
 <p>功能： 文本简化</p>
@@ -769,7 +769,7 @@ $           结束位置锚定
 <p>使用了indent之后文本会缩进2个字符。</p>
 </div>
 <div class="section" id="unicodedata">
-<h2>6.5. unicodedata<a class="headerlink" href="#unicodedata" title="Permalink to this headline">¶</a></h2>
+<h2>6.5. unicodedata<a class="headerlink" href="#unicodedata" title="永久链接至标题">¶</a></h2>
 <p>此模块提供对Unicode字符数据库（UCD）的访问，该字符数据库为所有Unicode字符定义字符属性。</p>
 <p>样例：</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">83</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">unicodedata</span>
@@ -786,14 +786,14 @@ $           结束位置锚定
 </div>
 </div>
 <div class="section" id="stringprep">
-<h2>6.6. stringprep<a class="headerlink" href="#stringprep" title="Permalink to this headline">¶</a></h2>
+<h2>6.6. stringprep<a class="headerlink" href="#stringprep" title="永久链接至标题">¶</a></h2>
 </div>
 <div class="section" id="readline">
-<h2>6.7. readline<a class="headerlink" href="#readline" title="Permalink to this headline">¶</a></h2>
+<h2>6.7. readline<a class="headerlink" href="#readline" title="永久链接至标题">¶</a></h2>
 <p>readline模块定义了许多函数来方便Python解释器完成和读取/写入历史文件。</p>
 </div>
 <div class="section" id="rlcompleter">
-<h2>6.8. rlcompleter<a class="headerlink" href="#rlcompleter" title="Permalink to this headline">¶</a></h2>
+<h2>6.8. rlcompleter<a class="headerlink" href="#rlcompleter" title="永久链接至标题">¶</a></h2>
 <p>rlcompleter模块通过完成有效的Python标识符和关键字来定义适用于readline模块的完成函数。</p>
 </div>
 </div>
@@ -852,6 +852,7 @@ $           结束位置锚定
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
 
   
 

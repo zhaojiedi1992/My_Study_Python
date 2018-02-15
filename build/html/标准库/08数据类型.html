@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>8. 数据类型 &mdash; My_Study_Python v0.1 documentation</title>
+  <title>8. 数据类型 &mdash; My_Study_Python v0.1 文档</title>
   
 
   
@@ -32,10 +32,10 @@
   
 
   
-        <link rel="index" title="Index"
+        <link rel="index" title="索引"
               href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="My_Study_Python v0.1 documentation" href="../index.html"/>
+        <link rel="search" title="搜索" href="../search.html"/>
+    <link rel="top" title="My_Study_Python v0.1 文档" href="../index.html"/>
         <link rel="next" title="9. 数值模块" href="09数值模块.html"/>
         <link rel="prev" title="7. 二进制处理" href="07二进制处理.html"/> 
 
@@ -353,11 +353,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>8. 数据类型<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>8. 数据类型<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="section" id="datetime">
-<h2>8.1. datetime<a class="headerlink" href="#datetime" title="Permalink to this headline">¶</a></h2>
+<h2>8.1. datetime<a class="headerlink" href="#datetime" title="永久链接至标题">¶</a></h2>
 <div class="section" id="timedelta">
-<h3>8.1.1. timedelta<a class="headerlink" href="#timedelta" title="Permalink to this headline">¶</a></h3>
+<h3>8.1.1. timedelta<a class="headerlink" href="#timedelta" title="永久链接至标题">¶</a></h3>
 <p>class datetime.timedelta(days=0, seconds=0, microseconds=0, milliseconds=0, minutes=0, hours=0, weeks=0)</p>
 <p>样例：</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
@@ -376,7 +376,7 @@
 </div>
 </div>
 <div class="section" id="date">
-<h3>8.1.2. date<a class="headerlink" href="#date" title="Permalink to this headline">¶</a></h3>
+<h3>8.1.2. date<a class="headerlink" href="#date" title="永久链接至标题">¶</a></h3>
 <p>样例：</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
 
@@ -416,7 +416,7 @@
 </div>
 </div>
 <div class="section" id="id2">
-<h3>8.1.3. datetime<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3>8.1.3. datetime<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 <p>样例：</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">33</span><span class="p">]:</span> <span class="n">d</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">14</span><span class="p">)</span>
 
@@ -425,59 +425,63 @@
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">35</span><span class="p">]:</span> <span class="n">t</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
 
+<span class="c1"># 日期和时间构造一个datetime</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">36</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">combine</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">36</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
 
+<span class="c1"># 当前时间</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">37</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">37</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">986889</span><span class="p">)</span>
 
+<span class="c1"># utc时间，北京和utc时区差8个小时</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">38</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">38</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">978965</span><span class="p">)</span>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">39</span><span class="p">]:</span> <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span>
 
+<span class="c1"># 日期转字符串</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">41</span><span class="p">]:</span> <span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">)</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">41</span><span class="p">]:</span> <span class="s1">&#39;2018-02-11 07:23:39&#39;</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">42</span><span class="p">]:</span> <span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">)</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">42</span><span class="p">]:</span> <span class="s1">&#39;2018-02-11 07:23:39&#39;</span>
-
 <span class="n">In</span> <span class="p">[</span><span class="mi">43</span><span class="p">]:</span> <span class="n">now_str</span> <span class="o">=</span> <span class="s1">&#39;2018-02-11 07:23:39&#39;</span>
 
+<span class="c1"># 字符串转日期</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">44</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">now_str</span><span class="p">,</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">)</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">44</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">39</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="time">
-<h3>8.1.4. time<a class="headerlink" href="#time" title="Permalink to this headline">¶</a></h3>
+<h3>8.1.4. time<a class="headerlink" href="#time" title="永久链接至标题">¶</a></h3>
 <p>样例：</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">46</span><span class="p">]:</span>  <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">time</span>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">47</span><span class="p">]:</span>  <span class="n">dt</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="n">hour</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="mi">34</span><span class="p">,</span> <span class="n">second</span><span class="o">=</span><span class="mi">56</span><span class="p">,</span> <span class="n">microsecond</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
+<span class="c1"># 指定下显示的精度程度</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">48</span><span class="p">]:</span> <span class="n">dt</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s1">&#39;microseconds&#39;</span><span class="p">)</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">48</span><span class="p">]:</span> <span class="s1">&#39;12:34:56.000000&#39;</span>
 
+<span class="c1"># 默认的，只是显示，时分秒</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">49</span><span class="p">]:</span> <span class="n">dt</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">49</span><span class="p">]:</span> <span class="s1">&#39;12:34:56&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id3">
-<h3>8.1.5. 格式控制<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h3>8.1.5. 格式控制<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <p><a class="reference external" href="https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior">日期格式控制符</a></p>
 </div>
 </div>
 <div class="section" id="calendar">
-<h2>8.2. calendar<a class="headerlink" href="#calendar" title="Permalink to this headline">¶</a></h2>
+<h2>8.2. calendar<a class="headerlink" href="#calendar" title="永久链接至标题">¶</a></h2>
 <p>提供日历功能</p>
 </div>
 <div class="section" id="collectons">
-<h2>8.3. collectons<a class="headerlink" href="#collectons" title="Permalink to this headline">¶</a></h2>
+<h2>8.3. collectons<a class="headerlink" href="#collectons" title="永久链接至标题">¶</a></h2>
 <p>提供容器数据类型</p>
 <div class="section" id="chainmap">
-<h3>8.3.1. ChainMap<a class="headerlink" href="#chainmap" title="Permalink to this headline">¶</a></h3>
+<h3>8.3.1. ChainMap<a class="headerlink" href="#chainmap" title="永久链接至标题">¶</a></h3>
 <p>提供用于快速链接多个映射，以便将它们视为单个单元。 它通常比创建新字典和运行多个update()调用要快得多。</p>
 <p>样例：</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">53</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">ChainMap</span>
@@ -514,7 +518,7 @@
 </div>
 </div>
 <div class="section" id="counter">
-<h3>8.3.2. Counter<a class="headerlink" href="#counter" title="Permalink to this headline">¶</a></h3>
+<h3>8.3.2. Counter<a class="headerlink" href="#counter" title="永久链接至标题">¶</a></h3>
 <p>计数功能</p>
 <blockquote>
 <div><div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># 导入</span>
@@ -561,7 +565,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="deque">
-<h3>8.3.3. deque<a class="headerlink" href="#deque" title="Permalink to this headline">¶</a></h3>
+<h3>8.3.3. deque<a class="headerlink" href="#deque" title="永久链接至标题">¶</a></h3>
 <p>队列</p>
 <p>常用方法：</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># 导入</span>
@@ -639,7 +643,7 @@
 </div>
 </div>
 <div class="section" id="defaultdict">
-<h3>8.3.4. defaultdict<a class="headerlink" href="#defaultdict" title="Permalink to this headline">¶</a></h3>
+<h3>8.3.4. defaultdict<a class="headerlink" href="#defaultdict" title="永久链接至标题">¶</a></h3>
 <p>默认字典，就是在原有字典的基础上提供默认值。</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">46</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
 
@@ -663,7 +667,7 @@
 <p>上面使用defaultdict指定int参数，如果没有值的话，会自动获取int的默认值0的。</p>
 </div>
 <div class="section" id="namedtuple">
-<h3>8.3.5. namedtuple<a class="headerlink" href="#namedtuple" title="Permalink to this headline">¶</a></h3>
+<h3>8.3.5. namedtuple<a class="headerlink" href="#namedtuple" title="永久链接至标题">¶</a></h3>
 <p>给元组提供了名字的扩展</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">53</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
 
@@ -703,7 +707,7 @@
 </div>
 </div>
 <div class="section" id="ordereddict">
-<h3>8.3.6. OrderedDict<a class="headerlink" href="#ordereddict" title="Permalink to this headline">¶</a></h3>
+<h3>8.3.6. OrderedDict<a class="headerlink" href="#ordereddict" title="永久链接至标题">¶</a></h3>
 <p>有序字典与普通词典一样，但它们记住插入项的顺序。在遍历一个有序字典时，这些项将按其第一次添加的顺序返回。</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># 导入</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">67</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
@@ -726,11 +730,11 @@
 </div>
 </div>
 <div class="section" id="collections-abc">
-<h2>8.4. collections.abc<a class="headerlink" href="#collections-abc" title="Permalink to this headline">¶</a></h2>
+<h2>8.4. collections.abc<a class="headerlink" href="#collections-abc" title="永久链接至标题">¶</a></h2>
 <p>这个模块提供抽象基类，可以用来测试是否一个类提供了一个特定的接口；</p>
 </div>
 <div class="section" id="heapq">
-<h2>8.5. heapq<a class="headerlink" href="#heapq" title="Permalink to this headline">¶</a></h2>
+<h2>8.5. heapq<a class="headerlink" href="#heapq" title="永久链接至标题">¶</a></h2>
 <p>这个模块提供了一个堆队列算法的实现，也称为优先级队列算法。</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># 导入</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">87</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">heapq</span> <span class="kn">import</span> <span class="n">heappush</span><span class="p">,</span><span class="n">heappop</span>
@@ -760,7 +764,7 @@
 </div>
 </div>
 <div class="section" id="bisect">
-<h2>8.6. bisect<a class="headerlink" href="#bisect" title="Permalink to this headline">¶</a></h2>
+<h2>8.6. bisect<a class="headerlink" href="#bisect" title="永久链接至标题">¶</a></h2>
 <p>此模块提供了支持以排序的顺序维护列表，而不必在每次插入之后对列表进行排序。</p>
 <p>样例：</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">110</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">bisect</span> <span class="kn">import</span> <span class="n">bisect</span> <span class="p">,</span> <span class="n">bisect_left</span>
@@ -779,19 +783,19 @@
 <p>上面的使用4 个break point 将区间划分为5个， 每个对应一个等级，使用bisect去查找对应索引。</p>
 </div>
 <div class="section" id="array">
-<h2>8.7. array<a class="headerlink" href="#array" title="Permalink to this headline">¶</a></h2>
+<h2>8.7. array<a class="headerlink" href="#array" title="永久链接至标题">¶</a></h2>
 <p>这个模块定义了一个可以紧凑地表示基本值数组的对象类型：字符、整数、浮点数。</p>
 </div>
 <div class="section" id="weakref">
-<h2>8.8. weakref<a class="headerlink" href="#weakref" title="Permalink to this headline">¶</a></h2>
+<h2>8.8. weakref<a class="headerlink" href="#weakref" title="永久链接至标题">¶</a></h2>
 <p>这个模块允许Python程序员创建对象的弱引用</p>
 </div>
 <div class="section" id="types">
-<h2>8.9. types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h2>
+<h2>8.9. types<a class="headerlink" href="#types" title="永久链接至标题">¶</a></h2>
 <p>此模块定义实用工具函数，以帮助动态创建新类型。</p>
 </div>
 <div class="section" id="copy">
-<h2>8.10. copy<a class="headerlink" href="#copy" title="Permalink to this headline">¶</a></h2>
+<h2>8.10. copy<a class="headerlink" href="#copy" title="永久链接至标题">¶</a></h2>
 <p>此模块提供深copy和浅copy功能</p>
 <p>样例：</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">113</span><span class="p">]:</span> <span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
@@ -809,7 +813,7 @@
 </div>
 </div>
 <div class="section" id="pprint">
-<h2>8.11. pprint<a class="headerlink" href="#pprint" title="Permalink to this headline">¶</a></h2>
+<h2>8.11. pprint<a class="headerlink" href="#pprint" title="永久链接至标题">¶</a></h2>
 <p>数据显示美化打印</p>
 <p>方法： pprint.pprint(object, stream=None, indent=1, width=80, depth=None, *, compact=False)</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">json</span>
@@ -906,11 +910,11 @@
 </div>
 </div>
 <div class="section" id="reprlib">
-<h2>8.12. reprlib<a class="headerlink" href="#reprlib" title="Permalink to this headline">¶</a></h2>
+<h2>8.12. reprlib<a class="headerlink" href="#reprlib" title="永久链接至标题">¶</a></h2>
 <p>reprlib模块提供了对生成的字符串的大小限制生产对象表示的一种手段</p>
 </div>
 <div class="section" id="enum">
-<h2>8.13. enum<a class="headerlink" href="#enum" title="Permalink to this headline">¶</a></h2>
+<h2>8.13. enum<a class="headerlink" href="#enum" title="永久链接至标题">¶</a></h2>
 <p>枚举</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">135</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span><span class="p">,</span><span class="n">auto</span>
 
@@ -967,7 +971,7 @@
 </pre></div>
 </div>
 <div class="section" id="intenum">
-<h3>8.13.1. IntEnum<a class="headerlink" href="#intenum" title="Permalink to this headline">¶</a></h3>
+<h3>8.13.1. IntEnum<a class="headerlink" href="#intenum" title="永久链接至标题">¶</a></h3>
 <p>整型枚举</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">146</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">IntEnum</span>
     <span class="o">...</span><span class="p">:</span> <span class="k">class</span> <span class="nc">Shape</span><span class="p">(</span><span class="n">IntEnum</span><span class="p">):</span>
@@ -981,7 +985,7 @@
 </div>
 </div>
 <div class="section" id="intflag">
-<h3>8.13.2. IntFlag<a class="headerlink" href="#intflag" title="Permalink to this headline">¶</a></h3>
+<h3>8.13.2. IntFlag<a class="headerlink" href="#intflag" title="永久链接至标题">¶</a></h3>
 <p>整型标记</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">150</span><span class="p">]:</span> <span class="k">class</span> <span class="nc">Perm</span><span class="p">(</span><span class="n">IntFlag</span><span class="p">):</span>
     <span class="o">...</span><span class="p">:</span>     <span class="n">R</span> <span class="o">=</span><span class="mi">4</span>
@@ -1006,7 +1010,7 @@
 </div>
 </div>
 <div class="section" id="flag">
-<h2>8.14. Flag<a class="headerlink" href="#flag" title="Permalink to this headline">¶</a></h2>
+<h2>8.14. Flag<a class="headerlink" href="#flag" title="永久链接至标题">¶</a></h2>
 <p>标记</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">160</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Flag</span>
     <span class="o">...</span><span class="p">:</span> <span class="k">class</span> <span class="nc">Color</span><span class="p">(</span><span class="n">Flag</span><span class="p">):</span>
@@ -1029,6 +1033,7 @@
 </pre></div>
 </div>
 <p>使用Flag，每个item都是按照1，2，4，8，16这样的值。</p>
+<p>这种flag的主要用于后续有异或运算的情况下。</p>
 </div>
 </div>
 
@@ -1086,6 +1091,7 @@
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
 
   
 

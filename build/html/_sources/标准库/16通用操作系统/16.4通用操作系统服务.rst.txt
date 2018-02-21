@@ -11,7 +11,7 @@ sys.argv中的那些参数。 argparse模块还会自动生成帮助和用法消
 .. literalinclude:: /样例/argparse样例/00-入门.py
    :encoding: utf-8
    :language: python
-   :linenos:
+   
 
 调用样例
 
@@ -66,7 +66,7 @@ prog
 .. literalinclude:: /样例/argparse样例/类的/01-prog.py
    :language: python 
    :encoding: utf-8
-   :linenos:
+   
 
 终端测试
 
@@ -93,7 +93,7 @@ usage
 .. literalinclude:: /样例/argparse样例/类的/02-usage.py
    :language: python 
    :encoding: utf-8
-   :linenos:
+   
 
 终端测试
 
@@ -117,7 +117,7 @@ description
 .. literalinclude:: /样例/argparse样例/类的/04-description.py
    :language: python 
    :encoding: utf-8
-   :linenos:
+   
 
 终端测试
 
@@ -145,7 +145,7 @@ epilog
 .. literalinclude:: /样例/argparse样例/类的/05-epilog.py
    :language: python 
    :encoding: utf-8
-   :linenos:
+   
 
 终端测试
 
@@ -173,7 +173,7 @@ parents
 .. literalinclude:: /样例/argparse样例/类的/06-parents.py
    :language: python 
    :encoding: utf-8
-   :linenos:
+   
 
 终端测试
 
@@ -215,7 +215,7 @@ formatter_class
 .. literalinclude:: /样例/argparse样例/类的/07-formatter_class.py
    :language: python 
    :encoding: utf-8
-   :linenos:
+   
 
 终端测试
 
@@ -291,7 +291,7 @@ prefix_char
 .. literalinclude:: /样例/argparse样例/类的/08-prefix_char.py
    :language: python 
    :encoding: utf-8
-   :linenos:
+   
 
 终端测试
 
@@ -319,7 +319,7 @@ fromfile_prefix_chars
 .. literalinclude:: /样例/argparse样例/类的/09-fromfile_prefix_chars.py
    :language: python 
    :encoding: utf-8
-   :linenos:
+   
 
 终端测试
 
@@ -342,7 +342,7 @@ default
 .. literalinclude:: /样例/argparse样例/类的/10-default.py
    :language: python 
    :encoding: utf-8
-   :linenos:
+   
 
 终端测试
 
@@ -368,7 +368,7 @@ allow_abbrev
 .. literalinclude:: /样例/argparse样例/类的/11-allow_abbrev.py
    :language: python 
    :encoding: utf-8
-   :linenos:
+   
 
 终端测试
 
@@ -396,7 +396,7 @@ conflict_handler
 .. literalinclude:: /样例/argparse样例/类的/12-conflict_handler.py
    :language: python 
    :encoding: utf-8
-   :linenos:
+   
 
 终端测试
 
@@ -440,7 +440,7 @@ add_help
 .. literalinclude:: /样例/argparse样例/类的/13-add_help.py
    :language: python 
    :encoding: utf-8
-   :linenos:
+   
 
 终端测试
 
@@ -494,7 +494,7 @@ name
 .. literalinclude:: /样例/argparse样例/方法的/01-name.py
    :language: python 
    :encoding: utf-8
-   :linenos:
+   
 
 终端测试
 
@@ -515,7 +515,7 @@ action
 .. literalinclude:: /样例/argparse样例/方法的/02-action.py
    :language: python 
    :encoding: utf-8
-   :linenos:
+   
 
 终端测试
 
@@ -554,7 +554,7 @@ nargs
 .. literalinclude:: /样例/argparse样例/方法的/03-nargs.py
    :language: python 
    :encoding: utf-8
-   :linenos:
+   
 
 终端测试
 
@@ -591,7 +591,7 @@ default
 .. literalinclude:: /样例/argparse样例/方法的/04-default.py
    :language: python 
    :encoding: utf-8
-   :linenos:
+   
 
 终端测试
 
@@ -611,7 +611,7 @@ type
 .. literalinclude:: /样例/argparse样例/方法的/05-type.py
    :language: python 
    :encoding: utf-8
-   :linenos:
+   
 
 终端测试
 
@@ -636,7 +636,7 @@ choices
 .. literalinclude:: /样例/argparse样例/方法的/06-choices.py
    :language: python 
    :encoding: utf-8
-   :linenos:
+   
 
 终端测试
 
@@ -658,7 +658,7 @@ required
 .. literalinclude:: /样例/argparse样例/方法的/07-required.py
    :language: python 
    :encoding: utf-8
-   :linenos:
+   
 
 终端测试
 
@@ -680,7 +680,7 @@ help
 .. literalinclude:: /样例/argparse样例/方法的/08-help.py
    :language: python 
    :encoding: utf-8
-   :linenos:
+   
 
 终端测试
 
@@ -706,7 +706,7 @@ metavar
 .. literalinclude:: /样例/argparse样例/方法的/09-metavar.py
    :language: python 
    :encoding: utf-8
-   :linenos:
+   
 
 终端测试
 
@@ -734,7 +734,7 @@ dest
 .. literalinclude:: /样例/argparse样例/方法的/10-dest.py
    :language: python 
    :encoding: utf-8
-   :linenos:
+   
 
 终端测试
 
@@ -758,7 +758,7 @@ ArgumentParser.parse_args(args=None, namespace=None)
 .. literalinclude:: /样例/argparse样例/方法的/11-parse_args.py
    :language: python 
    :encoding: utf-8
-   :linenos:
+   
 
 终端测试
 
@@ -797,7 +797,7 @@ ArgumentParser.add_subparsers([title][, description][, prog][, parser_class][, a
 .. literalinclude:: /样例/argparse样例/其他的/01-子命令.py
    :language: python 
    :encoding: utf-8
-   :linenos:
+   
 
 终端测试
 
@@ -820,7 +820,7 @@ ArgumentParser.add_argument_group(title=None, description=None)
 .. literalinclude:: /样例/argparse样例/其他的/02-group.py
    :language: python 
    :encoding: utf-8
-   :linenos:
+   
 
 终端测试
 
@@ -852,7 +852,7 @@ ArgumentParser.add_mutually_exclusive_group(required=False)
 .. literalinclude:: /样例/argparse样例/其他的/03-mutually_group.py
    :language: python 
    :encoding: utf-8
-   :linenos:
+   
 
 终端测试
 
@@ -870,12 +870,12 @@ ArgumentParser.set_defaults(\*\*kwargs)
 
 功能： 添加参数组，这个组在使用命令的时候必须指定
 
-样例代码
+样例代码maek
 
 .. literalinclude:: /样例/argparse样例/其他的/04-set_default.py
    :language: python 
    :encoding: utf-8
-   :linenos:
+   
 
 终端测试
 

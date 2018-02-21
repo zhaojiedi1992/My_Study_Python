@@ -154,7 +154,7 @@ os.path
 ----------------------------------------------------------------------------------------
 这个模块算是用的比较多的，目录判断和文件相关的大部分功能都有。
 
-.. code-block:: python 
+.. code-block:: text
 
     os.path.abspath(path)                       绝对路径
     os.path.basename(path)                      基名
@@ -200,7 +200,7 @@ stat
 ---------------------------------------------------------------------------------
 stat模块定义用于解释os.stat()，os.fstat()和os.lstat()（如果它们存在）的结果的常量和函数。
 
-.. code-block:: python 
+.. code-block:: text
 
     stat.S_ISDIR(mode)              是否是一个目录
     stat.S_ISCHR(mode)              字符设备

@@ -134,7 +134,9 @@ cmath
 
 decimal
 -------------------------------------------------------
-decimal提供高精度运算的，有些数据库使用number,float都是decimal的。
+decimal提供高精度运算的
+
+.. note:: 有些数据库使用的所谓number,float类型都是decimal高精度的。
 
 .. code-block:: python 
 
@@ -212,6 +214,14 @@ random
     # 从集合中取样本数据
     In [76]: random.sample("abcdef",k=3)
     Out[76]: ['e', 'a', 'f']
+    
+    # 另一个取样本的方法，不能超过样本个数
+    In [18]: import random
+
+    In [19]: import string
+
+    In [21]: random.sample(string.digits,k=8)
+    Out[21]: ['0', '5', '7', '6', '4', '1', '2', '3']
 
 statistics
 -----------------------------
@@ -219,36 +229,36 @@ statistics
 
 .. code-block:: python 
 
-# 导入
-In [79]: import statistics
+    # 导入
+    In [79]: import statistics
 
-In [80]: a=[1,2,3,4]
+    In [80]: a=[1,2,3,4]
 
-# 均值
-In [82]: statistics.mean(a)
-Out[82]: 2.5
+    # 均值
+    In [82]: statistics.mean(a)
+    Out[82]: 2.5
 
-# 中值，就是这4个数中间的那一个，如果偶数个，就去中间2个平均数，奇数取中间值
-In [83]: statistics.median(a)
-Out[83]: 2.5
+    # 中值，就是这4个数中间的那一个，如果偶数个，就去中间2个平均数，奇数取中间值
+    In [83]: statistics.median(a)
+    Out[83]: 2.5
 
-In [84]: b=[1,2,3,4,5]
+    In [84]: b=[1,2,3,4,5]
 
-In [85]: b=[1,4,2,0,100]
+    In [85]: b=[1,4,2,0,100]
 
-In [86]: statistics.median(b)
-Out[86]: 2
+    In [86]: statistics.median(b)
+    Out[86]: 2
 
-# 取中间2个小的那个
-In [87]: statistics.median_low(a)
-Out[87]: 2
+    # 取中间2个小的那个
+    In [87]: statistics.median_low(a)
+    Out[87]: 2
 
-# 取中间大的那个
-In [88]: statistics.median_high(a)
-Out[88]: 3
+    # 取中间大的那个
+    In [88]: statistics.median_high(a)
+    Out[88]: 3
 
-# 标准差
-In [90]: statistics.stdev(a)
-Out[90]: 1.2909944487358056
+    # 标准差
+    In [90]: statistics.stdev(a)
+    Out[90]: 1.2909944487358056
 
 

@@ -277,6 +277,46 @@
 <li class="toctree-l2"><a class="reference internal" href="12数据持久化.html#sqllite">12.6. sqllite</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="13数据压缩和归档.html">13. 数据压缩和归档</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="13数据压缩和归档.html#zlib">13.1. zlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13数据压缩和归档.html#gzip">13.2. gzip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13数据压缩和归档.html#bz2">13.3. bz2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13数据压缩和归档.html#lzma">13.4. lzma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13数据压缩和归档.html#zipfile">13.5. zipfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13数据压缩和归档.html#tarfile">13.6. tarfile</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="14文件格式.html">14. 文件格式</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="14文件格式.html#csv">14.1. csv</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="14文件格式.html#csv-writer-csvfile-dialect-excel-fmtparams">14.1.1. csv.writer(csvfile, dialect=’excel’, **fmtparams)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="14文件格式.html#csv-reader-csvfile-dialect-excel-fmtparams">14.1.2. csv.reader(csvfile, dialect=’excel’, **fmtparams)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="14文件格式.html#csv-dictwriter-f-fieldnames-restval-extrasaction-raise-dialect-excel-args-kwds">14.1.3. csv.DictWriter(f, fieldnames, restval=’‘, extrasaction=’raise’, dialect=’excel’, *args, **kwds)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="14文件格式.html#id2">14.1.4. csv.reader(csvfile, dialect=’excel’, **fmtparams)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="14文件格式.html#configparser">14.2. configparser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14文件格式.html#netrc">14.3. netrc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14文件格式.html#xdrlib">14.4. xdrlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14文件格式.html#plistlib">14.5. plistlib</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="15加密服务.html">15. 加密服务</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="15加密服务.html#hashlib">15.1. hashlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15加密服务.html#hmac">15.2. hmac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15加密服务.html#secrets">15.3. secrets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="16通用操作系统服务.html">16. 通用操作系统服务</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="16通用操作系统/16.1通用操作系统服务.html">16.1. os</a></li>
+<li class="toctree-l2"><a class="reference internal" href="16通用操作系统/16.2通用操作系统服务.html">16.2. io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="16通用操作系统/16.3通用操作系统服务.html">16.3. time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="16通用操作系统/16.4通用操作系统服务.html">16.4. argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="17并发执行.html">17. 并发执行</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18进程通信和网络.html">18. 进程通信和网络</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19网络数据处理.html">19. 网络数据处理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20结构化文本文档处理工具.html">20. 结构化文本文档处理工具</a></li>
 </ul>
 
             
@@ -501,7 +541,7 @@
 <div class="section" id="os-path">
 <h2>11.2. os.path<a class="headerlink" href="#os-path" title="永久链接至标题">¶</a></h2>
 <p>这个模块算是用的比较多的，目录判断和文件相关的大部分功能都有。</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>os.path.abspath(path)                       绝对路径
+<div class="highlight-text"><div class="highlight"><pre><span></span>os.path.abspath(path)                       绝对路径
 os.path.basename(path)                      基名
 os.path.commonpath(paths)                   公共路径
 os.path.commonprefix(list)                  公共前缀
@@ -545,7 +585,7 @@ os.path.splitext(path)                      扩展，用于提取不带扩展的
 <div class="section" id="stat">
 <h2>11.4. stat<a class="headerlink" href="#stat" title="永久链接至标题">¶</a></h2>
 <p>stat模块定义用于解释os.stat()，os.fstat()和os.lstat()（如果它们存在）的结果的常量和函数。</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>stat.S_ISDIR(mode)              是否是一个目录
+<div class="highlight-text"><div class="highlight"><pre><span></span>stat.S_ISDIR(mode)              是否是一个目录
 stat.S_ISCHR(mode)              字符设备
 stat.S_ISBLK(mode)              块设备
 stat.S_ISREG(mode)              普通文件
@@ -860,7 +900,7 @@ shutil.get_terminal_size(fallback=(columns, lines))                         获�
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>  个人博客 <a href="http://blog.linuxpanda.tech/topic/"> LinuxPanda </a> . 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>  个人博客 <a href="http://www.linuxpanda.tech/topic/"> LinuxPanda </a> . 
 
 </footer>
 

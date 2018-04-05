@@ -891,6 +891,108 @@ ArgumentParser.set_defaults(\*\*kwargs)
 案例
 ---------------------------------------------------
 
-写一个类似编译的源码的解析脚本，提供make clean,make ,make install等调用。
+案例1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+要求： 写一个类似编译的源码的解析脚本，提供make clean,make ,make install等调用。
+
+样例代码
+
+.. literalinclude:: /样例/argparse样例/案例的/make.py
+   :language: python 
+   :encoding: utf-8
+   
+
+终端测试
+
+.. code-block:: bash
+
+    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 (master)
+    $ python make.py  --help
+    usage: make.py [-h] [{install,clean}]
+
+    模拟编译操作
+
+    positional arguments:
+    {install,clean}  设置需要做的操作
+
+    optional arguments:
+    -h, --help       show this help message and exit
+
+    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 (master)
+    $ python make.py
+    start make
+    end make
+
+    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 (master)
+    $ python make.py install
+    start make install
+    end make install
+
+    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 (master)
+    $ python make.py clean
+    start make clean
+    end make clean
+
+    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 (master)
+    $ python make.py test
+    usage: make.py [-h] [{install,clean}]
+    make.py: error: argument do: invalid choice: 'test' (choose from 'install', 'clean')
+
+
+案例2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+要求： 写一个简单版本的防火墙命令实现
+
+在写之前，需要熟悉下 iptables_ 的使用。
+
+.. _iptables: https://linux.die.net/man/8/iptables
+
+分析： 
+
+这个相对比较复杂
+
+样例代码
+
+.. literalinclude:: /样例/argparse样例/案例的/make.py
+   :language: python 
+   :encoding: utf-8
+   
+
+终端测试
+
+.. code-block:: bash
+
+    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 (master)
+    $ python make.py  --help
+    usage: make.py [-h] [{install,clean}]
+
+    模拟编译操作
+
+    positional arguments:
+    {install,clean}  设置需要做的操作
+
+    optional arguments:
+    -h, --help       show this help message and exit
+
+    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 (master)
+    $ python make.py
+    start make
+    end make
+
+    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 (master)
+    $ python make.py install
+    start make install
+    end make install
+
+    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 (master)
+    $ python make.py clean
+    start make clean
+    end make clean
+
+    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 (master)
+    $ python make.py test
+    usage: make.py [-h] [{install,clean}]
+    make.py: error: argument do: invalid choice: 'test' (choose from 'install', 'clean')
 

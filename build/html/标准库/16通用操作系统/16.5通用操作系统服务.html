@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>16.2. io &mdash; My_Study_Python v0.1 文档</title>
+  <title>16.5. getopt &mdash; My_Study_Python v0.1 文档</title>
   
 
   
@@ -37,8 +37,8 @@
         <link rel="search" title="搜索" href="../../search.html"/>
     <link rel="top" title="My_Study_Python v0.1 文档" href="../../index.html"/>
         <link rel="up" title="16. 通用操作系统服务" href="../16通用操作系统服务.html"/>
-        <link rel="next" title="16.3. time" href="16.3通用操作系统服务.html"/>
-        <link rel="prev" title="16.1. os" href="16.1通用操作系统服务.html"/> 
+        <link rel="next" title="16.6. logging" href="16.6通用操作系统服务.html"/>
+        <link rel="prev" title="16.4. argparse" href="16.4通用操作系统服务.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -312,9 +312,9 @@
 <li class="toctree-l3"><a class="reference internal" href="16.1通用操作系统服务.html#id1">16.1.1. 文件名，命令行参数，环境变量</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">16.2. io</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">16.2.1. io入门样例</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">16.2.2. 主要先关类和主要方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="16.2通用操作系统服务.html">16.2. io</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="16.2通用操作系统服务.html#id1">16.2.1. io入门样例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="16.2通用操作系统服务.html#id2">16.2.2. 主要先关类和主要方法</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="16.3通用操作系统服务.html">16.3. time</a></li>
@@ -364,8 +364,8 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="16.5通用操作系统服务.html">16.5. getopt</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="16.5通用操作系统服务.html#id1">16.5.1. 快速入门样例</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">16.5. getopt</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">16.5.1. 快速入门样例</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="16.6通用操作系统服务.html">16.6. logging</a><ul>
@@ -430,14 +430,14 @@
         
           <li><a href="../16通用操作系统服务.html">16. 通用操作系统服务</a> &raquo;</li>
         
-      <li>16.2. io</li>
+      <li>16.5. getopt</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/zhaojiedi1992/My_Study_Python/blob/../edit/master/source/标准库/16通用操作系统/16.2通用操作系统服务.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/zhaojiedi1992/My_Study_Python/blob/../edit/master/source/标准库/16通用操作系统/16.5通用操作系统服务.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -448,10 +448,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="16.3通用操作系统服务.html" class="btn btn-neutral float-right" title="16.3. time" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="16.6通用操作系统服务.html" class="btn btn-neutral float-right" title="16.6. logging" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="16.1通用操作系统服务.html" class="btn btn-neutral" title="16.1. os" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="16.4通用操作系统服务.html" class="btn btn-neutral" title="16.4. argparse" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -460,59 +460,26 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="io">
-<h1>16.2. io<a class="headerlink" href="#io" title="永久链接至标题">¶</a></h1>
+  <div class="section" id="getopt">
+<h1>16.5. getopt<a class="headerlink" href="#getopt" title="永久链接至标题">¶</a></h1>
+<p>getopt模块是命令行选项的解析器，其API旨在为C getopt（）函数的用户所熟悉。 不熟悉C getopt（）函数的用户，
+或者希望编写更少代码并获得更好帮助和错误消息的用户应该考虑使用argparse模块。</p>
 <div class="section" id="id1">
-<h2>16.2.1. io入门样例<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Text I/O</span>
-<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;myfile.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="s2">&quot;some initial text data&quot;</span><span class="p">)</span>
+<h2>16.5.1. 快速入门样例<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">getopt</span>
 
-<span class="c1"># Binary I/O</span>
-<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;myfile.jpg&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;some initial binary data: </span><span class="se">\x00\x01</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">args</span> <span class="o">=</span> <span class="s1">&#39;-a -b -cfoo -d bar a1 a2&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 
-<span class="mi">3</span><span class="n">Raw</span> <span class="n">I</span><span class="o">/</span><span class="n">O</span>
-<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;myfile.jpg&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">,</span> <span class="n">buffering</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="id2">
-<h2>16.2.2. 主要先关类和主要方法<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<div class="highlight-text"><div class="highlight"><pre><span></span>io.IOBase
-    close
-    closed
-    flush
-    readline
-    readlines
-    seek
-    tell
-    writelines(lines)
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">args</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;-a&#39;</span><span class="p">,</span> <span class="s1">&#39;-b&#39;</span><span class="p">,</span> <span class="s1">&#39;-cfoo&#39;</span><span class="p">,</span> <span class="s1">&#39;-d&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;a1&#39;</span><span class="p">,</span> <span class="s1">&#39;a2&#39;</span><span class="p">]</span>
 
-io.RawIOBase
-    read
-    readall
-    readinto
-    write
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">optlist</span><span class="p">,</span><span class="n">args</span><span class="o">=</span><span class="n">getopt</span><span class="o">.</span><span class="n">getopt</span><span class="p">(</span><span class="n">args</span><span class="p">,</span><span class="s1">&#39;abc:d:&#39;</span><span class="p">)</span>
 
-io.BufferedIOBase
-    read
-    readinto
-    write
+<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">optlist</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="p">[(</span><span class="s1">&#39;-a&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;-b&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;-c&#39;</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;-d&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">)]</span>
 
-io.BytesIO
-    getbuffer
-    getvalue
-
-io.TextIOBase
-    encoding
-    errors
-    newlines
-    buffer
-    read
-    readline
-    tell
-    write
+<span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">args</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;a1&#39;</span><span class="p">,</span> <span class="s1">&#39;a2&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -528,10 +495,10 @@ io.TextIOBase
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="16.3通用操作系统服务.html" class="btn btn-neutral float-right" title="16.3. time" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="16.6通用操作系统服务.html" class="btn btn-neutral float-right" title="16.6. logging" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="16.1通用操作系统服务.html" class="btn btn-neutral" title="16.1. os" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="16.4通用操作系统服务.html" class="btn btn-neutral" title="16.4. argparse" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

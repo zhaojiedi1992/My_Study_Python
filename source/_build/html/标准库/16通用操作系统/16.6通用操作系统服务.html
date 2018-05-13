@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>16.2. io &mdash; My_Study_Python v0.1 文档</title>
+  <title>16.6. logging &mdash; My_Study_Python v0.1 文档</title>
   
 
   
@@ -37,8 +37,8 @@
         <link rel="search" title="搜索" href="../../search.html"/>
     <link rel="top" title="My_Study_Python v0.1 文档" href="../../index.html"/>
         <link rel="up" title="16. 通用操作系统服务" href="../16通用操作系统服务.html"/>
-        <link rel="next" title="16.3. time" href="16.3通用操作系统服务.html"/>
-        <link rel="prev" title="16.1. os" href="16.1通用操作系统服务.html"/> 
+        <link rel="next" title="17. 并发执行" href="../17并发执行.html"/>
+        <link rel="prev" title="16.5. getopt" href="16.5通用操作系统服务.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -312,9 +312,9 @@
 <li class="toctree-l3"><a class="reference internal" href="16.1通用操作系统服务.html#id1">16.1.1. 文件名，命令行参数，环境变量</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">16.2. io</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">16.2.1. io入门样例</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">16.2.2. 主要先关类和主要方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="16.2通用操作系统服务.html">16.2. io</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="16.2通用操作系统服务.html#id1">16.2.1. io入门样例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="16.2通用操作系统服务.html#id2">16.2.2. 主要先关类和主要方法</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="16.3通用操作系统服务.html">16.3. time</a></li>
@@ -368,13 +368,9 @@
 <li class="toctree-l3"><a class="reference internal" href="16.5通用操作系统服务.html#id1">16.5.1. 快速入门样例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="16.6通用操作系统服务.html">16.6. logging</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="16.6通用操作系统服务.html#logging-logger">16.6.1. logging.Logger</a></li>
-<li class="toctree-l3"><a class="reference internal" href="16.6通用操作系统服务.html#logging-handler">16.6.2. logging.Handler</a></li>
-<li class="toctree-l3"><a class="reference internal" href="16.6通用操作系统服务.html#logging-formatter">16.6.3. logging.Formatter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="16.6通用操作系统服务.html#logging-filter">16.6.4. logging.Filter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="16.6通用操作系统服务.html#logging-logrecord">16.6.5. logging.LogRecord</a></li>
-<li class="toctree-l3"><a class="reference internal" href="16.6通用操作系统服务.html#id1">16.6.6. 简单使用</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">16.6. logging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#logging-logger">16.6.1. logging.Logger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">16.6.2. 简单使用</a></li>
 </ul>
 </li>
 </ul>
@@ -430,14 +426,14 @@
         
           <li><a href="../16通用操作系统服务.html">16. 通用操作系统服务</a> &raquo;</li>
         
-      <li>16.2. io</li>
+      <li>16.6. logging</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/zhaojiedi1992/My_Study_Python/blob/../edit/master/source/标准库/16通用操作系统/16.2通用操作系统服务.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/zhaojiedi1992/My_Study_Python/blob/../edit/master/source/标准库/16通用操作系统/16.6通用操作系统服务.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -448,10 +444,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="16.3通用操作系统服务.html" class="btn btn-neutral float-right" title="16.3. time" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../17并发执行.html" class="btn btn-neutral float-right" title="17. 并发执行" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="16.1通用操作系统服务.html" class="btn btn-neutral" title="16.1. os" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="16.5通用操作系统服务.html" class="btn btn-neutral" title="16.5. getopt" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -460,61 +456,88 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="io">
-<h1>16.2. io<a class="headerlink" href="#io" title="永久链接至标题">¶</a></h1>
+  <div class="section" id="logging">
+<h1>16.6. logging<a class="headerlink" href="#logging" title="永久链接至标题">¶</a></h1>
+<p>logging提供实现了可扩展的日志系统。</p>
+<div class="section" id="logging-logger">
+<h2>16.6.1. logging.Logger<a class="headerlink" href="#logging-logger" title="永久链接至标题">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre><span></span>propagate: 如果此属性的计算结果为true，除了附加到此记录器的任何处理程序外，记录到此记录程序的事件将传递给更高级别（祖先）记录程序的处理程序。
+setLevel: 设置日志级别
+isEnabledFor:指示是否将由此记录器处理严重性级别为lvl的消息。 此方法首先检查由logging.disable（lvl）设置的模块级别级别，然后检查记录器的有效级别
+getEffectiveLevel: 获取当前日志级别
+getChild: 根据后缀确定，返回日志器
+debug: 输出debug信息
+info: 输出info信息
+warning:输出警告信息
+error:输出error信息
+critical：输出critical级别信息
+log: 输出指定级别的信息
+exception:输出异常信息
+addFilter: 添加过滤器
+filter: 应用过滤器
+addHandler: 添加处理方法
+removeHandler: 移除handler
+findCaller: 找到调用者源文件名字和行号
+handler: 处理记录
+makeRecode: 工厂方法
+hasHandlers: 是否有Handler
+</pre></div>
+</div>
+<p>日志级别</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="27%" />
+<col width="36%" />
+<col width="36%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">级别</th>
+<th class="head">数值</th>
+<th class="head">描述</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>CRITICAL</td>
+<td>50</td>
+<td>严重</td>
+</tr>
+<tr class="row-odd"><td>ERROR</td>
+<td>40</td>
+<td>错误</td>
+</tr>
+<tr class="row-even"><td>WARNING</td>
+<td>30</td>
+<td>警告</td>
+</tr>
+<tr class="row-odd"><td>INFO</td>
+<td>20</td>
+<td>信息</td>
+</tr>
+<tr class="row-even"><td>DEBUG</td>
+<td>10</td>
+<td>调试</td>
+</tr>
+<tr class="row-odd"><td>NOTSET</td>
+<td>0</td>
+<td>不设置</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="section" id="id1">
-<h2>16.2.1. io入门样例<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Text I/O</span>
-<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;myfile.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="s2">&quot;some initial text data&quot;</span><span class="p">)</span>
-
-<span class="c1"># Binary I/O</span>
-<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;myfile.jpg&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;some initial binary data: </span><span class="se">\x00\x01</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="mi">3</span><span class="n">Raw</span> <span class="n">I</span><span class="o">/</span><span class="n">O</span>
-<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;myfile.jpg&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">,</span> <span class="n">buffering</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<h2>16.6.2. 简单使用<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id2">
-<h2>16.2.2. 主要先关类和主要方法<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<div class="highlight-text"><div class="highlight"><pre><span></span>io.IOBase
-    close
-    closed
-    flush
-    readline
-    readlines
-    seek
-    tell
-    writelines(lines)
-
-io.RawIOBase
-    read
-    readall
-    readinto
-    write
-
-io.BufferedIOBase
-    read
-    readinto
-    write
-
-io.BytesIO
-    getbuffer
-    getvalue
-
-io.TextIOBase
-    encoding
-    errors
-    newlines
-    buffer
-    read
-    readline
-    tell
-    write
-</pre></div>
-</div>
+<p>In [1]: import logging</p>
+<blockquote>
+<div>In [2]: FORMAT = ‘%(asctime)-15s %(clientip)s %(user)-8s %(message)s’
+…: logging.basicConfig(format=FORMAT)
+…: d = {‘clientip’: ‘192.168.0.1’, ‘user’: ‘zhaojiedi’}
+…: logger = logging.getLogger(‘tcpserver’)
+…: logger.warning(‘Protocol problem: %s’, ‘connection reset’, extra=d)
+…:
+2018-05-13 13:59:54,626 192.168.0.1 zhaojiedi  Protocol problem: connection reset</div></blockquote>
 </div>
 </div>
 
@@ -528,10 +551,10 @@ io.TextIOBase
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="16.3通用操作系统服务.html" class="btn btn-neutral float-right" title="16.3. time" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../17并发执行.html" class="btn btn-neutral float-right" title="17. 并发执行" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="16.1通用操作系统服务.html" class="btn btn-neutral" title="16.1. os" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="16.5通用操作系统服务.html" class="btn btn-neutral" title="16.5. getopt" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

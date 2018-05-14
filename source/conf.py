@@ -90,7 +90,7 @@ html_theme = 'sphinx_rtd_theme'
 # documentation.
 #
 html_theme_options = {
-    'typekit_id': '',
+    #'typekit_id': '',
     'canonical_url': '',
     'analytics_id': '',
     'logo_only': False,

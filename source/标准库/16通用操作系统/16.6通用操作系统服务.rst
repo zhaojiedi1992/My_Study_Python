@@ -105,7 +105,7 @@ logging.LogRecord
 
 .. code-block:: python 
 
-In [1]: import logging
+    In [1]: import logging
 
     In [2]: FORMAT = '%(asctime)-15s %(clientip)s %(user)-8s %(message)s'
     ...: logging.basicConfig(format=FORMAT)

@@ -41,14 +41,71 @@ logging.Logger
     "DEBUG","10","调试"
     "NOTSET","0","不设置"
 
+logging.Handler
+--------------------------------------------
 
+.. code-block:: text 
 
+    __init__:   初始化
+    createLock: 初始化线程锁
+    acquire:    需要使用createLock创建线程锁
+    release:    释放
+    setLevel：  设置级别
+    setFormatter: 设置格式
+    addFilter:  添加过滤器
+    removeFilter: 移除过滤器
+    filter: 应用过滤器
+    flush: 确保日志记录输出被刷新
+    close: 关闭
+    handler: 根据可能已添加到处理程序的过滤器，有条件地发出指定的日志记录
+    hanglerError: 错误
+    format: 对记录进行格式
+    emit: 做任何事情来实际记录指定的日志记录。 此版本旨在由子类实现，因此引发NotImplementedError。
+
+logging.Formatter
+--------------------------------------------
+
+.. code-block:: text 
+
+    format: 格式化记录
+    formatTime: 格式化记录使用特定的日期格式
+    formatException: 格式化异常信息
+    formatStack: 格式化堆栈信息
+
+logging.Filter
+--------------------------------------------
+
+.. code-block:: text 
+
+    filter: 过滤特定日志
+
+logging.LogRecord
+--------------------------------------------
+
+.. code-block:: text 
+
+    这个对象接受很多参数，如下
+    name:   名字
+    level:  日志级别
+    pathname: 路径名
+    lineno:     行号
+    msg:        消息内容
+    args：      参数信息
+    exc_info:   异常信息
+    func:       调用的方法
+    sinfo:      堆栈信息
+
+日志记录属性
+
+.. csv-table:: 
+   :header: "属性","格式","描述"
+     
 简单使用
 ---------------------------------------------
 
 .. code-block:: python 
 
-In [1]: import logging
+    In [1]: import logging
 
     In [2]: FORMAT = '%(asctime)-15s %(clientip)s %(user)-8s %(message)s'
     ...: logging.basicConfig(format=FORMAT)

@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -25,27 +25,19 @@
   
 
   
-  
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="索引"
-              href="../../genindex.html"/>
-        <link rel="search" title="搜索" href="../../search.html"/>
-    <link rel="top" title="My_Study_Python v0.1 文档" href="../../index.html"/>
-        <link rel="up" title="16. 通用操作系统服务" href="../16通用操作系统服务.html"/>
-        <link rel="next" title="17. 并发执行" href="../17并发执行.html"/>
-        <link rel="prev" title="16.5. getopt" href="16.5通用操作系统服务.html"/> 
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="16.7. logging.Config" href="16.7通用操作系统服务.html" />
+    <link rel="prev" title="16.5. getopt" href="16.5通用操作系统服务.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
-  <script src="../../_static/js/baidu.js"></script>
+
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -370,9 +362,40 @@
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">16.6. logging</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#logging-logger">16.6.1. logging.Logger</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">16.6.2. 简单使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#logging-handler">16.6.2. logging.Handler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#logging-formatter">16.6.3. logging.Formatter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#logging-filter">16.6.4. logging.Filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#logging-logrecord">16.6.5. logging.LogRecord</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">16.6.6. 简单使用</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="16.7通用操作系统服务.html">16.7. logging.Config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="16.7通用操作系统服务.html#logging-config-dictconfig">16.7.1. logging.config.dictConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="16.7通用操作系统服务.html#logging-config-fileconfig">16.7.2. logging.config.fileConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="16.7通用操作系统服务.html#logging-config-listen">16.7.3. logging.config.listen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="16.7通用操作系统服务.html#id1">16.7.4. 字典配置细节</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="16.8通用操作系统服务.html">16.8. logging.Handlers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="16.8通用操作系统服务.html#logging-streamhandler">16.8.1. logging.StreamHandler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="16.8通用操作系统服务.html#logging-filehandler">16.8.2. logging.FileHandler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="16.8通用操作系统服务.html#logging-nullhandler">16.8.3. logging.NullHandler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="16.8通用操作系统服务.html#watchedfilehandler">16.8.4. WatchedFileHandler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="16.8通用操作系统服务.html#baserotatinghandler">16.8.5. BaseRotatingHandler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="16.8通用操作系统服务.html#rotatingfilehandler">16.8.6. RotatingFileHandler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="16.8通用操作系统服务.html#timedrotatingfilehandler">16.8.7. TimedRotatingFileHandler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="16.8通用操作系统服务.html#sockethandler">16.8.8. SocketHandler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="16.8通用操作系统服务.html#datagramhandler">16.8.9. DatagramHandler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="16.8通用操作系统服务.html#sysloghandler">16.8.10. SysLogHandler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="16.8通用操作系统服务.html#nteventloghandler">16.8.11. NTEventLogHandler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="16.8通用操作系统服务.html#smtphandler">16.8.12. SMTPHandler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="16.8通用操作系统服务.html#logging-handlers-bufferinghandler">16.8.13. logging.handlers.BufferingHandler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="16.8通用操作系统服务.html#logging-handlers-memoryhandler">16.8.14. logging.handlers.MemoryHandler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="16.8通用操作系统服务.html#httphandler">16.8.15. HTTPHandler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="16.8通用操作系统服务.html#queuehandler">16.8.16. QueueHandler</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="16.9通用操作系统服务.html">16.9. getpass</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../17并发执行.html">17. 并发执行</a></li>
@@ -390,7 +413,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">My_Study_Python</a>
@@ -398,11 +421,11 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
-
 
 
 
@@ -444,7 +467,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="../17并发执行.html" class="btn btn-neutral float-right" title="17. 并发执行" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="16.7通用操作系统服务.html" class="btn btn-neutral float-right" title="16.7. logging.Config" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="16.5通用操作系统服务.html" class="btn btn-neutral" title="16.5. getopt" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -524,34 +547,82 @@ hasHandlers: 是否有Handler
 </tbody>
 </table>
 </div>
-<div class="section" id="id1">
-<h2>16.6.2. 简单使用<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span>
+<div class="section" id="logging-handler">
+<h2>16.6.2. logging.Handler<a class="headerlink" href="#logging-handler" title="永久链接至标题">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre><span></span>__init__:   初始化
+createLock: 初始化线程锁
+acquire:    需要使用createLock创建线程锁
+release:    释放
+setLevel：  设置级别
+setFormatter: 设置格式
+addFilter:  添加过滤器
+removeFilter: 移除过滤器
+filter: 应用过滤器
+flush: 确保日志记录输出被刷新
+close: 关闭
+handler: 根据可能已添加到处理程序的过滤器，有条件地发出指定的日志记录
+hanglerError: 错误
+format: 对记录进行格式
+emit: 做任何事情来实际记录指定的日志记录。 此版本旨在由子类实现，因此引发NotImplementedError。
 </pre></div>
 </div>
-<p>In [1]: import logging</p>
-<blockquote>
-<div>In [2]: FORMAT = ‘%(asctime)-15s %(clientip)s %(user)-8s %(message)s’
-…: logging.basicConfig(format=FORMAT)
-…: d = {‘clientip’: ‘192.168.0.1’, ‘user’: ‘zhaojiedi’}
-…: logger = logging.getLogger(‘tcpserver’)
-…: logger.warning(‘Protocol problem: %s’, ‘connection reset’, extra=d)
-…:
-2018-05-13 13:59:54,626 192.168.0.1 zhaojiedi  Protocol problem: connection reset</div></blockquote>
+</div>
+<div class="section" id="logging-formatter">
+<h2>16.6.3. logging.Formatter<a class="headerlink" href="#logging-formatter" title="永久链接至标题">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre><span></span>format: 格式化记录
+formatTime: 格式化记录使用特定的日期格式
+formatException: 格式化异常信息
+formatStack: 格式化堆栈信息
+</pre></div>
+</div>
+</div>
+<div class="section" id="logging-filter">
+<h2>16.6.4. logging.Filter<a class="headerlink" href="#logging-filter" title="永久链接至标题">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre><span></span>filter: 过滤特定日志
+</pre></div>
+</div>
+</div>
+<div class="section" id="logging-logrecord">
+<h2>16.6.5. logging.LogRecord<a class="headerlink" href="#logging-logrecord" title="永久链接至标题">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre><span></span>这个对象接受很多参数，如下
+name:   名字
+level:  日志级别
+pathname: 路径名
+lineno:     行号
+msg:        消息内容
+args：      参数信息
+exc_info:   异常信息
+func:       调用的方法
+sinfo:      堆栈信息
+</pre></div>
+</div>
+<p>日志记录属性</p>
+</div>
+<div class="section" id="id1">
+<h2>16.6.6. 简单使用<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">FORMAT</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%(asctime)-15s</span><span class="s1"> </span><span class="si">%(clientip)s</span><span class="s1"> </span><span class="si">%(user)-8s</span><span class="s1"> </span><span class="si">%(message)s</span><span class="s1">&#39;</span>
+<span class="o">...</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">format</span><span class="o">=</span><span class="n">FORMAT</span><span class="p">)</span>
+<span class="o">...</span><span class="p">:</span> <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;clientip&#39;</span><span class="p">:</span> <span class="s1">&#39;192.168.0.1&#39;</span><span class="p">,</span> <span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="s1">&#39;zhaojiedi&#39;</span><span class="p">}</span>
+<span class="o">...</span><span class="p">:</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;tcpserver&#39;</span><span class="p">)</span>
+<span class="o">...</span><span class="p">:</span> <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Protocol problem: </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;connection reset&#39;</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="n">d</span><span class="p">)</span>
+<span class="o">...</span><span class="p">:</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mo">05</span><span class="o">-</span><span class="mi">13</span> <span class="mi">13</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">54</span><span class="p">,</span><span class="mi">626</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.1</span> <span class="n">zhaojiedi</span>  <span class="n">Protocol</span> <span class="n">problem</span><span class="p">:</span> <span class="n">connection</span> <span class="n">reset</span>
+</pre></div>
+</div>
 </div>
 </div>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../17并发执行.html" class="btn btn-neutral float-right" title="17. 并发执行" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="16.7通用操作系统服务.html" class="btn btn-neutral float-right" title="16.7. logging.Config" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="16.5通用操作系统服务.html" class="btn btn-neutral" title="16.5. getopt" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -567,7 +638,7 @@ hasHandlers: 是否有Handler
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>  个人博客 <a href="http://www.linuxpanda.tech/topic/"> LinuxPanda </a> . 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -586,6 +657,7 @@ hasHandlers: 是否有Handler
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
             VERSION:'v0.1',
+            LANGUAGE:'zh_CN',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -604,14 +676,11 @@ hasHandlers: 是否有Handler
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

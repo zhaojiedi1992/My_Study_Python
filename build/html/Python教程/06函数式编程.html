@@ -439,7 +439,8 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">26. 函数式编程</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id2">26.1. 切片</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">26.1. 函数调用和函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">26.2. 传入函数</a></li>
 </ul>
 </li>
 </ul>
@@ -472,8 +473,25 @@
              
   <section id="id1">
 <h1><span class="section-number">26. </span>函数式编程<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<p>函数式编程是抽象很高的编程范式，允许函数作为参数，允许函数作为返回值。</p>
 <section id="id2">
-<h2><span class="section-number">26.1. </span>切片<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<h2><span class="section-number">26.1. </span>函数调用和函数<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>abs(-10) 表示函数调用， 但是abs是函数本身， 函数本身可以赋值给变量，</p>
+</section>
+<section id="id3">
+<h2><span class="section-number">26.2. </span>传入函数<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span> 
+<span class="k">def</span> <span class="nf">f2</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">f</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+
+
+<span class="n">f2</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="n">add</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 </section>
 

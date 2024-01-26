@@ -6,13 +6,16 @@
 我自己的python学习笔记
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. toctree::
+   :maxdepth: 3
+   :caption: python教程
+
+   python教程/index
 
 .. toctree::
-   :maxdepth: 2
-   :caption: 基础库
-   :numbered:
-   :glob:
+   :maxdepth: 3
+   :caption: 标准库
 
-   标准库/*
-   Python教程/*
+   标准库/index
+
 

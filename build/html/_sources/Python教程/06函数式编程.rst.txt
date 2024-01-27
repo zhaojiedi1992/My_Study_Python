@@ -73,4 +73,22 @@ sorted
    def f(x):
       return x * x 
 
-   
+   f2 = lamba x: x*x 
+
+
+装饰器
+----------------------------------------------
+增强函数功能，但是不修改原有函数代码。 
+
+.. literalinclude:: ../code/06.05.output.func.py
+   :encoding: utf-8
+   :language: python
+
+
+偏函数
+----------------------------------------------
+固定一些参数，方便函数调用。
+
+.. literalinclude:: ../code/06.07.partial.py
+   :encoding: utf-8
+   :language: python

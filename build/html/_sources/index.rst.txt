@@ -7,9 +7,8 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. toctree::
-   :caption: python教程
+   :maxdepth: 2
+   :caption: PYTHONE学习笔记
 
    python教程/index
-
-
-
+   

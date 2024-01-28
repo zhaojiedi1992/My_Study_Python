@@ -57,3 +57,9 @@ ipc
 .. literalinclude:: ../../code/12.07.thread.local.py
    :encoding: utf-8
    :language: python
+
+
+分布式进程
+----------------------------------------------
+通过分布式进程可以将任务分布到多台机器上面去。 通过网络完成信息通信。 
+

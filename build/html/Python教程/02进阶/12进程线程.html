@@ -165,6 +165,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#subprocess">2.8.4. subprocess</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ipc">2.8.5. ipc</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id2">2.8.6. 多线程</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">2.8.7. 分布式进程</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="13%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.html">2.9. 正则表达式</a><ul>
@@ -230,7 +231,7 @@
 <span class="k">if</span> <span class="n">pid</span> <span class="o">==</span><span class="mi">0</span> <span class="p">:</span> 
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;i am child ,my pid=</span><span class="si">{}</span><span class="s2">,ppid=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">(),</span><span class="n">os</span><span class="o">.</span><span class="n">getppid</span><span class="p">()))</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;i am parent,my pid </span><span class="si">{}</span><span class="s2">, my child pid </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">()))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;i am parent,my pid </span><span class="si">{}</span><span class="s2">, my child pid </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">(),</span><span class="n">pid</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>
@@ -366,41 +367,31 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
 <span class="c1"># -*- coding: utf-8 -*-</span>
 
-<span class="kn">import</span> <span class="nn">time</span> 
-<span class="kn">import</span> <span class="nn">threading</span>
-<span class="kn">import</span> <span class="nn">multiprocessing</span>
 
+<span class="kn">import</span> <span class="nn">threading</span> 
 
-<span class="n">balance</span> <span class="o">=</span><span class="mi">0</span> 
-<span class="n">lock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+<span class="n">local_school</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">local</span>
 
-<span class="k">def</span> <span class="nf">change_balance</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> 
-    <span class="k">global</span> <span class="n">balance</span> 
-    <span class="n">balance</span> <span class="o">=</span> <span class="n">balance</span> <span class="o">+</span> <span class="n">n</span> 
-    <span class="n">balance</span> <span class="o">=</span> <span class="n">balance</span> <span class="o">-</span> <span class="n">n</span> 
+<span class="k">def</span> <span class="nf">process_student</span><span class="p">():</span>
+    <span class="n">stu</span> <span class="o">=</span> <span class="n">local_school</span><span class="o">.</span><span class="n">student</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">threading</span><span class="o">.</span><span class="n">current_thread</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">,</span><span class="n">stu</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">run_thread</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> 
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20000000</span> <span class="o">*</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">()):</span>
-         <span class="n">lock</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
-         <span class="k">try</span><span class="p">:</span> 
-            <span class="n">change_balance</span><span class="p">(</span><span class="n">i</span> <span class="p">)</span>
-         <span class="k">finally</span><span class="p">:</span> 
-             <span class="n">lock</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">process_thread</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="n">local_school</span><span class="o">.</span><span class="n">student</span> <span class="o">=</span> <span class="n">name</span> 
+    <span class="n">process_student</span><span class="p">()</span>
 
-
-<span class="n">t1</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">run_thread</span><span class="p">,</span><span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,))</span>
-<span class="n">t2</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">run_thread</span><span class="p">,</span><span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">58</span><span class="p">,))</span>
-<span class="n">t3</span>  <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">run_thread</span><span class="p">,</span><span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">58</span><span class="p">,))</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">process_thread</span><span class="p">,</span><span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;zhao&quot;</span><span class="p">,),</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;thread-zhao&quot;</span><span class="p">)</span>
+<span class="n">t2</span><span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">process_thread</span><span class="p">,</span><span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;qian&quot;</span><span class="p">,),</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;thread-qian&quot;</span><span class="p">)</span>
 <span class="n">t1</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 <span class="n">t2</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-<span class="n">t3</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 <span class="n">t1</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
-<span class="n">t2</span><span class="o">.</span><span class="n">join</span><span class="p">()</span> 
-<span class="n">t3</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">balance</span><span class="p">)</span>
+<span class="n">t2</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
 </pre></div>
 </div>
+</section>
+<section id="id3">
+<h2><span class="section-number">2.8.7. </span>分布式进程<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p>通过分布式进程可以将任务分布到多台机器上面去。 通过网络完成信息通信。</p>
 </section>
 </section>
 

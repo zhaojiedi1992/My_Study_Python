@@ -1,36 +1,22 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import time 
-import threading
-import multiprocessing
 
+import threading 
 
-balance =0 
-lock = threading.Lock()
+local_school = threading.local
 
-def change_balance(n): 
-    global balance 
-    balance = balance + n 
-    balance = balance - n 
+def process_student():
+    stu = local_school.student 
+    print("{} {}",threading.current_thread().name,stu)
 
-def run_thread(n): 
-    for i in range(20000000 * multiprocessing.cpu_count()):
-         lock.acquire()
-         try: 
-            change_balance(i )
-         finally: 
-             lock.release()
+def process_thread(name):
+    local_school.student = name 
+    process_student()
 
-
-t1 = threading.Thread(target=run_thread,args=(5,))
-t2 = threading.Thread(target=run_thread,args=(58,))
-t3  = threading.Thread(target=run_thread,args=(58,))
+t1 = threading.Thread(target=process_thread,args=("zhao",),name="thread-zhao")
+t2= threading.Thread(target=process_thread,args=("qian",),name="thread-qian")
 t1.start()
 t2.start()
-t3.start()
 t1.join()
-t2.join() 
-t3.join()
-
-print(balance)
+t2.join()

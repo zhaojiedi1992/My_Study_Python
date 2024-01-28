@@ -8,4 +8,4 @@ pid = os.fork()
 if pid ==0 : 
     print("i am child ,my pid={},ppid={}".format(os.getpid(),os.getppid()))
 else:
-    print("i am parent,my pid {}, my child pid {}".format(pid, os.getpid()))
+    print("i am parent,my pid {}, my child pid {}".format( os.getpid(),pid))

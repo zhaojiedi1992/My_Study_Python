@@ -87,7 +87,7 @@
 
 \**kw是关键字参数，kw接收的是一个dict。
 
-.. code-block:: ipython 
+.. code-block:: python 
 
    def f1(a,b,c=0,*args,**kw):
      print('a =', a, 'b =', b, 'c =', c, 'args =', args, 'kw =', kw)

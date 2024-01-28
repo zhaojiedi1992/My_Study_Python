@@ -12,3 +12,6 @@ class TestDict(unittest.TestCase):
         self.assertTrue(isinstance(d, dict))
 
 
+if __name__ == '__main__':
+    unittest.main()
+

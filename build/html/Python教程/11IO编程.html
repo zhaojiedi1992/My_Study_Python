@@ -74,6 +74,8 @@
 <li class="toctree-l2"><a class="reference internal" href="03python%E5%9F%BA%E7%A1%80.html#if">3.10. if</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03python%E5%9F%BA%E7%A1%80.html#match">3.11. match</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03python%E5%9F%BA%E7%A1%80.html#id7">3.12. 循环</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03python%E5%9F%BA%E7%A1%80.html#dict">3.13. dict</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03python%E5%9F%BA%E7%A1%80.html#set">3.14. set</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="04%E5%87%BD%E6%95%B0.html">4. 函数</a><ul>
@@ -530,9 +532,11 @@
 <h2><span class="section-number">11.1. </span>文件读写<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
 <span class="c1"># -*- coding: utf-8 -*-</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./out.log&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./out.log&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span><span class="n">errors</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/Users/michael/test.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Hello, world!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>

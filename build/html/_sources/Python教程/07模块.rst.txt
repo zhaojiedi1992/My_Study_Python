@@ -16,4 +16,5 @@
 .. code-block:: bash 
    
    pip install Pillow 
-   
+
+

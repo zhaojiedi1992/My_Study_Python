@@ -74,6 +74,8 @@
 <li class="toctree-l2"><a class="reference internal" href="03python%E5%9F%BA%E7%A1%80.html#if">3.10. if</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03python%E5%9F%BA%E7%A1%80.html#match">3.11. match</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03python%E5%9F%BA%E7%A1%80.html#id7">3.12. 循环</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03python%E5%9F%BA%E7%A1%80.html#dict">3.13. dict</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03python%E5%9F%BA%E7%A1%80.html#set">3.14. set</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="04%E5%87%BD%E6%95%B0.html">4. 函数</a><ul>
@@ -593,7 +595,7 @@
 <section id="id5">
 <h2><span class="section-number">8.5. </span>获取对象类型信息<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
 <p>对象类型，使用type()函数，对于class的继承关系来说，使用type()就很不方便。我们要判断class的类型，可以使用isinstance()函数。</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="nb">type</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="nb">type</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="nb">int</span>
 
 
@@ -613,7 +615,7 @@
 <section id="id6">
 <h2><span class="section-number">8.6. </span>获取对象属性和方法信息<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
 <p>如果要获得一个对象的所有属性和方法，可以使用dir()函数， 配合 getattr()、setattr()以及hasattr()，我们可以直接操作一个对象的状态。</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="nb">dir</span> <span class="p">(</span><span class="s2">&quot;ABC&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="nb">dir</span> <span class="p">(</span><span class="s2">&quot;ABC&quot;</span><span class="p">)</span>
 
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="k">class</span> <span class="nc">Dog</span><span class="p">():</span>

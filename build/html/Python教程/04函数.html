@@ -74,6 +74,8 @@
 <li class="toctree-l2"><a class="reference internal" href="03python%E5%9F%BA%E7%A1%80.html#if">3.10. if</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03python%E5%9F%BA%E7%A1%80.html#match">3.11. match</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03python%E5%9F%BA%E7%A1%80.html#id7">3.12. 循环</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03python%E5%9F%BA%E7%A1%80.html#dict">3.13. dict</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03python%E5%9F%BA%E7%A1%80.html#set">3.14. set</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">4. 函数</a><ul>
@@ -600,7 +602,7 @@
 <h2><span class="section-number">4.9. </span>参数组合<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
 <p>*args是可变参数，args接收的是一个tuple；</p>
 <p>**kw是关键字参数，kw接收的是一个dict。</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f1</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f1</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kw</span><span class="p">):</span>
   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a =&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s1">&#39;b =&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="s1">&#39;c =&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="s1">&#39;args =&#39;</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="s1">&#39;kw =&#39;</span><span class="p">,</span> <span class="n">kw</span><span class="p">)</span>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span>    <span class="k">def</span> <span class="nf">f1</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kw</span><span class="p">):</span>

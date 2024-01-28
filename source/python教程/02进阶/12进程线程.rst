@@ -1,0 +1,59 @@
+进程线程
+====================================================================
+多任务实现类型： 
+- 多进程模式；
+- 多线程模式；
+- 多进程+多线程模式。
+
+fork
+----------------------------------------------
+
+.. literalinclude:: ../../code/12.01.process.py
+   :encoding: utf-8
+   :language: python
+
+
+
+multiprocess
+----------------------------------------------
+
+.. literalinclude:: ../../code/12.02.mprocess.py
+   :encoding: utf-8
+   :language: python
+
+
+pool
+----------------------------------------------
+
+.. literalinclude:: ../../code/12.03.pool.py
+   :encoding: utf-8
+   :language: python
+
+subprocess
+----------------------------------------------
+
+.. literalinclude:: ../../code/12.04.subprocess.py
+   :encoding: utf-8
+   :language: python
+
+
+ipc
+----------------------------------------------
+
+.. literalinclude:: ../../code/12.05.ipc.py
+   :encoding: utf-8
+   :language: python
+
+
+多线程
+----------------------------------------------
+
+.. literalinclude:: ../../code/12.06.thread.py
+   :encoding: utf-8
+   :language: python
+
+一个ThreadLocal变量虽然是全局变量，但每个线程都只能读写自己线程的独立副本，互不干扰。ThreadLocal解决了参数在一个线程中各个函数之间互相传递的问题。
+
+.. literalinclude:: ../../code/12.07.thread.local.py
+   :encoding: utf-8
+   :language: python

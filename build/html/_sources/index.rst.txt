@@ -7,13 +7,11 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. toctree::
-   :maxdepth: 3
    :caption: python教程
 
    python教程/index
 
 .. toctree::
-   :maxdepth: 3
    :caption: 标准库
 
    标准库/index

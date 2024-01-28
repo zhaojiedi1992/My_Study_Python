@@ -11,9 +11,5 @@
 
    python教程/index
 
-.. toctree::
-   :caption: 标准库
-
-   标准库/index
 
 

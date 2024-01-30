@@ -125,3 +125,60 @@ hashlib
    In [10]: md5.hexdigest()
    Out[10]: 'efb605a4a365423301d33afec4138813'
 
+hmac
+----------------------------------------------
+
+.. code-block:: python 
+
+   In [1]: import hmac
+
+   In [2]: message=b'abc'
+
+   In [3]: key=b'secret'
+
+   In [4]: h = hmac.new(key,message,digestmod='md5')
+
+   In [5]: h.hexdigest()
+   Out[5]: 'd9bf7c3a63eae7031c4e6d7c9b78ba93'
+
+
+itertools
+----------------------------------------------
+
+.. code-block:: python 
+
+   # 三个字母循环的。
+   cs = itertools.cycle('ABC')
+
+   # 重复一个元素多次
+   ns = itertools.repeat('A', 3)
+
+   # 提前特定个数
+   itertools.takewhile(lambda x: x <= 10, natuals)
+
+   # 整合一个大的
+   for c in itertools.chain('ABC', 'XYZ'):
+
+   # groupby()把迭代器中相邻的重复元素挑出来放在一起：
+   for key, group in itertools.groupby('AAABBBCCAAA'):
+       print(key, list(group))
+
+contextlib
+----------------------------------------------
+实现上下文管理是通过__enter__和__exit__这两个方法实现的。
+
+编写__enter__和__exit__仍然很繁琐，因此Python的标准库contextlib提供了更简单的写法
+
+如果一个对象没有实现上下文，我们就不能把它用于with语句。这个时候，可以用closing()来把该对象变为上下文对象
+
+
+.. literalinclude:: ../../code/14.04.with.py
+   :encoding: utf-8
+   :language: python
+
+request
+----------------------------------------------
+
+.. literalinclude:: ../../code/14.05.request.py
+   :encoding: utf-8
+   :language: python

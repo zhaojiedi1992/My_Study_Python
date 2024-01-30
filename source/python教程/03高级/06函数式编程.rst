@@ -1,0 +1,94 @@
+函数式编程
+====================================================================
+函数式编程是抽象很高的编程范式，允许函数作为参数，允许函数作为返回值。
+
+函数调用和函数
+----------------------------------------------
+
+abs(-10) 表示函数调用， 但是abs是函数本身， 函数本身可以赋值给变量，
+
+传入函数
+----------------------------------------------
+
+.. literalinclude:: ../../code/06.01.input.func.py
+   :encoding: utf-8
+   :language: python
+
+mapreduce
+----------------------------------------------
+
+.. literalinclude:: ../../code/06.02.mapreduce.py
+   :encoding: utf-8
+   :language: python
+
+
+filter
+----------------------------------------------
+
+.. literalinclude:: ../../code/06.03.filter.py
+   :encoding: utf-8
+   :language: python
+
+sorted
+----------------------------------------------
+
+.. literalinclude:: ../../code/06.04.sorted.py
+   :encoding: utf-8
+   :language: python
+
+
+函数作为返回值
+----------------------------------------------
+
+.. literalinclude:: ../../code/06.05.output.func.py
+   :encoding: utf-8
+   :language: python
+
+
+闭包
+----------------------------------------------
+内部函数使用外部函数的变量。
+
+使用闭包时，对外层变量赋值前，需要先使用nonlocal声明该变量不是当前函数的局部变量。 
+
+.. code-block:: python 
+
+   def inc():
+    x = 0
+    def fn():
+        # nonlocal x
+        x = x + 1
+        return x
+    return fn
+
+   f = inc()
+   print(f()) # 1
+   print(f()) # 2
+
+匿名函数
+----------------------------------------------
+
+.. code-block:: python 
+
+   def f(x):
+      return x * x 
+
+   f2 = lamba x: x*x 
+
+
+装饰器
+----------------------------------------------
+增强函数功能，但是不修改原有函数代码。 
+
+.. literalinclude:: ../../code/06.06.decorator.py
+   :encoding: utf-8
+   :language: python
+
+
+偏函数
+----------------------------------------------
+固定一些参数，方便函数调用。
+
+.. literalinclude:: ../../code/06.07.partial.py
+   :encoding: utf-8
+   :language: python

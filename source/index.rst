@@ -7,3 +7,4 @@
    :caption: PYTHONE学习笔记
 
    python教程/index
+   cookbook/index

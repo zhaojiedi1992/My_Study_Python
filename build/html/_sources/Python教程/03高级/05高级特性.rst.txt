@@ -136,7 +136,7 @@
 自己定义一个生成器函数
 ----------------------------------------------
 
-.. literalinclude:: ../../code/02.05.generator.py
+.. literalinclude:: ../../code/python教程/02.05.generator.py
    :encoding: utf-8
    :language: python
 

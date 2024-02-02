@@ -1,8 +1,8 @@
-python基础
+cookbook基础
 **********************************************
 
 .. toctree::
-    :caption: python基础
+    :caption: cookbook基础
     :glob:
 
     *

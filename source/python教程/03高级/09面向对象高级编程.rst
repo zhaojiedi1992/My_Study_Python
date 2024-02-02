@@ -4,7 +4,7 @@
 给类绑定一个方法
 ----------------------------------------------
 
-.. literalinclude:: ../../code/09.01.mountmethod.py
+.. literalinclude:: ../../code/python教程/09.01.mountmethod.py
    :encoding: utf-8
    :language: python
 
@@ -23,7 +23,7 @@ Python允许在定义class的时候，定义一个特殊的__slots__变量，来
 Python内置的@property装饰器就是负责把一个方法变成属性调用的。
 
 
-.. literalinclude:: ../../code/09.02.property.py
+.. literalinclude:: ../../code/python教程/09.02.property.py
    :encoding: utf-8
    :language: python
 
@@ -31,7 +31,7 @@ Python内置的@property装饰器就是负责把一个方法变成属性调用�
 ----------------------------------------------
 由于Python允许使用多重继承，因此，MixIn就是一种常见的设计.
 
-.. literalinclude:: ../../code/09.03.mixin.py
+.. literalinclude:: ../../code/python教程/09.03.mixin.py
    :encoding: utf-8
    :language: python
 
@@ -51,7 +51,7 @@ __str__()返回用户看到的字符串，而__repr__()返回程序开发者看�
 
 __iter__，该方法返回一个迭代对象，然后，Python的for循环就会不断调用该迭代对象的__next__()方法拿到循环的下一个值，直到遇到StopIteration错误时退出循环。
 
-.. literalinclude:: ../../code/09.04.iter.py
+.. literalinclude:: ../../code/python教程/09.04.iter.py
    :encoding: utf-8
    :language: python
 
@@ -119,6 +119,6 @@ Enum可以把一组相关常量定义在一个class中，且class不可变，而
 元类
 ----------------------------------------------
 
-.. literalinclude:: ../../code/09.05.metaclass.py
+.. literalinclude:: ../../code/python教程/09.05.metaclass.py
    :encoding: utf-8
    :language: python

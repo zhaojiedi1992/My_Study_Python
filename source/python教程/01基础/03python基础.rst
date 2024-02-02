@@ -111,7 +111,7 @@ tuple
 if
 ----------------------------------------------
 
-.. literalinclude:: ../../code/02.03.if.py
+.. literalinclude:: ../../code/python教程/02.03.if.py
    :encoding: utf-8
    :language: python
 
@@ -120,14 +120,14 @@ match
 ----------------------------------------------
 这个match类似其他语言的switch
 
-.. literalinclude:: ../../code/02.03.match.py
+.. literalinclude:: ../../code/python教程/02.03.match.py
    :encoding: utf-8
    :language: python
 
 循环
 ----------------------------------------------
 
-.. literalinclude:: ../../code/02.03.for.py
+.. literalinclude:: ../../code/python教程/02.03.for.py
    :encoding: utf-8
    :language: python
 

@@ -4,14 +4,14 @@
 这里只说明mysql的。
 
 
-.. literalinclude:: ../../code/17.01.sql.py
+.. literalinclude:: ../../code/python教程/17.01.sql.py
    :encoding: utf-8
    :language: python
 
 
 ORM框架的作用就是把数据库表的一行记录与一个对象互相做自动转换。
 
-.. literalinclude:: ../../code/17.01.sql_orm.py
+.. literalinclude:: ../../code/python教程/17.01.sql_orm.py
    :encoding: utf-8
    :language: python
 

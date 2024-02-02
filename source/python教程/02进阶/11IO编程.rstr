@@ -1,0 +1,47 @@
+IO编程
+====================================================================
+
+文件读写
+----------------------------------------------
+.. literalinclude:: ../../code/python教程11.01.readwrite.py
+   :encoding: utf-8
+   :language: python
+
+StringIO和BytesIO
+----------------------------------------------
+内存中读取str或者byte
+
+.. code-block:: python 
+
+   from io import StringIO
+   f = StringIO()
+   f.write('hello')
+   f.write(" ")
+   f.write("world!")
+   print(f.getvalue())
+
+   from io import BytesIO
+   f = BytesIO(b'\xe4\xb8\xad\xe6\x96\x87')
+   f.read()
+
+操作文件和目录
+----------------------------------------------
+核心是2个模块， 一个是os模块，一个是os.path模块
+
+.. code-block:: python 
+
+   import os 
+   # 绝对路径
+   os.path.abspath(".")
+   # 目录拼接
+   os.path.join("/","etc")
+   os.mkdir("/tmp/a.txt")
+   os.rmdir("/tmp/a.txt")
+   # 拆分路径
+   os.path.split
+   # 拆分扩展
+   os.path.splitext
+
+序列化
+----------------------------------------------
+

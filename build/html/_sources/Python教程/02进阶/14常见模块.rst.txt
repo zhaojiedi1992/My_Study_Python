@@ -10,7 +10,7 @@ datetime表示的时间需要时区信息才能确定一个特定的时间，否
 
 如果要存储datetime，最佳方法是将其转换为timestamp再存储，因为timestamp的值与时区完全无关。
 
-.. literalinclude:: ../../code/14.01.datetime.py
+.. literalinclude:: ../../code/python教程/14.01.datetime.py
    :encoding: utf-8
    :language: python
 
@@ -22,7 +22,7 @@ collection是python内建的一个集合模块，提供了许多有用的集合�
 
 namedtuple是一个函数，它用来创建一个自定义的tuple对象。
 
-.. literalinclude:: ../../code/14.02.collections.py
+.. literalinclude:: ../../code/python教程/14.02.collections.py
    :encoding: utf-8
    :language: python
    :start-after: [namedtuple_start]
@@ -33,7 +33,7 @@ namedtuple是一个函数，它用来创建一个自定义的tuple对象。
 
 deque是为了高效实现插入和删除操作的双向列表，适合用于队列和栈。 list不适合频繁插入删除。
 
-.. literalinclude:: ../../code/14.02.collections.py
+.. literalinclude:: ../../code/python教程/14.02.collections.py
    :encoding: utf-8
    :language: python
    :start-after: [deque_start]
@@ -43,7 +43,7 @@ deque是为了高效实现插入和删除操作的双向列表，适合用于队
 
 如果希望key不存在时，返回一个默认值，就可以用defaultdict。
 
-.. literalinclude:: ../../code/14.02.collections.py
+.. literalinclude:: ../../code/python教程/14.02.collections.py
    :encoding: utf-8
    :language: python
    :start-after: [defaultdict_start]
@@ -54,7 +54,7 @@ deque是为了高效实现插入和删除操作的双向列表，适合用于队
 
 如果要保持Key的顺序，可以用OrderedDict。
 
-.. literalinclude:: ../../code/14.02.collections.py
+.. literalinclude:: ../../code/python教程/14.02.collections.py
    :encoding: utf-8
    :language: python
    :start-after: [OrderedDict_start]
@@ -65,7 +65,7 @@ deque是为了高效实现插入和删除操作的双向列表，适合用于队
 
 ChainMap是可以把一组dict串起来组成的逻辑dict,会优先查找内部的dict,依次查找外部。
 
-.. literalinclude:: ../../code/14.02.collections.py
+.. literalinclude:: ../../code/python教程/14.02.collections.py
    :encoding: utf-8
    :language: python
    :start-after: [ChainMap_start]
@@ -75,7 +75,7 @@ ChainMap是可以把一组dict串起来组成的逻辑dict,会优先查找内部
 
 counter是一个简单的计数器。
 
-.. literalinclude:: ../../code/14.02.collections.py
+.. literalinclude:: ../../code/python教程/14.02.collections.py
    :encoding: utf-8
    :language: python
    :start-after: [Counter_start]
@@ -85,7 +85,7 @@ argparser
 ----------------------------------------------
 argparse是用于解析命令行参数的。
 
-.. literalinclude:: ../../code/14.03.argparse.py
+.. literalinclude:: ../../code/python教程/14.03.argparse.py
    :encoding: utf-8
    :language: python
 
@@ -172,13 +172,13 @@ contextlib
 如果一个对象没有实现上下文，我们就不能把它用于with语句。这个时候，可以用closing()来把该对象变为上下文对象
 
 
-.. literalinclude:: ../../code/14.04.with.py
+.. literalinclude:: ../../code/python教程/14.04.with.py
    :encoding: utf-8
    :language: python
 
 request
 ----------------------------------------------
 
-.. literalinclude:: ../../code/14.05.request.py
+.. literalinclude:: ../../code/python教程/14.05.request.py
    :encoding: utf-8
    :language: python

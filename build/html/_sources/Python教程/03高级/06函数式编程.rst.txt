@@ -10,14 +10,14 @@ abs(-10) 表示函数调用， 但是abs是函数本身， 函数本身可以赋
 传入函数
 ----------------------------------------------
 
-.. literalinclude:: ../../code/06.01.input.func.py
+.. literalinclude:: ../../code/python教程/06.01.input.func.py
    :encoding: utf-8
    :language: python
 
 mapreduce
 ----------------------------------------------
 
-.. literalinclude:: ../../code/06.02.mapreduce.py
+.. literalinclude:: ../../code/python教程/06.02.mapreduce.py
    :encoding: utf-8
    :language: python
 
@@ -25,14 +25,14 @@ mapreduce
 filter
 ----------------------------------------------
 
-.. literalinclude:: ../../code/06.03.filter.py
+.. literalinclude:: ../../code/python教程/06.03.filter.py
    :encoding: utf-8
    :language: python
 
 sorted
 ----------------------------------------------
 
-.. literalinclude:: ../../code/06.04.sorted.py
+.. literalinclude:: ../../code/python教程/06.04.sorted.py
    :encoding: utf-8
    :language: python
 
@@ -40,7 +40,7 @@ sorted
 函数作为返回值
 ----------------------------------------------
 
-.. literalinclude:: ../../code/06.05.output.func.py
+.. literalinclude:: ../../code/python教程/06.05.output.func.py
    :encoding: utf-8
    :language: python
 
@@ -80,7 +80,7 @@ sorted
 ----------------------------------------------
 增强函数功能，但是不修改原有函数代码。 
 
-.. literalinclude:: ../../code/06.06.decorator.py
+.. literalinclude:: ../../code/python教程/06.06.decorator.py
    :encoding: utf-8
    :language: python
 
@@ -89,6 +89,6 @@ sorted
 ----------------------------------------------
 固定一些参数，方便函数调用。
 
-.. literalinclude:: ../../code/06.07.partial.py
+.. literalinclude:: ../../code/python教程/06.07.partial.py
    :encoding: utf-8
    :language: python

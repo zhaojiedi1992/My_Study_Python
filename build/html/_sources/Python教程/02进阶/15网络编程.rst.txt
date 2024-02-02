@@ -5,14 +5,14 @@
 tcp client 
 ----------------------------------------------
 
-.. literalinclude:: ../../code/15.01.tcp_client.py
+.. literalinclude:: ../../code/python教程/15.01.tcp_client.py
    :encoding: utf-8
    :language: python
 
 tcp server
 ----------------------------------------------
 
-.. literalinclude:: ../../code/15.02.tcp_server.py
+.. literalinclude:: ../../code/python教程/15.02.tcp_server.py
    :encoding: utf-8
    :language: python
 
@@ -20,7 +20,7 @@ tcp server
 wsgi
 ----------------------------------------------
 
-.. literalinclude:: ../../code/15.03.wsgi.py
+.. literalinclude:: ../../code/python教程/15.03.wsgi.py
    :encoding: utf-8
    :language: python
 
@@ -28,7 +28,7 @@ wsgi
 flask
 ----------------------------------------------
 
-.. literalinclude:: ../../code/15.04.flask.py
+.. literalinclude:: ../../code/python教程/15.04.flask.py
    :encoding: utf-8
    :language: python
 

@@ -30,7 +30,7 @@ Student是类， 通过Student()创建的是一个实例。 各个实例是互�
 动态语言的鸭子类型特点决定了继承不像静态语言那样是必须的。
 
 
-.. literalinclude:: ../../code/08.01.class.py
+.. literalinclude:: ../../code/python教程/08.01.class.py
    :encoding: utf-8
    :language: python
 

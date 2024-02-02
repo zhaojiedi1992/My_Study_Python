@@ -3,7 +3,7 @@ IO编程
 
 文件读写
 ----------------------------------------------
-.. literalinclude:: ../../code/11.01.readwrite.py
+.. literalinclude:: ../../code/python教程/11.01.readwrite.py
    :encoding: utf-8
    :language: python
 

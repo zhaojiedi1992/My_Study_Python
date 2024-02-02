@@ -1,0 +1,131 @@
+函数
+====================================================================
+
+调用函数
+----------------------------------------------
+
+.. code-block:: python
+
+   abs(-10)
+
+定义函数
+----------------------------------------------
+
+.. code-block:: python
+
+   def my_abs(n):
+      if n< 0: 
+         reutrn -n 
+      else:    
+         return n  
+
+空函数
+----------------------------------------------
+
+.. code-block:: python
+
+   def f():
+      pass
+
+参数校验
+----------------------------------------------
+
+.. code-block:: python
+
+   def my_abs(n):
+      if not isinstance(x, (int, float)):
+         raise TypeError('bad operand type')
+      if n< 0: 
+         reutrn -n 
+      else:    
+         return n  
+
+多返回值
+----------------------------------------------
+返回值是一个元组默认， 当然可以自己封装为一个class或者字典等。
+
+.. code-block:: python
+
+   def move(x,y,x_offset,y_offset):
+      return x + x_offset , y+y_offset
+
+
+函数默认值
+----------------------------------------------
+
+.. code-block:: python
+
+   def pow(x,n=2):
+      return x ** n 
+
+可变参数
+----------------------------------------------
+
+.. code-block:: python 
+
+   def calc(numbers):
+    sum = 0
+    for n in numbers:
+        sum = sum + n * n
+    return sum
+
+   calc(1,2,3)
+   calc([1,2])
+
+关键字参数
+----------------------------------------------
+
+.. code-block:: python 
+
+   def person(name, age, **kw):
+      print('name:', name, 'age:', age, 'other:', kw)
+
+参数组合
+----------------------------------------------
+\*args是可变参数，args接收的是一个tuple；
+
+
+\**kw是关键字参数，kw接收的是一个dict。
+
+.. code-block:: python 
+
+   def f1(a,b,c=0,*args,**kw):
+     print('a =', a, 'b =', b, 'c =', c, 'args =', args, 'kw =', kw)
+
+   In [2]:    def f1(a,b,c=0,*args,**kw):
+   ...:      print('a =', a, 'b =', b, 'c =', c, 'args =', args, 'kw =', kw)
+   ...: 
+
+   In [3]: f1(1,2)
+   a = 1 b = 2 c = 0 args = () kw = {}
+
+   In [4]: f1(1,2,3)
+   a = 1 b = 2 c = 3 args = () kw = {}
+
+   In [5]: f1(1,2,3,4)
+   a = 1 b = 2 c = 3 args = (4,) kw = {}
+
+
+   In [7]: f1(1,2,3,4,5,aaa=1,bbbb=2)
+   a = 1 b = 2 c = 3 args = (4, 5) kw = {'aaa': 1, 'bbbb': 2}
+
+   In [8]: args=(1,2,4,5)
+
+   In [9]: kw={"age":20}
+
+   In [10]: f1(args,kw)
+   a = (1, 2, 4, 5) b = {'age': 20} c = 0 args = () kw = {}
+
+   In [11]: f1(*args,**kw)
+   a = 1 b = 2 c = 4 args = (5,) kw = {'age': 20}
+
+
+递归函数
+----------------------------------------------
+
+.. code-block:: python
+
+   def fact(n):
+      if n==1: 
+         return 1
+      return fact(n-1) * n 

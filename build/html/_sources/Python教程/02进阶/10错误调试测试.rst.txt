@@ -5,7 +5,7 @@
 ----------------------------------------------
 和其他的语言类似，通过 try catch 来捕捉异常。
 
-.. literalinclude:: ../../code/10.01.try.py
+.. literalinclude:: ../../code/python教程/10.01.try.py
    :encoding: utf-8
    :language: python
 

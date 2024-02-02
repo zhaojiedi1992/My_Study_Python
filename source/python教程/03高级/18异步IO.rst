@@ -18,7 +18,7 @@ Python对协程的支持是通过generator实现的。
 async/await
 ----------------------------------------------
 
-.. literalinclude:: ../../code/18.02.asyncio.py
+.. literalinclude:: ../../code/python教程/18.02.asyncio.py
    :encoding: utf-8
    :language: python
    :start-after: [sync_start]
@@ -27,7 +27,7 @@ async/await
 同步和异步对比
 ----------------------------------------------
 
-.. literalinclude:: ../../code/18.02.asyncio.py
+.. literalinclude:: ../../code/python教程/18.02.asyncio.py
    :encoding: utf-8
    :language: python
    :start-after: [compare_start]
@@ -36,6 +36,6 @@ async/await
 aiohttp
 ----------------------------------------------
 
-.. literalinclude:: ../../code/18.03.aiohttp.py
+.. literalinclude:: ../../code/python教程/18.03.aiohttp.py
    :encoding: utf-8
    :language: python

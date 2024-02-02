@@ -1,8 +1,8 @@
-python高级
+cookbook高级
 **********************************************
 
 .. toctree::
-    :caption: python高级
+    :caption: cookbook高级
     :glob:
 
     *

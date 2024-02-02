@@ -4,7 +4,7 @@
 编写文件
 ----------------------------------------------
 
-.. literalinclude:: ../../code/02.01.hello.py
+.. literalinclude:: ../../code/python教程/02.01.hello.py
    :encoding: utf-8
    :language: python
 

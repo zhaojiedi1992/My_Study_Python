@@ -1,8 +1,8 @@
-python进阶
+cookbook进阶
 **********************************************
 
 .. toctree::
-    :caption: python进阶
+    :caption: cookbook进阶
     :glob:
 
     *

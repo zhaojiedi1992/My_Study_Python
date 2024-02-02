@@ -1,0 +1,284 @@
+数据结构和算法
+====================================================================
+
+解压序列赋值给多个变量
+----------------------------------------------
+
+.. code-block:: python
+
+    In [1]: a,b=1,2
+
+    In [2]: print(a,b)
+    1 2
+
+    In [3]: a,b=[1,2]
+
+    In [4]: print(a,b)
+    1 2
+
+    In [5]: s = 'Hello'
+
+    In [6]: a,b,c,d,_=s
+
+    In [7]: print(a)
+    H
+
+    In [8]: print(d)
+    l
+
+    In [9]: data = [ 'ACME', 50, 91.1, (2012, 12, 21) ]
+
+    In [10]: a,b,c,(d,e,f) =data
+
+    In [11]: print(a)
+    ACME
+
+    In [12]: print(d)
+    2012
+
+序列都是可以拆解的， 如果想丢弃参数，可以使用_（本质也是变量），需要保证这个变量不被其他使用或者使用这个变量覆盖其他的。
+
+解压可迭代对象赋值给多个变量
+----------------------------------------------
+
+.. code-block:: python
+
+    def drop_first_last(grades):
+        first,*middle,last = grades
+        return sum(middle)/len(middle)
+
+    In [17]: drop_first_last([1,2,5,6])
+    Out[17]: 3.5
+
+    In [18]: record = ('Dave', 'dave@example.com', '773-555-1212', '847-555-1212')
+
+    In [19]: name,email,*phone = record
+
+    In [20]: print(phone)
+    ['773-555-1212', '847-555-1212']
+
+
+\*变量名 获取的结果一定是一个list类型的。
+
+
+保留最后 N 个元素
+----------------------------------------------
+
+使用 deque(maxlen=N) 构造函数会新建一个固定大小的队列。当新的元素加入并且这个队列已满的时候， 最老的元素会自动被移除掉。
+
+.. literalinclude:: ../../code/cookbook/01.keep_n_item.py
+   :encoding: utf-8
+   :language: python
+
+
+查找最大或最小的 N 个元素
+----------------------------------------------
+heapq 模块有两个函数：nlargest() 和 nsmallest() 可以完美解决这个问题。
+
+堆数据结构最重要的特征是 heap[0] 永远是最小的元素。并且剩余的元素可以很容易的通过调用 heapq.heappop() 方法得到
+
+.. code-block:: python
+
+    In [2]: import heapq
+    ...: nums = [1, 8, 2, 23, 7, -4, 18, 23, 42, 37, 2]
+    In [4]: heapq.nlargest(3,nums)
+    Out[4]: [42, 37, 23]
+
+    In [7]:  heapq.heapify(nums)
+    In [10]: nums[0]
+    Out[10]: -4
+
+    In [11]: heapq.heappop(nums)
+    Out[11]: -4
+
+    In [12]: nums
+    Out[12]: [1, 2, 2, 23, 7, 8, 18, 23, 42, 37]
+
+.. literalinclude:: ../../code/cookbook/01.heap_sort.py
+   :encoding: utf-8
+   :language: python
+
+实现一个优先级队列
+----------------------------------------------
+index 变量组成三元组 (priority, index, item) ，就能很好的避免上面的错误， 因为不可能有两个元素有相同的 index 值。
+
+.. literalinclude:: ../../code/cookbook/01.PriorityQueue.py
+   :encoding: utf-8
+   :language: python
+
+字典中的键映射多个值
+----------------------------------------------
+
+.. literalinclude:: ../../code/cookbook/01.key_multi_value.py
+   :encoding: utf-8
+   :language: python
+
+字典排序
+----------------------------------------------
+为了能控制一个字典中元素的顺序，你可以使用 collections 模块中的 OrderedDict 类。 在迭代操作的时候它会保持元素被插入时的顺序。
+
+.. literalinclude:: ../../code/cookbook/01.dict_sort.py
+   :encoding: utf-8
+   :language: python
+
+
+查找两字典的相同点
+----------------------------------------------
+
+.. code-block:: python
+
+    In [3]: a = {
+    ...:     'x' : 1,
+    ...:     'y' : 2,
+    ...:     'z' : 3
+    ...: }
+    ...: 
+    ...: b = {
+    ...:     'w' : 10,
+    ...:     'x' : 11,
+    ...:     'y' : 2
+    ...: }
+    ...: 
+
+    In [4]: a.keys() & b.keys()
+    Out[4]: {'x', 'y'}
+
+    In [5]: a.keys() - b.keys()
+    Out[5]: {'z'}
+
+
+删除序列相同元素并保持顺序
+----------------------------------------------
+
+.. literalinclude:: ../../code/cookbook/01.remove_same.py
+   :encoding: utf-8
+   :language: python
+
+命名切片
+----------------------------------------------
+你避免了大量无法理解的硬编码下标，使得你的代码更加清晰可读了
+.. code-block:: python 
+
+    
+    record = '....................100 .......513.25 ..........'
+    cost = int(record[20:23]) * float(record[31:37])
+
+
+    SHARES = slice(20, 23)
+    PRICE = slice(31, 37)
+    cost = int(record[SHARES]) * float(record[PRICE])
+
+
+序列中出现次数最多的元素
+----------------------------------------------
+collections.Counter 类就是专门为这类问题而设计的， 它甚至有一个有用的 most_common() 方法
+
+.. literalinclude:: ../../code/cookbook/01.counter.py
+   :encoding: utf-8
+   :language: python
+
+通过某个关键字排序一个字典列表
+----------------------------------------------
+.. code-block:: python 
+
+    In [1]: rows = [
+    ...:     {'fname': 'Brian', 'lname': 'Jones', 'uid': 1003},
+    ...:     {'fname': 'David', 'lname': 'Beazley', 'uid': 1002},
+    ...:     {'fname': 'John', 'lname': 'Cleese', 'uid': 1001},
+    ...:     {'fname': 'Big', 'lname': 'Jones', 'uid': 1004}
+    ...: ]
+
+    In [2]: from operator import itemgetter
+
+    In [3]: sorted(rows,key=itemgetter('uid'))
+    Out[3]: 
+    [{'fname': 'John', 'lname': 'Cleese', 'uid': 1001},
+    {'fname': 'David', 'lname': 'Beazley', 'uid': 1002},
+    {'fname': 'Brian', 'lname': 'Jones', 'uid': 1003},
+    {'fname': 'Big', 'lname': 'Jones', 'uid': 1004}]
+
+    In [4]: sorted(rows,key=itemgetter('uid','fname'))
+    Out[4]: 
+    [{'fname': 'John', 'lname': 'Cleese', 'uid': 1001},
+    {'fname': 'David', 'lname': 'Beazley', 'uid': 1002},
+    {'fname': 'Brian', 'lname': 'Jones', 'uid': 1003},
+    {'fname': 'Big', 'lname': 'Jones', 'uid': 1004}]
+
+
+字典可以通过 ``itemgetter()`` ,而对象可以通过 ``attrgetter()`` 。
+
+通过某个字段将记录分组
+----------------------------------------------
+
+.. code-block:: python 
+
+    In [5]: rows = [
+    ...:     {'address': '5412 N CLARK', 'date': '07/01/2012'},
+    ...:     {'address': '5148 N CLARK', 'date': '07/04/2012'},
+    ...:     {'address': '5800 E 58TH', 'date': '07/02/2012'},
+    ...:     {'address': '2122 N CLARK', 'date': '07/03/2012'},
+    ...:     {'address': '5645 N RAVENSWOOD', 'date': '07/02/2012'},
+    ...:     {'address': '1060 W ADDISON', 'date': '07/02/2012'},
+    ...:     {'address': '4801 N BROADWAY', 'date': '07/01/2012'},
+    ...:     {'address': '1039 W GRANVILLE', 'date': '07/04/2012'},
+    ...: ]
+    ...: 
+
+    In [6]: from itertools import groupby
+
+    In [7]: from operator import itemgetter
+
+    In [11]: rows.sort(key=itemgetter('date'))
+    In [9]: res = groupby(rows,key=itemgetter('date'))
+
+    In [10]: list(res)
+    
+
+过滤序列元素
+----------------------------------------------
+
+.. literalinclude:: ../../code/cookbook/01.filter.py
+   :encoding: utf-8
+   :language: python
+
+从字典中提取子集
+----------------------------------------------
+
+.. literalinclude:: ../../code/cookbook/01.fetch_sub_dict.py
+   :encoding: utf-8
+   :language: python
+
+映射名称到序列元素
+----------------------------------------------
+
+.. code-block:: python 
+
+    from collections import namedtuple
+    Subscriber = namedtuple('Subscriber', ['addr', 'joined'])
+    sub = Subscriber('jonesy@example.com', '2012-10-19')
+    print(sub.addr,sub.joined)
+    sub = sub._replace(addr='hello')
+
+
+转换并同时计算数据
+----------------------------------------------
+.. code-block:: python
+
+    nums = [1, 2, 3, 4, 5]
+    s = sum(x * x for x in nums)
+    s = sum((x * x for x in nums))
+
+
+合并多个字典或映射
+----------------------------------------------
+假设你必须在两个字典中执行查找操作（比如先从 a 中找，如果找不到再在 b 中找）。 一个非常简单的解决方案就是使用 collections 模块中的 ChainMap 类
+
+.. code-block:: python 
+
+    a = {'x': 1, 'z': 3 }
+    b = {'y': 2, 'z': 4 }
+    from collections import ChainMap
+    c = ChainMap(a,b)
+    print(c['x']) # Outputs 1 (from a)
+    print(c['y']) # Outputs 2 (from b)
+    print(c['z']) # Outputs 3 (from a)

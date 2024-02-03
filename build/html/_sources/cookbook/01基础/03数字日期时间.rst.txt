@@ -1,0 +1,286 @@
+数字日期时间
+====================================================================
+
+数字的四舍五入
+----------------------------------------------
+对于简单的舍入运算，使用内置的 ``round(value, ndigits)`` 函数即可
+
+.. code-block:: python 
+
+    In [1]: round(1.5,0)
+    Out[1]: 2.0
+
+    In [2]: round(2.5,0)
+    Out[2]: 2.0
+
+    In [3]: round(2.51,0)
+    Out[3]: 3.0
+
+    In [4]: a = 1627731
+
+    In [5]: round(a,-2)
+    Out[5]: 1627700
+
+执行精确的浮点数运算
+----------------------------------------------
+你可以使用 decimal 模块。
+
+.. code-block:: python 
+
+    In [9]: a = 4.2
+
+    In [10]: b = 2.1
+
+    In [11]: a+b
+    Out[11]: 6.300000000000001
+
+    In [12]: (a + b) == 6.3
+    Out[12]: False
+
+    In [13]: from decimal import Decimal
+
+    In [14]:  a = Decimal('4.2')
+
+    In [15]: b = Decimal('2.1')
+
+    In [16]: (a + b) == Decimal('6.3')
+    Out[16]: True
+
+    In [17]: print(a+b)
+    6.3
+
+数字的格式化输出
+----------------------------------------------
+
+.. code-block:: python 
+
+    In [18]: x = 1234.56789
+
+    In [19]: "{:.2f}".format(x)
+    Out[19]: '1234.57'
+
+    In [20]: "{:,.2f}".format(x)
+    Out[20]: '1,234.57'
+
+    In [21]: "{:,<10.2f}".format(x)
+    Out[21]: '1234.57,,,'
+
+    In [22]: "{:<10,.2f}".format(x)
+    Out[22]: '1,234.57  '
+
+    In [23]: "{:#<10,.2f}".format(x)
+    Out[23]: '1,234.57##'
+
+二八十六进制整数
+----------------------------------------------
+为了将整数转换为二进制、八进制或十六进制的文本串， 可以分别使用 ``bin()`` , ``oct()`` 或 ``hex()``
+
+.. code-block:: python 
+
+    In [24]:  x = 1234
+
+    In [25]: bin(x)
+    Out[25]: '0b10011010010'
+
+    In [26]: format(x,'b')
+    Out[26]: '10011010010'
+
+字节到大整数的打包与解包
+----------------------------------------------
+将bytes解析为整数，使用 ``int.from_bytes()``
+
+
+复数的数学运算
+----------------------------------------------
+
+.. code-block:: python 
+
+    In [27]: a = complex(2, 4)
+
+    In [28]: a
+    Out[28]: (2+4j)
+
+    In [29]: a.real
+    Out[29]: 2.0
+
+    In [30]: a.imag
+    Out[30]: 4.0
+
+    In [31]: import cmath
+
+    In [33]: cmath.sqrt(-1)
+    Out[33]: 1j
+
+无穷大与NaN
+----------------------------------------------
+Python并没有特殊的语法来表示这些特殊的浮点值，但是可以使用 float() 来创建它们。
+
+为了测试这些值的存在，使用 math.isinf() 和 math.isnan() 函数。
+
+.. code-block:: python 
+
+    In [34]: b = float('-inf')
+
+    In [35]: a=float('inf')
+
+    In [36]: a+b
+    Out[36]: nan
+
+    In [37]: c=float('nan')
+
+    In [38]: c
+    Out[38]: nan
+
+    In [40]: math.isinf(a)
+    Out[40]: True
+
+
+分数运算
+----------------------------------------------
+fractions 模块可以被用来执行包含分数的数学运算。
+
+.. code-block:: python 
+
+    In [42]: from fractions import Fraction
+
+    In [43]: a= Fraction(1,2)
+
+    In [44]: b= Fraction(1,3)
+
+    In [45]: a-b
+    Out[45]: Fraction(1, 6)
+
+    In [46]: a*b
+    Out[46]: Fraction(1, 6)
+
+    In [47]: float(a-b)
+    Out[47]: 0.16666666666666666
+
+    In [48]:  x = 3.75
+
+    In [49]: y = Fraction(*x.as_integer_ratio())
+
+    In [50]: y
+    Out[50]: Fraction(15, 4)
+
+大型数组运算
+----------------------------------------------
+到数组的重量级运算操作，可以使用 NumPy 库。
+
+比如： 执行矩阵和线性代数运算，比如矩阵乘法、寻找行列式、求解线性方程组。
+
+随机选择
+----------------------------------------------
+
+.. code-block:: python 
+
+    In [51]: import random
+
+    In [52]: values = [1, 2, 3, 4, 5, 6]
+
+    In [53]: random.choice(values)
+    Out[53]: 3
+
+    In [55]: random.sample(values,3)
+    Out[55]: [1, 6, 2]
+
+    In [56]:  random.shuffle(values)
+
+    In [57]: values
+    Out[57]: [4, 3, 2, 6, 5, 1]
+
+    In [58]: random.randint(3,5)
+    Out[58]: 5
+
+    In [59]: random.randint(3,5)
+    Out[59]: 3
+
+    In [60]: random.randint(3,5)
+    Out[60]: 5
+
+    In [61]: random.random()
+    Out[61]: 0.8821204800599628
+
+    In [68]: bin(random.getrandbits(10))
+    Out[68]: '0b100111100'
+
+基本的日期与时间转换
+----------------------------------------------
+对大多数基本的日期和时间处理问题， datetime 模块已经足够了。 
+如果你需要执行更加复杂的日期操作，比如处理时区，模糊时间范围，节假日计算等等， 可以考虑使用 dateutil模块
+
+.. code-block:: python 
+
+    In [73]: a = timedelta(hours=1)
+
+    In [74]: b=timedelta(days=1,hours=25)
+
+    In [75]: a+b
+    Out[75]: datetime.timedelta(days=2, seconds=7200)
+
+
+    In [5]: a = datetime(2012, 9, 23)
+
+    In [6]: a + relativedelta(months=+1)
+    Out[6]: datetime.datetime(2012, 10, 23, 0, 0)
+
+计算最后一个周五的日期
+----------------------------------------------
+
+.. code-block:: python 
+
+    In [7]:  from datetime import datetime
+
+    In [8]: from dateutil.relativedelta import relativedelta
+
+    In [9]: from dateutil.rrule import *
+
+    In [10]: print(datetime.now())
+    2024-02-03 20:42:04.969243
+
+    In [12]:  print(datetime.now() + relativedelta(weekday=FR))
+    2024-02-09 20:42:28.756677
+
+    In [13]:  print(datetime.now() + relativedelta(weekday=FR(-1)))
+    2024-02-02 20:42:41.233142
+
+
+计算当前月份的日期范围
+----------------------------------------------
+
+.. literalinclude:: ../../code/cookbook/03.daterange.py
+   :encoding: utf-8
+   :language: python
+
+字符串转换为日期
+----------------------------------------------
+
+.. code-block:: python 
+
+    In [3]: from datetime import datetime
+
+    In [4]: text = '2012-09-20'
+
+    In [5]: y = datetime.strptime(text, '%Y-%m-%d')
+
+    Out[6]: datetime.datetime(2012, 9, 20, 0, 0)
+
+结合时区的日期操作
+----------------------------------------------
+pytz 模块一个主要用途是将 datetime 库创建的简单日期对象本地化。
+这个不推荐了， python已经内置了对zoneinfo的支持工作。
+
+
+.. code-block:: python 
+
+    In [18]: from zoneinfo import ZoneInfo
+
+    In [19]: dt = datetime(2020, 10, 31, 12, tzinfo=ZoneInfo("America/Los_Angeles"))
+
+    In [20]: dt
+    Out[20]: datetime.datetime(2020, 10, 31, 12, 0, tzinfo=zoneinfo.ZoneInfo(key='America/Los_Angeles'))
+
+    In [21]: shanghai = ZoneInfo('Asia/Shanghai')
+
+    In [22]: dt.astimezone(shanghai)
+    Out[22]: datetime.datetime(2020, 11, 1, 3, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai'))

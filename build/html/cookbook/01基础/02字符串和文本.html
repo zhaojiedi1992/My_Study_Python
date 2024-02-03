@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1.2. 字符串和文本 &mdash; My_Study_Python v0.1 文档</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=d7bb714b"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/translations.js?v=beaddf03"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="1.3. 数字日期时间" href="03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html" />
+    <link rel="prev" title="1.1. 数据结构和算法" href="01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            My_Study_Python
+          </a>
+              <div class="version">
+                v0.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">PYTHON学习笔记</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/index.html">python入门</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/index.html">1. python基础</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/01%E5%AE%89%E8%A3%85%E5%87%86%E5%A4%87python.html">1.1. 环境准备</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/01%E5%AE%89%E8%A3%85%E5%87%86%E5%A4%87python.html#macpython">1.1.1. mac安装python</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/01%E5%AE%89%E8%A3%85%E5%87%86%E5%A4%87python.html#id2">1.1.2. 环境配置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/01%E5%AE%89%E8%A3%85%E5%87%86%E5%A4%87python.html#python">1.1.3. python解释器</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/02%E8%BF%90%E8%A1%8C%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F.html">1.2. 运行第一个程序</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/02%E8%BF%90%E8%A1%8C%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F.html#id2">1.2.1. 编写文件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/02%E8%BF%90%E8%A1%8C%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F.html#hello-world">1.2.2. 运行hello world</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html">1.3. Python基础</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html#id1">1.3.1. 数据类型</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html#id2">1.3.2. 变量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html#id3">1.3.3. 字符编码</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html#id4">1.3.4. 转化</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html#len">1.3.5. len函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html#id5">1.3.6. 强制编码</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html#id6">1.3.7. 字符串格式化</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html#list">1.3.8. list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html#tuple">1.3.9. tuple</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html#if">1.3.10. if</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html#match">1.3.11. match</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html#id7">1.3.12. 循环</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html#dict">1.3.13. dict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html#set">1.3.14. set</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/04%E5%87%BD%E6%95%B0.html">1.4. 函数</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/04%E5%87%BD%E6%95%B0.html#id2">1.4.1. 调用函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/04%E5%87%BD%E6%95%B0.html#id3">1.4.2. 定义函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/04%E5%87%BD%E6%95%B0.html#id4">1.4.3. 空函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/04%E5%87%BD%E6%95%B0.html#id5">1.4.4. 参数校验</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/04%E5%87%BD%E6%95%B0.html#id6">1.4.5. 多返回值</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/04%E5%87%BD%E6%95%B0.html#id7">1.4.6. 函数默认值</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/04%E5%87%BD%E6%95%B0.html#id8">1.4.7. 可变参数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/04%E5%87%BD%E6%95%B0.html#id9">1.4.8. 关键字参数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/04%E5%87%BD%E6%95%B0.html#id10">1.4.9. 参数组合</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/04%E5%87%BD%E6%95%B0.html#id11">1.4.10. 递归函数</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/index.html">2. python进阶</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/07%E6%A8%A1%E5%9D%97.html">2.1. 模块</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/07%E6%A8%A1%E5%9D%97.html#id2">2.1.1. 编写模块</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/07%E6%A8%A1%E5%9D%97.html#id3">2.1.2. 安装第三方包</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/08%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html">2.2. 面向对象编程</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/08%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html#demo">2.2.1. 类demo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/08%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html#id2">2.2.2. 类和实例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/08%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html#id3">2.2.3. 访问限制</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/08%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html#id4">2.2.4. 继承和多态</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/08%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html#id5">2.2.5. 获取对象类型信息</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/08%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html#id6">2.2.6. 获取对象属性和方法信息</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/08%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html#id7">2.2.7. 实例属性和类属性</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/10%E9%94%99%E8%AF%AF%E8%B0%83%E8%AF%95%E6%B5%8B%E8%AF%95.html">2.3. 错误调试测试</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/10%E9%94%99%E8%AF%AF%E8%B0%83%E8%AF%95%E6%B5%8B%E8%AF%95.html#id2">2.3.1. 捕捉异常</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/10%E9%94%99%E8%AF%AF%E8%B0%83%E8%AF%95%E6%B5%8B%E8%AF%95.html#id3">2.3.2. 抛出异常</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/10%E9%94%99%E8%AF%AF%E8%B0%83%E8%AF%95%E6%B5%8B%E8%AF%95.html#id4">2.3.3. 调试方法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/10%E9%94%99%E8%AF%AF%E8%B0%83%E8%AF%95%E6%B5%8B%E8%AF%95.html#id5">2.3.4. 单元测试</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/11IO%E7%BC%96%E7%A8%8B.html">2.4. IO编程</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/11IO%E7%BC%96%E7%A8%8B.html#id1">2.4.1. 文件读写</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/11IO%E7%BC%96%E7%A8%8B.html#stringiobytesio">2.4.2. StringIO和BytesIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/11IO%E7%BC%96%E7%A8%8B.html#id2">2.4.3. 操作文件和目录</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/11IO%E7%BC%96%E7%A8%8B.html#id3">2.4.4. 序列化</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/12%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B.html">2.5. 进程线程</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/12%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B.html#fork">2.5.1. fork</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/12%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B.html#multiprocess">2.5.2. multiprocess</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/12%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B.html#pool">2.5.3. pool</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/12%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B.html#subprocess">2.5.4. subprocess</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/12%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B.html#ipc">2.5.5. ipc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/12%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B.html#id2">2.5.6. 多线程</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/12%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B.html#id3">2.5.7. 分布式进程</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/13%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.html">2.6. 正则表达式</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/13%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.html#id3">2.6.1. 是否匹配</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/13%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.html#id4">2.6.2. 切分字符串</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/13%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.html#id5">2.6.3. 分组</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/13%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.html#id6">2.6.4. 编译正则</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/14%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97.html">2.7. 常见模块</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/14%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97.html#datetime">2.7.1. datetime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/14%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97.html#collections">2.7.2. collections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/14%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97.html#argparser">2.7.3. argparser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/14%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97.html#base64">2.7.4. base64</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/14%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97.html#struct">2.7.5. struct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/14%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97.html#hashlib">2.7.6. hashlib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/14%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97.html#hmac">2.7.7. hmac</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/14%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97.html#itertools">2.7.8. itertools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/14%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97.html#contextlib">2.7.9. contextlib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/14%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97.html#request">2.7.10. request</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/15%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B.html">2.8. 网络编程</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/15%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B.html#tcp-client">2.8.1. tcp client</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/15%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B.html#tcp-server">2.8.2. tcp server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/15%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B.html#wsgi">2.8.3. wsgi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/15%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B.html#flask">2.8.4. flask</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/16%E9%82%AE%E4%BB%B6%E6%94%B6%E5%8F%91.html">2.9. 邮件收发</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/17%E6%95%B0%E6%8D%AE%E5%BA%93.html">2.10. 数据库</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/index.html">3. python高级</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/05%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7.html">3.1. 高级特性</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/05%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7.html#id2">3.1.1. 切片</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/05%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7.html#id3">3.1.2. 是否可以迭代判定</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/05%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7.html#id4">3.1.3. 常见类型的遍历方法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/05%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7.html#id5">3.1.4. 列表生成式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/05%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7.html#id6">3.1.5. 生成器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/05%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7.html#id7">3.1.6. 自己定义一个生成器函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/05%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7.html#id8">3.1.7. 迭代器</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/06%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B.html">3.2. 函数式编程</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/06%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B.html#id2">3.2.1. 函数调用和函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/06%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B.html#id3">3.2.2. 传入函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/06%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B.html#mapreduce">3.2.3. mapreduce</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/06%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B.html#filter">3.2.4. filter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/06%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B.html#sorted">3.2.5. sorted</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/06%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B.html#id4">3.2.6. 函数作为返回值</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/06%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B.html#id5">3.2.7. 闭包</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/06%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B.html#id6">3.2.8. 匿名函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/06%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B.html#id7">3.2.9. 装饰器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/06%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B.html#id8">3.2.10. 偏函数</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/09%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html">3.3. 面向对象高级编程</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/09%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html#id2">3.3.1. 给类绑定一个方法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/09%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html#slot">3.3.2. slot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/09%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html#property">3.3.3. &#64;property</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/09%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html#id3">3.3.4. 多重继承</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/09%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html#id4">3.3.5. 定制类</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/09%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html#id5">3.3.6. 枚举</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/09%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html#id6">3.3.7. 元类</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/18%E5%BC%82%E6%AD%A5IO.html">3.4. 异步IO</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/18%E5%BC%82%E6%AD%A5IO.html#id1">3.4.1. 协程</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/18%E5%BC%82%E6%AD%A5IO.html#async-await">3.4.2. async/await</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/18%E5%BC%82%E6%AD%A5IO.html#id2">3.4.3. 同步和异步对比</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/18%E5%BC%82%E6%AD%A5IO.html#aiohttp">3.4.4. aiohttp</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cookbook学习记录</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">1. cookbook基础</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html">1.1. 数据结构和算法</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id2">1.1.1. 解压序列赋值给多个变量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id3">1.1.2. 解压可迭代对象赋值给多个变量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#n">1.1.3. 保留最后 N 个元素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id4">1.1.4. 查找最大或最小的 N 个元素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id5">1.1.5. 实现一个优先级队列</a></li>
+<li class="toctree-l4"><a class="reference internal" href="01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id6">1.1.6. 字典中的键映射多个值</a></li>
+<li class="toctree-l4"><a class="reference internal" href="01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id7">1.1.7. 字典排序</a></li>
+<li class="toctree-l4"><a class="reference internal" href="01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id8">1.1.8. 查找两字典的相同点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id9">1.1.9. 删除序列相同元素并保持顺序</a></li>
+<li class="toctree-l4"><a class="reference internal" href="01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id10">1.1.10. 命名切片</a></li>
+<li class="toctree-l4"><a class="reference internal" href="01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id11">1.1.11. 序列中出现次数最多的元素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id12">1.1.12. 通过某个关键字排序一个字典列表</a></li>
+<li class="toctree-l4"><a class="reference internal" href="01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id13">1.1.13. 通过某个字段将记录分组</a></li>
+<li class="toctree-l4"><a class="reference internal" href="01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id14">1.1.14. 过滤序列元素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id15">1.1.15. 从字典中提取子集</a></li>
+<li class="toctree-l4"><a class="reference internal" href="01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id16">1.1.16. 映射名称到序列元素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id17">1.1.17. 转换并同时计算数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id18">1.1.18. 合并多个字典或映射</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1.2. 字符串和文本</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">1.2.1. 使用多个界定符分割字符串</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">1.2.2. 字符串开头或结尾匹配</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">1.2.3. 字符串匹配和搜索</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">1.2.4. 字符串搜索和替换</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">1.2.5. 字符串忽略大小写的搜索替换</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unicode">1.2.6. 将Unicode文本标准化</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">1.2.7. 删除字符串中不需要的字符</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">1.2.8. 审查清理文本字符串</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">1.2.9. 字符串对齐</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">1.2.10. 合并字符串</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">1.2.11. 字符串中插入变量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">1.2.12. 以指定列宽格式化字符串</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlxml">1.2.13. 在字符串中处理html和xml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13">1.2.14. 字符串令牌解析</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html">1.3. 数字日期时间</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#id2">1.3.1. 数字的四舍五入</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#id3">1.3.2. 执行精确的浮点数运算</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#id4">1.3.3. 数字的格式化输出</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#id5">1.3.4. 二八十六进制整数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#id6">1.3.5. 字节到大整数的打包与解包</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#id7">1.3.6. 复数的数学运算</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#nan">1.3.7. 无穷大与NaN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#id8">1.3.8. 分数运算</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#id9">1.3.9. 大型数组运算</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#id10">1.3.10. 随机选择</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#id11">1.3.11. 基本的日期与时间转换</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#id12">1.3.12. 计算最后一个周五的日期</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#id13">1.3.13. 计算当前月份的日期范围</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#id14">1.3.14. 字符串转换为日期</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#id15">1.3.15. 结合时区的日期操作</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../02%E8%BF%9B%E9%98%B6/index.html">2. cookbook进阶</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../03%E9%AB%98%E7%BA%A7/index.html">3. cookbook高级</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">My_Study_Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Cookbook学习记录</a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">1. </span>cookbook基础</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">1.2. </span>字符串和文本</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/zhaojiedi1992/My_Study_Python/blob/../edit/master/source/cookbook/01基础/02字符串和文本.rst" class="fa fa-github"> 在 GitHub 上编辑</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="顺序式页面导航">
+        <a href="01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html" class="btn btn-neutral float-left" title="1.1. 数据结构和算法" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html" class="btn btn-neutral float-right" title="1.3. 数字日期时间" accesskey="n">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1><span class="section-number">1.2. </span>字符串和文本<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<section id="id2">
+<h2><span class="section-number">1.2.1. </span>使用多个界定符分割字符串<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">line</span> <span class="o">=</span> <span class="s1">&#39;asdf fjdk; afed, fjek,asdf, foo&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">re</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[\s;,]&#39;</span><span class="p">,</span><span class="n">line</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;asdf&#39;</span><span class="p">,</span> <span class="s1">&#39;fjdk&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;afed&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;fjek&#39;</span><span class="p">,</span> <span class="s1">&#39;asdf&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">]</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[\s;,]\s+&#39;</span><span class="p">,</span><span class="n">line</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;asdf fjdk&#39;</span><span class="p">,</span> <span class="s1">&#39;afed&#39;</span><span class="p">,</span> <span class="s1">&#39;fjek,asdf&#39;</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2><span class="section-number">1.2.2. </span>字符串开头或结尾匹配<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p>检查字符串开头或结尾的一个简单方法是使用 <code class="docutils literal notranslate"><span class="pre">str.startswith()</span></code> 或者是 <code class="docutils literal notranslate"><span class="pre">str.endswith()</span></code> 方法</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://www.python.org&#39;</span>
+<span class="n">choices</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;http:&#39;</span><span class="p">,</span> <span class="s1">&#39;ftp:&#39;</span><span class="p">]</span>
+<span class="n">url</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">choices</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h2><span class="section-number">1.2.3. </span>字符串匹配和搜索<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p>字面匹配可以采用 <code class="docutils literal notranslate"><span class="pre">str.find()</span></code>  , <code class="docutils literal notranslate"><span class="pre">str.endswith()</span></code> , <code class="docutils literal notranslate"><span class="pre">str.startswith()</span></code> 或者类似的方法。</p>
+<p>对于复杂的匹配需要使用正则表达式和 re 模块，如果多次匹配，可以先编译正则，再去匹配。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">14</span><span class="p">]:</span> <span class="n">datepat</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(\d+)/(\d+)/(\d+)&#39;</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">]:</span>  <span class="n">m</span> <span class="o">=</span> <span class="n">datepat</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;11/27/2012&#39;</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="n">m</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="p">(</span><span class="s1">&#39;11&#39;</span><span class="p">,</span> <span class="s1">&#39;27&#39;</span><span class="p">,</span> <span class="s1">&#39;2012&#39;</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="n">month</span><span class="p">,</span><span class="n">day</span><span class="p">,</span><span class="n">year</span><span class="o">=</span><span class="n">m</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">18</span><span class="p">]:</span> <span class="nb">print</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+<span class="mi">2012</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">19</span><span class="p">]:</span> <span class="n">datepat2</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(\d+)/(\d+)/(?P&lt;year&gt;\d+)&#39;</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="n">m2</span><span class="o">=</span><span class="n">datepat2</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;11/27/2012    12/30/2014&#39;</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="n">m2</span><span class="o">.</span><span class="n">groupdict</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="p">{</span><span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="s1">&#39;2012&#39;</span><span class="p">}</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">22</span><span class="p">]:</span> <span class="n">m3</span><span class="o">=</span><span class="n">datepat2</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;11/27/2012    12/30/2014&#39;</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">23</span><span class="p">]:</span> <span class="n">m3</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">23</span><span class="p">]:</span> <span class="p">[(</span><span class="s1">&#39;11&#39;</span><span class="p">,</span> <span class="s1">&#39;27&#39;</span><span class="p">,</span> <span class="s1">&#39;2012&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;12&#39;</span><span class="p">,</span> <span class="s1">&#39;30&#39;</span><span class="p">,</span> <span class="s1">&#39;2014&#39;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h2><span class="section-number">1.2.4. </span>字符串搜索和替换<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<p>普通替换可以使用 `` str.replace()`` 替换即可，对于复杂的模式，请使用 re 模块中的 sub() 函数。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">36</span><span class="p">]:</span> <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Today is 11/27/2012. PyCon starts 3/13/2013.&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">37</span><span class="p">]:</span> <span class="n">t2</span><span class="p">,</span><span class="n">cnt</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">subn</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(?P&lt;month&gt;\d</span><span class="si">{2}</span><span class="s1">)/(?P&lt;day&gt;\d</span><span class="si">{2}</span><span class="s1">)/(?P&lt;year&gt;\d</span><span class="si">{4}</span><span class="s1">)&#39;</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;\g&lt;year&gt;/\g&lt;month&gt;/\g&lt;day&gt;&#39;</span><span class="p">,</span><span class="n">text</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">38</span><span class="p">]:</span> <span class="n">t2</span><span class="p">,</span><span class="n">cnt</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">38</span><span class="p">]:</span> <span class="p">(</span><span class="s1">&#39;Today is 2012/11/27. PyCon starts 3/13/2013.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">41</span><span class="p">]:</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(\d{1,2})/(\d{1,2})/(\d</span><span class="si">{4}</span><span class="s1">)&#39;</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;\3/\2/\1&#39;</span><span class="p">,</span><span class="n">text</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">41</span><span class="p">]:</span> <span class="s1">&#39;Today is 2012/27/11. PyCon starts 2013/13/3.&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="id6">
+<h2><span class="section-number">1.2.5. </span>字符串忽略大小写的搜索替换<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<p>你需要在使用 re 模块的时候给这些操作提供 re.IGNORECASE 标志参数。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">41</span><span class="p">]:</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(\d{1,2})/(\d{1,2})/(\d</span><span class="si">{4}</span><span class="s1">)&#39;</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;\3/\2/\1&#39;</span><span class="p">,</span><span class="n">text</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">41</span><span class="p">]:</span> <span class="s1">&#39;Today is 2012/27/11. PyCon starts 2013/13/3.&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">42</span><span class="p">]:</span> <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;UPPER PYTHON, lower python, Mixed Python&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">43</span><span class="p">]:</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">43</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;PYTHON&#39;</span><span class="p">,</span> <span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="s1">&#39;Python&#39;</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">44</span><span class="p">]:</span>  <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="s1">&#39;snake&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">44</span><span class="p">]:</span> <span class="s1">&#39;UPPER snake, lower snake, Mixed snake&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">matchcase</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">replace</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">text</span><span class="o">.</span><span class="n">isupper</span><span class="p">():</span>
+            <span class="k">return</span> <span class="n">word</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">text</span><span class="o">.</span><span class="n">islower</span><span class="p">():</span>
+            <span class="k">return</span> <span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">isupper</span><span class="p">():</span>
+            <span class="k">return</span> <span class="n">word</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">word</span>
+    <span class="k">return</span> <span class="n">replace</span>
+
+
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;UPPER PYTHON, lower python, Mixed Python&#39;</span>
+<span class="n">t2</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;python&#39;</span><span class="p">,</span><span class="n">matchcase</span><span class="p">(</span><span class="s1">&#39;snake&#39;</span><span class="p">),</span><span class="n">text</span><span class="p">,</span><span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="unicode">
+<h2><span class="section-number">1.2.6. </span>将Unicode文本标准化<a class="headerlink" href="#unicode" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">s1</span> <span class="o">=</span> <span class="s1">&#39;Spicy Jalape</span><span class="se">\u00f1</span><span class="s1">o&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">s2</span> <span class="o">=</span> <span class="s1">&#39;Spicy Jalapen</span><span class="se">\u0303</span><span class="s1">o&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">s1</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="s1">&#39;Spicy Jalapeño&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">s2</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="s1">&#39;Spicy Jalapeño&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">s1</span> <span class="o">==</span> <span class="n">s2</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="kc">False</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="nb">len</span><span class="p">(</span><span class="n">s1</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span>  <span class="kn">import</span> <span class="nn">unicodedata</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">t1</span><span class="o">=</span><span class="n">unicodedata</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="s1">&#39;NFC&#39;</span><span class="p">,</span><span class="n">s1</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="n">t2</span><span class="o">=</span><span class="n">unicodedata</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="s1">&#39;NFC&#39;</span><span class="p">,</span><span class="n">s2</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="n">t1</span><span class="o">==</span><span class="n">t2</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</section>
+<section id="id7">
+<h2><span class="section-number">1.2.7. </span>删除字符串中不需要的字符<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<p>strip() 方法能用于删除开始或结尾的字符。 lstrip() 和 rstrip() 分别从左和从右执行删除操作。
+默认情况下，这些方法会去除空白字符，但是你也可以指定其他字符。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]:</span>  <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39; hello world </span><span class="se">\n</span><span class="s1">&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="s1">&#39;hello world&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="n">t</span> <span class="o">=</span> <span class="s1">&#39;-----hello=====&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="n">t</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="s1">&#39;hello=====&#39;</span>
+</pre></div>
+</div>
+<p>如果你想处理中间的空格，那么你需要求助其他技术。比如使用 replace() 方法或者是用正则表达式替换。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="s1">&#39;helloworld,verygood&#39;</span>
+
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\s+&#39;</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="s1">&#39;helloworld,verygood&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="id8">
+<h2><span class="section-number">1.2.8. </span>审查清理文本字符串<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<blockquote>
+<div><p>对于简单的替换操作， <code class="docutils literal notranslate"><span class="pre">str.translate()</span></code> 方法通常是最快的，甚至在你需要多次调用的时候。</p>
+<p>如果你需要执行任何复杂字符对字符的重新映射或者删除操作的话， tanslate() 方法会非常的快。</p>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">22</span><span class="p">]:</span> <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;pýtĥöñ</span><span class="se">\f</span><span class="s1">is</span><span class="se">\t</span><span class="s1">awesome</span><span class="se">\r\n</span><span class="s1">&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">23</span><span class="p">]:</span> <span class="n">remap</span> <span class="o">=</span> <span class="p">{</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">):</span> <span class="s1">&#39;&#39;</span><span class="p">,</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">):</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">):</span> <span class="s1">&#39;b&#39;</span><span class="p">}</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="n">s</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">remap</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="s1">&#39;pýtĥöñ</span><span class="se">\x0c</span><span class="s1">isbwesome</span><span class="se">\r</span><span class="s1">x&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="id9">
+<h2><span class="section-number">1.2.9. </span>字符串对齐<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
+<p>字符串对齐，可以使用 <code class="docutils literal notranslate"><span class="pre">ljust()</span></code> , <code class="docutils literal notranslate"><span class="pre">rjust()</span></code> 和 <code class="docutils literal notranslate"><span class="pre">center()</span></code> 方法,不过还是format更通用一些。</p>
+<p>可以通过 <code class="docutils literal notranslate"><span class="pre">&lt;&gt;^</span></code>,来分别左对齐，右对齐和居中对齐。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">25</span><span class="p">]:</span>  <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Hello World&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">26</span><span class="p">]:</span> <span class="n">text</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="s1">&#39;#&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">26</span><span class="p">]:</span> <span class="s1">&#39;Hello World#########&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">27</span><span class="p">]:</span>  <span class="nb">format</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;=&gt;20s&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">27</span><span class="p">]:</span> <span class="s1">&#39;=========Hello World&#39;</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">28</span><span class="p">]:</span> <span class="n">text</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;^20s&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">28</span><span class="p">]:</span> <span class="s1">&#39;Hello World&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">34</span><span class="p">]:</span>  <span class="s1">&#39;</span><span class="si">{:&gt;10s}</span><span class="s1"> </span><span class="si">{:&gt;10s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;World&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">34</span><span class="p">]:</span> <span class="s1">&#39;     Hello      World&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="id10">
+<h2><span class="section-number">1.2.10. </span>合并字符串<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
+<p>合并字符串可以通过 <code class="docutils literal notranslate"><span class="pre">join</span></code> 函数完成.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">],</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id11">
+<h2><span class="section-number">1.2.11. </span>字符串中插入变量<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
+<p>没有直接支持的， 可以通过format配合占位来完成，</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">37</span><span class="p">]:</span> <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{name}</span><span class="s1"> has </span><span class="si">{n}</span><span class="s1"> messages.&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">38</span><span class="p">]:</span> <span class="n">s</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;zhaojiedi&quot;</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">38</span><span class="p">]:</span> <span class="s1">&#39;zhaojiedi has 20 messages.&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">40</span><span class="p">]:</span> <span class="n">s</span><span class="o">.</span><span class="n">format_map</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;zhaojiedi&#39;</span><span class="p">,</span><span class="s1">&#39;n&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">})</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">40</span><span class="p">]:</span> <span class="s1">&#39;zhaojiedi has 20 messages.&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">41</span><span class="p">]:</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;panda&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">42</span><span class="p">]:</span> <span class="n">n</span><span class="o">=</span><span class="mi">100</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">43</span><span class="p">]:</span> <span class="n">s</span><span class="o">.</span><span class="n">format_map</span><span class="p">(</span><span class="nb">vars</span><span class="p">())</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">43</span><span class="p">]:</span> <span class="s1">&#39;panda has 100 messages.&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">44</span><span class="p">]:</span> <span class="k">class</span> <span class="nc">Info</span><span class="p">:</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+    <span class="o">...</span><span class="p">:</span>         <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="o">=</span><span class="n">name</span>
+    <span class="o">...</span><span class="p">:</span>         <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span><span class="n">n</span>
+    <span class="o">...</span><span class="p">:</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">45</span><span class="p">]:</span> <span class="n">a</span><span class="o">=</span><span class="n">Info</span><span class="p">(</span><span class="s1">&#39;pandav2&#39;</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">46</span><span class="p">]:</span> <span class="n">s</span><span class="o">.</span><span class="n">format_map</span><span class="p">(</span><span class="nb">vars</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">46</span><span class="p">]:</span> <span class="s1">&#39;pandav2 has 100 messages.&#39;</span>
+
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">52</span><span class="p">]:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">52</span><span class="p">]:</span> <span class="s1">&#39;panda,100&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="id12">
+<h2><span class="section-number">1.2.12. </span>以指定列宽格式化字符串<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Look into my eyes, look into my eyes, the eyes, the eyes, </span><span class="se">\</span>
+<span class="s2">...: the eyes, not around the eyes, don&#39;t look around the eyes, </span><span class="se">\</span>
+<span class="s2">...: look into my eyes, you&#39;re under.&quot;</span>
+<span class="o">...</span><span class="p">:</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">os</span><span class="o">.</span><span class="n">get_terminal_size</span><span class="p">()</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="mi">134</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">textwrap</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span>  <span class="nb">print</span><span class="p">(</span><span class="n">textwrap</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">134</span><span class="p">))</span>
+<span class="n">Look</span> <span class="n">into</span> <span class="n">my</span> <span class="n">eyes</span><span class="p">,</span> <span class="n">look</span> <span class="n">into</span> <span class="n">my</span> <span class="n">eyes</span><span class="p">,</span> <span class="n">the</span> <span class="n">eyes</span><span class="p">,</span> <span class="n">the</span> <span class="n">eyes</span><span class="p">,</span> <span class="n">the</span> <span class="n">eyes</span><span class="p">,</span> <span class="ow">not</span> <span class="n">around</span> <span class="n">the</span> <span class="n">eyes</span><span class="p">,</span> <span class="n">don</span><span class="s1">&#39;t look around the eyes, look into my</span>
+<span class="n">eyes</span><span class="p">,</span> <span class="n">you</span><span class="s1">&#39;re under.</span>
+</pre></div>
+</div>
+</section>
+<section id="htmlxml">
+<h2><span class="section-number">1.2.13. </span>在字符串中处理html和xml<a class="headerlink" href="#htmlxml" title="Link to this heading"></a></h2>
+<p>如果要替换字符串的&lt;&gt;，你需要使用 <code class="docutils literal notranslate"><span class="pre">html.escape</span></code> 函数完成。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span>  <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;Elements are written as &quot;&lt;tag&gt;text&lt;/tag&gt;&quot;.&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span>  <span class="kn">import</span> <span class="nn">html</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">html</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="s1">&#39;Elements are written as &amp;quot;&amp;lt;tag&amp;gt;text&amp;lt;/tag&amp;gt;&amp;quot;.&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="id13">
+<h2><span class="section-number">1.2.14. </span>字符串令牌解析<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<span class="n">NAME</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(?P&lt;NAME&gt;[a-zA-Z_][a-zA-Z_0-9]*)&#39;</span>
+<span class="n">NUM</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(?P&lt;NUM&gt;\d+)&#39;</span>
+<span class="n">PLUS</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(?P&lt;PLUS&gt;\+)&#39;</span>
+<span class="n">TIMES</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(?P&lt;TIMES&gt;\*)&#39;</span>
+<span class="n">EQ</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(?P&lt;EQ&gt;=)&#39;</span>
+<span class="n">WS</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(?P&lt;WS&gt;\s+)&#39;</span>
+
+<span class="n">master_pat</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">NAME</span><span class="p">,</span> <span class="n">NUM</span><span class="p">,</span> <span class="n">PLUS</span><span class="p">,</span> <span class="n">TIMES</span><span class="p">,</span> <span class="n">EQ</span><span class="p">,</span> <span class="n">WS</span><span class="p">]))</span>
+<span class="n">scanner</span> <span class="o">=</span> <span class="n">master_pat</span><span class="o">.</span><span class="n">scanner</span><span class="p">(</span><span class="s1">&#39;foo = 42&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">iter</span><span class="p">(</span><span class="n">scanner</span><span class="o">.</span><span class="n">match</span><span class="p">,</span><span class="kc">None</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">lastgroup</span><span class="p">,</span><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+<span class="c1"># NAME foo</span>
+<span class="c1"># WS  </span>
+<span class="c1"># EQ =</span>
+<span class="c1"># WS  </span>
+<span class="c1"># NUM 42</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># import re</span>
+<span class="c1"># NAME = r&#39;(?P&lt;NAME&gt;[a-zA-Z_][a-zA-Z_0-9]*)&#39;</span>
+<span class="c1"># NUM = r&#39;(?P&lt;NUM&gt;\d+)&#39;</span>
+<span class="c1"># PLUS = r&#39;(?P&lt;PLUS&gt;\+)&#39;</span>
+<span class="c1"># TIMES = r&#39;(?P&lt;TIMES&gt;\*)&#39;</span>
+<span class="c1"># EQ = r&#39;(?P&lt;EQ&gt;=)&#39;</span>
+<span class="c1"># WS = r&#39;(?P&lt;WS&gt;\s+)&#39;</span>
+
+<span class="kn">from</span> <span class="nn">ply.lex</span> <span class="kn">import</span> <span class="n">lex</span> 
+<span class="kn">from</span> <span class="nn">ply.yacc</span> <span class="kn">import</span> <span class="n">yacc</span> 
+
+<span class="c1"># master_pat = re.compile(&#39;|&#39;.join([NAME, NUM, PLUS, TIMES, EQ, WS]))</span>
+
+<span class="n">tokens</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span> <span class="s1">&#39;NUM&#39;</span><span class="p">,</span> <span class="s1">&#39;PLUS&#39;</span><span class="p">,</span> <span class="s1">&#39;TIMES&#39;</span><span class="p">,</span> <span class="s1">&#39;EQ&#39;</span><span class="p">,</span> <span class="s1">&#39;WS&#39;</span><span class="p">]</span>
+
+<span class="n">t_PLUS</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;\+&#39;</span>
+<span class="n">t_TIMES</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;\*&#39;</span>
+<span class="n">t_EQ</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;=&#39;</span>
+<span class="n">t_ignore</span> <span class="o">=</span> <span class="s1">&#39; </span><span class="se">\t</span><span class="s1">&#39;</span>
+
+<span class="k">def</span> <span class="nf">t_NUM</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="sa">r</span><span class="s1">&#39;\d+&#39;</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">t</span>
+
+<span class="k">def</span> <span class="nf">t_error</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Illegal character </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">t</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">lexer</span><span class="o">.</span><span class="n">skip</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;1 + 2 * 3 = &#39;</span>
+<span class="n">lexer</span> <span class="o">=</span> <span class="n">lex</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">lexer</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">tok</span> <span class="ow">in</span> <span class="nb">iter</span><span class="p">(</span><span class="n">lexer</span><span class="o">.</span><span class="n">token</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">tok</span><span class="p">)</span>
+
+
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html" class="btn btn-neutral float-left" title="1.1. 数据结构和算法" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html" class="btn btn-neutral float-right" title="1.3. 数字日期时间" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2018, zhaojiedi1992@outlook.com。</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

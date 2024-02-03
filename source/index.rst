@@ -4,7 +4,7 @@
 
 .. toctree::
    :maxdepth: 3
-   :caption: PYTHONE学习笔记
+   :caption: PYTHON学习笔记
 
    python教程/index
    cookbook/index

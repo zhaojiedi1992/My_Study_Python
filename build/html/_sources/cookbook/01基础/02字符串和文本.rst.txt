@@ -1,0 +1,290 @@
+字符串和文本
+====================================================================
+
+使用多个界定符分割字符串
+----------------------------------------------
+
+.. code-block:: python 
+
+    In [1]: line = 'asdf fjdk; afed, fjek,asdf, foo'
+
+    In [2]: import re
+    In [4]: re.split(r'[\s;,]',line)
+    Out[4]: ['asdf', 'fjdk', '', 'afed', '', 'fjek', 'asdf', '', 'foo']
+    In [5]: re.split(r'[\s;,]\s+',line)
+    Out[5]: ['asdf fjdk', 'afed', 'fjek,asdf', 'foo']
+
+
+字符串开头或结尾匹配
+----------------------------------------------
+检查字符串开头或结尾的一个简单方法是使用 ``str.startswith()`` 或者是 ``str.endswith()`` 方法
+
+.. code-block:: python 
+
+    url = 'http://www.python.org'
+    choices = ['http:', 'ftp:']
+    url.startswith(tuple(choices))
+
+
+字符串匹配和搜索
+----------------------------------------------
+字面匹配可以采用 ``str.find()``  , ``str.endswith()`` , ``str.startswith()`` 或者类似的方法。 
+
+对于复杂的匹配需要使用正则表达式和 re 模块，如果多次匹配，可以先编译正则，再去匹配。 
+
+.. code-block:: python
+
+    In [14]: datepat = re.compile(r'(\d+)/(\d+)/(\d+)')
+
+    In [15]:  m = datepat.match('11/27/2012')
+
+    In [16]: m.groups()
+    Out[16]: ('11', '27', '2012')
+
+    In [17]: month,day,year=m.groups()
+
+    In [18]: print(year)
+    2012
+
+    In [19]: datepat2=re.compile(r'(\d+)/(\d+)/(?P<year>\d+)')
+
+    In [20]: m2=datepat2.match('11/27/2012    12/30/2014')
+
+    In [21]: m2.groupdict()
+    Out[21]: {'year': '2012'}
+
+    In [22]: m3=datepat2.findall('11/27/2012    12/30/2014')
+
+    In [23]: m3
+    Out[23]: [('11', '27', '2012'), ('12', '30', '2014')]
+
+
+字符串搜索和替换
+----------------------------------------------
+普通替换可以使用 `` str.replace()`` 替换即可，对于复杂的模式，请使用 re 模块中的 sub() 函数。
+
+.. code-block:: python 
+
+    In [36]: text = 'Today is 11/27/2012. PyCon starts 3/13/2013.'
+
+    In [37]: t2,cnt=re.subn(r'(?P<month>\d{2})/(?P<day>\d{2})/(?P<year>\d{4})',r'\g<year>/\g<month>/\g<day>',text)
+
+    In [38]: t2,cnt
+    Out[38]: ('Today is 2012/11/27. PyCon starts 3/13/2013.', 1)
+
+
+    In [41]: re.sub(r'(\d{1,2})/(\d{1,2})/(\d{4})',r'\3/\2/\1',text)
+    Out[41]: 'Today is 2012/27/11. PyCon starts 2013/13/3.'
+
+
+字符串忽略大小写的搜索替换
+----------------------------------------------
+你需要在使用 re 模块的时候给这些操作提供 re.IGNORECASE 标志参数。
+
+.. code-block:: python 
+
+    In [41]: re.sub(r'(\d{1,2})/(\d{1,2})/(\d{4})',r'\3/\2/\1',text)
+    Out[41]: 'Today is 2012/27/11. PyCon starts 2013/13/3.'
+
+    In [42]: text = 'UPPER PYTHON, lower python, Mixed Python'
+
+    In [43]: re.findall('python', text, flags=re.IGNORECASE)
+    Out[43]: ['PYTHON', 'python', 'Python']
+
+    In [44]:  re.sub('python', 'snake', text, flags=re.IGNORECASE)
+    Out[44]: 'UPPER snake, lower snake, Mixed snake'
+
+
+.. literalinclude:: ../../code/cookbook/02.replace.py
+   :encoding: utf-8
+   :language: python
+
+
+将Unicode文本标准化
+----------------------------------------------
+
+.. code-block:: python 
+
+    In [1]: s1 = 'Spicy Jalape\u00f1o'
+
+    In [2]: s2 = 'Spicy Jalapen\u0303o'
+
+    In [3]: s1
+    Out[3]: 'Spicy Jalapeño'
+
+    In [4]: s2
+    Out[4]: 'Spicy Jalapeño'
+
+    In [5]: s1 == s2
+    Out[5]: False
+
+    In [6]: len(s1),len(s2)
+    Out[6]: (14, 15)
+
+    In [7]:  import unicodedata
+
+    In [8]: t1=unicodedata.normalize('NFC',s1)
+
+    In [9]: t2=unicodedata.normalize('NFC',s2)
+
+    In [10]: t1==t2
+    Out[10]: True
+
+删除字符串中不需要的字符
+----------------------------------------------
+strip() 方法能用于删除开始或结尾的字符。 lstrip() 和 rstrip() 分别从左和从右执行删除操作。 
+默认情况下，这些方法会去除空白字符，但是你也可以指定其他字符。
+
+.. code-block:: python 
+
+    In [11]:  s = ' hello world \n'
+
+    In [12]: s.strip()
+    Out[12]: 'hello world'
+
+    In [13]: t = '-----hello====='
+
+    In [15]: t.lstrip('-')
+    Out[15]: 'hello====='
+
+如果你想处理中间的空格，那么你需要求助其他技术。比如使用 replace() 方法或者是用正则表达式替换。
+
+.. code-block:: python 
+
+    In [17]: s.replace(' ','')
+    Out[17]: 'helloworld,verygood'
+
+
+    In [20]: import re
+
+    In [21]: re.sub(r'\s+',r'',s)
+    Out[21]: 'helloworld,verygood'
+
+审查清理文本字符串
+----------------------------------------------
+ 对于简单的替换操作， ``str.translate()`` 方法通常是最快的，甚至在你需要多次调用的时候。
+
+ 如果你需要执行任何复杂字符对字符的重新映射或者删除操作的话， tanslate() 方法会非常的快。
+
+
+.. code-block:: python 
+
+    In [22]: s = 'pýtĥöñ\fis\tawesome\r\n'
+
+    In [23]: remap = { ord('\t'): '',ord('\n'): 'x',ord('a'): 'b'}
+
+    In [24]: s.translate(remap)
+    Out[24]: 'pýtĥöñ\x0cisbwesome\rx'
+
+
+字符串对齐
+----------------------------------------------
+字符串对齐，可以使用 ``ljust()`` , ``rjust()`` 和 ``center()`` 方法,不过还是format更通用一些。 
+
+可以通过 ``<>^``,来分别左对齐，右对齐和居中对齐。
+
+.. code-block:: python 
+
+    In [25]:  text = 'Hello World'
+
+    In [26]: text.ljust(20,'#')
+    Out[26]: 'Hello World#########'
+
+    In [27]:  format(text, '=>20s')
+    Out[27]: '=========Hello World'
+    In [28]: text.format('^20s')
+    Out[28]: 'Hello World'
+
+    In [34]:  '{:>10s} {:>10s}'.format('Hello', 'World')
+    Out[34]: '     Hello      World'
+
+合并字符串
+----------------------------------------------
+合并字符串可以通过 ``join`` 函数完成. 
+
+.. code-block:: python 
+
+    print('.'.join(['a','b','c']))
+    print(*['a','b','c'],sep='.')
+
+
+字符串中插入变量
+----------------------------------------------
+没有直接支持的， 可以通过format配合占位来完成，
+
+.. code-block:: python 
+
+    In [37]: s = '{name} has {n} messages.'
+
+    In [38]: s.format(name="zhaojiedi",n=20)
+    Out[38]: 'zhaojiedi has 20 messages.'
+
+    In [40]: s.format_map({'name':'zhaojiedi','n': 20})
+    Out[40]: 'zhaojiedi has 20 messages.'
+
+    In [41]: name='panda'
+
+    In [42]: n=100
+
+    In [43]: s.format_map(vars())
+    Out[43]: 'panda has 100 messages.'
+
+    In [44]: class Info:
+        ...:     def __init__(self,name,n):
+        ...:         self.name=name
+        ...:         self.n =n
+        ...: 
+
+    In [45]: a=Info('pandav2',100)
+
+    In [46]: s.format_map(vars(a))
+    Out[46]: 'pandav2 has 100 messages.'
+
+
+    In [52]: f"{name},{n}"
+    Out[52]: 'panda,100'
+
+以指定列宽格式化字符串
+----------------------------------------------
+
+.. code-block:: python 
+
+    In [1]: s = "Look into my eyes, look into my eyes, the eyes, the eyes, \
+    ...: the eyes, not around the eyes, don't look around the eyes, \
+    ...: look into my eyes, you're under."
+    ...: 
+
+    In [2]: import os
+
+    In [3]: os.get_terminal_size().columns
+    Out[3]: 134
+
+    In [4]: import textwrap
+
+    In [5]:  print(textwrap.fill(s, 134))
+    Look into my eyes, look into my eyes, the eyes, the eyes, the eyes, not around the eyes, don't look around the eyes, look into my
+    eyes, you're under.
+
+在字符串中处理html和xml
+----------------------------------------------
+如果要替换字符串的<>，你需要使用 ``html.escape`` 函数完成。
+
+.. code-block:: python 
+
+    In [6]:  s = 'Elements are written as "<tag>text</tag>".'
+
+    In [7]:  import html
+
+    In [8]: html.escape(s)
+    Out[8]: 'Elements are written as &quot;&lt;tag&gt;text&lt;/tag&gt;&quot;.'
+
+字符串令牌解析
+----------------------------------------------
+
+.. literalinclude:: ../../code/cookbook/02.token.py
+   :encoding: utf-8
+   :language: python
+
+.. literalinclude:: ../../code/cookbook/02.token_v2.py
+   :encoding: utf-8
+   :language: python

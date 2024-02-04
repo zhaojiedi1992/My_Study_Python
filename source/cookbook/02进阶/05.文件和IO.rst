@@ -1,0 +1,184 @@
+文件和IO
+====================================================================
+
+读写文本数据
+----------------------------------------------
+
+.. code-block:: python 
+
+    with open('./somefile.txt','r',encoding='utf-8',errors='ignore') as f:
+        lines = f.readlines()
+        print(lines)
+使用其他分隔符或行终止符打印
+----------------------------------------------
+
+.. code-block:: python 
+
+    In [6]: print('ACME', 50, 91.5)
+    ACME 50 91.5
+
+    In [7]: print('ACME', 50, 91.5,sep=",",end="!!!!")
+    ACME,50,91.5!!!!
+
+读写字节数据
+----------------------------------------------
+
+.. code-block:: python 
+
+    with open('./somefile.txt','rb') as f:
+
+
+字符串的I/O操作
+----------------------------------------------
+
+.. code-block:: python 
+
+    In [9]: import io
+
+    In [10]: s = io.StringIO()
+
+    In [11]: s.write("abc")
+    Out[11]: 3
+
+    In [12]: s.write("abc")
+    Out[12]: 3
+
+    In [13]: s.getvalue()
+    Out[13]: 'abcabc'
+
+
+读写压缩文件
+----------------------------------------------
+
+.. code-block:: python 
+
+    import gzip
+    with gzip.open('somefile.gz', 'rt') as f:
+        text = f.read()
+
+    import bz2
+    with bz2.open('somefile.bz2', 'wt') as f:
+        f.write(text)
+
+固定大小记录的文件迭代
+----------------------------------------------
+
+.. code-block:: python 
+
+    from functools import partial
+
+    RECORD_SIZE = 32
+
+    with open('./somefile.txt', 'r',encoding='utf-8') as f:
+        records = iter(partial(f.read, RECORD_SIZE), '')
+        for r in records:
+            pass
+
+
+读取二进制数据到可变缓冲区中
+----------------------------------------------
+
+
+.. literalinclude:: ../../code/cookbook/05.readintobuffer.py
+   :encoding: utf-8
+   :language: python
+
+内存映射的二进制文件
+----------------------------------------------
+
+为了随机访问文件的内容，使用 mmap 将文件映射到内存中是一个高效和优雅的方法。 
+例如，你无需打开一个文件并执行大量的 seek() ， read() ， write() 调用， 只需要简单的映射文件并使用切片操作访问数据即可。
+
+.. literalinclude:: ../../code/cookbook/05.mmap.py
+   :encoding: utf-8
+   :language: python
+
+文件路径名的操作
+----------------------------------------------
+
+.. code-block:: python 
+
+    In [1]: import os
+
+    In [2]:  path = '/Users/beazley/Data/data.csv'
+
+    In [3]: os.path.basename(path)
+    Out[3]: 'data.csv'
+
+    In [4]: os.path.dirname(path)
+    Out[4]: '/Users/beazley/Data'
+
+    In [5]: os.path.join('/Users/beazley/Data//','a','data.csv')
+    Out[5]: '/Users/beazley/Data//a/data.csv'
+
+    In [6]: os.path.join('/Users/beazley/Data','a','data.csv')
+    Out[6]: '/Users/beazley/Data/a/data.csv'
+
+    In [7]: os.path.splitext(path)
+    Out[7]: ('/Users/beazley/Data/data', '.csv')
+
+    In [8]: os.path.split(path)
+    Out[8]: ('/Users/beazley/Data', 'data.csv')
+
+    In [9]: os.path.expanduser('~/a.txt')
+    Out[9]: '/Users/bytedance/a.txt'
+
+测试文件是否存在
+----------------------------------------------
+使用 ``os.path.exists`` 来判定存在。
+
+
+
+获取文件夹中的文件列表
+----------------------------------------------
+
+.. literalinclude:: ../../code/cookbook/05.listdir.py
+   :encoding: utf-8
+   :language: python
+
+增加或改变已打开文件的编码
+----------------------------------------------
+
+.. code-block:: python 
+
+    >>> import sys
+    >>> sys.stdout.encoding
+    'UTF-8'
+    >>> sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding='latin-1')
+    >>> sys.stdout.encoding
+    'latin-1'
+
+
+将字节写入文本文件
+----------------------------------------------
+
+.. code-block:: python 
+
+    In [1]: import sys
+
+    In [2]: sys.stdout.write("abc")
+    Out[2]: abc3
+
+    In [3]: sys.stdout.buffer.write(b'abc')
+    abcOut[3]: 3
+
+
+将文件描述符包装成文件对象
+----------------------------------------------
+
+.. code-block:: python
+
+    import os
+    fd = os.open('somefile.txt', os.O_WRONLY | os.O_CREAT)
+
+    # Turn into a proper file
+    f = open(fd, 'wt')
+    f.write('hello world\n')
+    f.close()
+
+创建临时文件和文件夹
+----------------------------------------------
+
+TemporaryFile() 、NamedTemporaryFile() 和 TemporaryDirectory() 函数 应该是处理临时文件目录的最简单的方式了，因为它们会自动处理所有的创建和清理步骤。 
+在一个更低的级别，你可以使用 mkstemp() 和 mkdtemp() 来创建临时文件和目录,函数 mkstemp() 仅仅就返回一个原始的OS文件描述符，
+你需要自己将它转换为一个真正的文件对象。 同样你还需要自己清理这些文件。

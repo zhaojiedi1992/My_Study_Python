@@ -3,3 +3,28 @@
 
 读写CSV数据
 ----------------------------------------------
+如果你读取CSV数据的目的是做数据分析和统计的话， 你可能需要看一看 Pandas 包。Pandas 包含了一个非常方便的函数叫 ``pandas.read_csv()``
+
+.. literalinclude:: ../../code/cookbook/06.read_csv.py
+   :encoding: utf-8
+   :language: python
+
+.. literalinclude:: ../../code/cookbook/06.write_csv.py
+   :encoding: utf-8
+   :language: python
+
+读写JSON数据
+----------------------------------------------
+可以考虑使用pprint模块的 pprint() 函数来代替普通的 print() 函数。 它会按照key的字母顺序并以一种更加美观的方式输出。
+
+.. literalinclude:: ../../code/cookbook/06.rw_json.py
+   :encoding: utf-8
+   :language: python
+
+.. literalinclude:: ../../code/cookbook/06.json_load_other_type.py
+   :encoding: utf-8
+   :language: python
+
+.. literalinclude:: ../../code/cookbook/06.dump_custom_class.py
+   :encoding: utf-8
+   :language: python

@@ -76,7 +76,7 @@
 跳过可迭代对象的开始部分
 ----------------------------------------------
 
-.. literalinclude:: ../../code/cookbook/
+.. literalinclude:: ../../code/cookbook/04.dropwhile.py
    :encoding: utf-8
    :language: python
 

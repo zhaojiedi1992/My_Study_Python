@@ -1,0 +1,198 @@
+函数
+====================================================================
+
+可接受任意数量参数的函数
+----------------------------------------------
+为了能让一个函数接受任意数量的位置参数，可以使用一个*参数.
+
+为了接受任意数量的关键字参数，使用一个以**开头的参数
+
+.. code-block:: python 
+
+    In [6]: def f(*args,**kw):
+    ...:     print(args)
+    ...:     print('-'*10)
+    ...:     print(kw)
+    ...: 
+
+    In [7]: f(1,2)
+    (1, 2)
+    ----------
+    {}
+
+    In [8]: f(1,2,3)
+    (1, 2, 3)
+    ----------
+    {}
+
+    In [9]: f(a=1,b=2,c=3)
+    ()
+    ----------
+    {'a': 1, 'b': 2, 'c': 3}
+
+    In [10]: f(1,2,3,d=4)
+    (1, 2, 3)
+    ----------
+    {'d': 4}
+
+只接受关键字参数的函数
+----------------------------------------------
+
+.. code-block:: python 
+
+    In [1]: def recv(maxsize, *, block):
+    ...:     'Receives a message'
+    ...:     pass
+    ...: 
+
+    In [2]: recv(1024,True)
+    ---------------------------------------------------------------------------
+    TypeError                                 Traceback (most recent call last)
+    Cell In[2], line 1
+    ----> 1 recv(1024,True)
+
+    TypeError: recv() takes 1 positional argument but 2 were given
+
+    In [3]: recv(1024,block=True)
+
+给函数参数增加元信息
+----------------------------------------------
+
+.. code-block:: python 
+
+    def add(x:int, y:int) -> int:
+        return x + y
+
+返回多个值的函数
+----------------------------------------------
+尽管myfun()看上去返回了多个值，实际上是先创建了一个元组然后返回的。 
+
+.. code-block:: python 
+
+    def myfun():
+        return 1,2,3
+
+定义有默认参数的函数    
+----------------------------------------------
+，默认参数的值应该是不可变的对象，比如None、True、False、数字或字符串
+
+.. code-block:: python 
+
+    def spam(a, b=42):
+        print(a, b)
+
+    def addlist(val,l):
+        if l is None: 
+            l = [] 
+        l.append(val)
+
+    _no_value = object()
+
+    def spam(a, b=_no_value):
+        if b is _no_value:
+            print('No b value supplied')
+
+定义匿名或内联函数
+----------------------------------------------
+
+.. code-block:: python 
+
+    In [4]: add = lambda x, y: x + y
+
+    In [5]: add(2,3)
+    Out[5]: 5
+
+
+匿名函数捕获变量值
+----------------------------------------------
+
+.. code-block:: python 
+
+    In [6]: x=10
+
+    In [7]: a = lambda y: x + y
+
+    In [8]: x = 20
+
+    In [9]: b = lambda y: x + y
+
+    In [10]:  a(10)
+    Out[10]: 30
+
+    In [11]: b(10)
+    Out[11]: 30
+
+lambda表达式中的x是一个自由变量， 在运行时绑定值，而不是定义时就绑定，这跟函数的默认值参数定义是不同的。
+
+可以改写为如下的。 
+
+.. code-block:: python 
+
+    In [12]: x = 10
+
+    In [13]:  a = lambda y, x=x: x + y
+
+    In [14]: x = 20
+
+    In [15]: b = lambda y, x=x: x + y
+
+    In [16]: a(10)
+    Out[16]: 20
+
+    In [17]: b(10)
+    Out[17]: 30
+
+
+减少可调用对象的参数个数
+----------------------------------------------
+
+如果需要减少某个函数的参数个数，你可以使用 ``functools.partial()``
+
+.. code-block:: python 
+
+    In [18]: def spam(a, b, c, d):
+        ...:     print(a, b, c, d)
+        ...: 
+
+    In [19]:  from functools import partial
+
+    In [20]: s1 = partial(spam, 1) # a = 1
+
+    In [21]: s1(1,2,3)
+    1 1 2 3
+
+    In [22]: s3 = partial(spam, 1, 2, d=42) # a = 1, b = 2, d = 42
+
+    In [24]: s3(1)
+    1 2 1 42
+
+将单方法的类转换为函数
+----------------------------------------------
+大多数情况下，可以使用闭包来将单个方法的类转换成函数。
+
+.. literalinclude:: ../../code/cookbook/06.class2method.py
+   :encoding: utf-8
+   :language: python
+
+
+
+带额外状态信息的回调函数
+----------------------------------------------
+可以通过类、闭包、或者协程实现。
+
+.. literalinclude:: ../../code/cookbook/06.callback_with_state.py
+   :encoding: utf-8
+   :language: python
+
+内联回调函数
+----------------------------------------------
+todo 
+
+访问闭包中定义的变量
+----------------------------------------------
+``nonlocal`` 声明可以让我们编写函数来修改内部变量的值。 其次，函数属性允许我们用一种很简单的方式将访问方法绑定到闭包函数上。
+
+
+.. literalinclude:: ../../code/cookbook/06.access_var.py
+   :encoding: utf-8
+   :language: python

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2.3. 函数 &mdash; My_Study_Python v0.1 文档</title>
+  <title>2.3. 数据编码和处理 &mdash; My_Study_Python v0.1 文档</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
 
@@ -308,19 +308,8 @@
 <li class="toctree-l4"><a class="reference internal" href="05.%E6%96%87%E4%BB%B6%E5%92%8CIO.html#id14">2.2.15. 创建临时文件和文件夹</a></li>
 </ul>
 </li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">2.3. 函数</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id2">2.3.1. 可接受任意数量参数的函数</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id3">2.3.2. 只接受关键字参数的函数</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id4">2.3.3. 给函数参数增加元信息</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id5">2.3.4. 返回多个值的函数</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id6">2.3.5. 定义有默认参数的函数</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id7">2.3.6. 定义匿名或内联函数</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id8">2.3.7. 匿名函数捕获变量值</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id9">2.3.8. 减少可调用对象的参数个数</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id10">2.3.9. 将单方法的类转换为函数</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id11">2.3.10. 带额外状态信息的回调函数</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id12">2.3.11. 内联回调函数</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id13">2.3.12. 访问闭包中定义的变量</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.3. 数据编码和处理</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#csv">2.3.1. 读写CSV数据</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="07%E5%87%BD%E6%95%B0.html">2.4. 函数</a><ul>
@@ -363,7 +352,7 @@
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">Cookbook学习记录</a></li>
           <li class="breadcrumb-item"><a href="index.html"><span class="section-number">2. </span>cookbook进阶</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">2.3. </span>函数</li>
+      <li class="breadcrumb-item active"><span class="section-number">2.3. </span>数据编码和处理</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/zhaojiedi1992/My_Study_Python/blob/../edit/master/source/cookbook/02进阶/06数据编码和处理.rst" class="fa fa-github"> 在 GitHub 上编辑</a>
       </li>
@@ -377,172 +366,9 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1><span class="section-number">2.3. </span>函数<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
-<section id="id2">
-<h2><span class="section-number">2.3.1. </span>可接受任意数量参数的函数<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
-<p>为了能让一个函数接受任意数量的位置参数，可以使用一个*参数.</p>
-<p>为了接受任意数量的关键字参数，使用一个以**开头的参数</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kw</span><span class="p">):</span>
-<span class="o">...</span><span class="p">:</span>     <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
-<span class="o">...</span><span class="p">:</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
-<span class="o">...</span><span class="p">:</span>     <span class="nb">print</span><span class="p">(</span><span class="n">kw</span><span class="p">)</span>
-<span class="o">...</span><span class="p">:</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="o">----------</span>
-<span class="p">{}</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="o">----------</span>
-<span class="p">{}</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="p">()</span>
-<span class="o">----------</span>
-<span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">d</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="o">----------</span>
-<span class="p">{</span><span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
-</pre></div>
-</div>
-</section>
-<section id="id3">
-<h2><span class="section-number">2.3.2. </span>只接受关键字参数的函数<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="k">def</span> <span class="nf">recv</span><span class="p">(</span><span class="n">maxsize</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">block</span><span class="p">):</span>
-<span class="o">...</span><span class="p">:</span>     <span class="s1">&#39;Receives a message&#39;</span>
-<span class="o">...</span><span class="p">:</span>     <span class="k">pass</span>
-<span class="o">...</span><span class="p">:</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span>
-<span class="o">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span>                                 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="o">----&gt;</span> <span class="mi">1</span> <span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="ne">TypeError</span><span class="p">:</span> <span class="n">recv</span><span class="p">()</span> <span class="n">takes</span> <span class="mi">1</span> <span class="n">positional</span> <span class="n">argument</span> <span class="n">but</span> <span class="mi">2</span> <span class="n">were</span> <span class="n">given</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span><span class="n">block</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<section id="id4">
-<h2><span class="section-number">2.3.3. </span>给函数参数增加元信息<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-</pre></div>
-</div>
-</section>
-<section id="id5">
-<h2><span class="section-number">2.3.4. </span>返回多个值的函数<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
-<p>尽管myfun()看上去返回了多个值，实际上是先创建了一个元组然后返回的。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myfun</span><span class="p">():</span>
-    <span class="k">return</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span>
-</pre></div>
-</div>
-</section>
-<section id="id6">
-<h2><span class="section-number">2.3.5. </span>定义有默认参数的函数<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
-<p>，默认参数的值应该是不可变的对象，比如None、True、False、数字或字符串</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">spam</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">42</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">addlist</span><span class="p">(</span><span class="n">val</span><span class="p">,</span><span class="n">l</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">l</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
-
-<span class="n">_no_value</span> <span class="o">=</span> <span class="nb">object</span><span class="p">()</span>
-
-<span class="k">def</span> <span class="nf">spam</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="n">_no_value</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">b</span> <span class="ow">is</span> <span class="n">_no_value</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No b value supplied&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<section id="id7">
-<h2><span class="section-number">2.3.6. </span>定义匿名或内联函数<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">add</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="mi">5</span>
-</pre></div>
-</div>
-</section>
-<section id="id8">
-<h2><span class="section-number">2.3.7. </span>匿名函数捕获变量值<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">x</span><span class="o">=</span><span class="mi">10</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">a</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="n">b</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span>  <span class="n">a</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="mi">30</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="n">b</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="mi">30</span>
-</pre></div>
-</div>
-<p>lambda表达式中的x是一个自由变量， 在运行时绑定值，而不是定义时就绑定，这跟函数的默认值参数定义是不同的。</p>
-<p>可以改写为如下的。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">]:</span>  <span class="n">a</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">14</span><span class="p">]:</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="n">b</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="n">a</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="mi">20</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="n">b</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="mi">30</span>
-</pre></div>
-</div>
-</section>
-<section id="id9">
-<h2><span class="section-number">2.3.8. </span>减少可调用对象的参数个数<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
-<p>如果需要减少某个函数的参数个数，你可以使用 <code class="docutils literal notranslate"><span class="pre">functools.partial()</span></code></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">18</span><span class="p">]:</span> <span class="k">def</span> <span class="nf">spam</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
-    <span class="o">...</span><span class="p">:</span>     <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
-    <span class="o">...</span><span class="p">:</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">19</span><span class="p">]:</span>  <span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="n">s1</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">spam</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># a = 1</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="n">s1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="mi">1</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">22</span><span class="p">]:</span> <span class="n">s3</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">spam</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span> <span class="c1"># a = 1, b = 2, d = 42</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="n">s3</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="mi">1</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mi">42</span>
-</pre></div>
-</div>
-</section>
-<section id="id10">
-<h2><span class="section-number">2.3.9. </span>将单方法的类转换为函数<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
-<p>大多数情况下，可以使用闭包来将单个方法的类转换成函数。</p>
-</section>
-<section id="id11">
-<h2><span class="section-number">2.3.10. </span>带额外状态信息的回调函数<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
-<p>可以通过类、闭包、或者协程实现。</p>
-</section>
-<section id="id12">
-<h2><span class="section-number">2.3.11. </span>内联回调函数<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
-<p>todo</p>
-</section>
-<section id="id13">
-<h2><span class="section-number">2.3.12. </span>访问闭包中定义的变量<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">nonlocal</span></code> 声明可以让我们编写函数来修改内部变量的值。 其次，函数属性允许我们用一种很简单的方式将访问方法绑定到闭包函数上。</p>
+<h1><span class="section-number">2.3. </span>数据编码和处理<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<section id="csv">
+<h2><span class="section-number">2.3.1. </span>读写CSV数据<a class="headerlink" href="#csv" title="Link to this heading"></a></h2>
 </section>
 </section>
 

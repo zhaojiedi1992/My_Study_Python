@@ -545,9 +545,15 @@
 
 
 <span class="k">def</span> <span class="nf">urltemplate</span><span class="p">(</span><span class="n">template</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">opener</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">format_map</span><span class="p">(</span><span class="n">kwargs</span><span class="p">))</span>
     
+    <span class="k">return</span> <span class="n">opener</span>
+
+
+<span class="n">yahoo</span> <span class="o">=</span> <span class="n">urltemplate</span><span class="p">(</span><span class="s1">&#39;http://finance.yahoo.com/d/quotes.csv?s=</span><span class="si">{names}</span><span class="s1">&amp;f=</span><span class="si">{fields}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">yahoo</span><span class="p">(</span><span class="n">names</span><span class="o">=</span><span class="s1">&#39;IBM,AAPL,FB&#39;</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="s1">&#39;sl1c1v&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>

@@ -28,3 +28,68 @@
 .. literalinclude:: ../../code/cookbook/06.dump_custom_class.py
    :encoding: utf-8
    :language: python
+
+解析简单的XML数据
+----------------------------------------------
+可以使用 ``xml.etree.ElementTree`` 模块从简单的XML文档中提取数据。
+
+对于更高级的应用程序，你需要考虑使用 lxml 
+
+.. literalinclude:: ../../code/cookbook/06.parse_xml.py
+   :encoding: utf-8
+   :language: python
+
+增量式解析大型XML文件
+----------------------------------------------
+
+.. literalinclude:: ../../code/cookbook/06.parse_inc.py
+   :encoding: utf-8
+   :language: python
+
+
+将字典转换为XML
+----------------------------------------------
+
+.. literalinclude:: ../../code/cookbook/06.dict2xml.py
+   :encoding: utf-8
+   :language: python
+
+解析和修改XML
+----------------------------------------------
+修改一个XML文档结构是很容易的，但是你必须牢记的是所有的修改都是针对父节点元素， 将它作为一个列表来处理。例如，如果你删除某个元素，通过调用父节点的 remove() 方法从它的直接父节点中删除。 如果你插入或增加新的元素，你同样使用父节点元素的 insert() 和 append() 方法。 
+还能对元素使用索引和切片操作，比如 element[i] 或 element[i:j]
+
+
+利用命名空间解析XML文档
+----------------------------------------------
+todo , 建议使用 ``lxml`` 解析。
+
+与关系型数据库的交互
+----------------------------------------------
+.. literalinclude:: ../../code/cookbook/06.db.py
+   :encoding: utf-8
+   :language: python
+
+
+编码和解码十六进制数
+----------------------------------------------
+函数 ``base64.b16decode()`` 和 ``base64.b16encode()`` 只能操作大写形式的十六进制字母， 而 ``binascii`` 模块中的函数大小写都能处理。
+
+.. code-block:: python 
+
+    In [1]: s = b'hello'
+
+    In [2]: import binascii
+
+    In [3]: h = binascii.b2a_hex(s)
+
+    In [4]: h
+    Out[4]: b'68656c6c6f'
+
+    In [5]:  binascii.a2b_hex(h)
+    Out[5]: b'hello'
+
+编码解码Base64数据
+----------------------------------------------
+base64 模块中有两个函数 ``b64encode()`` and ``b64decode()``
+

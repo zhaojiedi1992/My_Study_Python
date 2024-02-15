@@ -311,6 +311,14 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">2.3. 数据编码和处理</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#csv">2.3.1. 读写CSV数据</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#json">2.3.2. 读写JSON数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#xml">2.3.3. 解析简单的XML数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">2.3.4. 增量式解析大型XML文件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">2.3.5. 将字典转换为XML</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">2.3.6. 解析和修改XML</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">2.3.7. 利用命名空间解析XML文档</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">2.3.8. 与关系型数据库的交互</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">2.3.9. 编码和解码十六进制数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#base64">2.3.10. 编码解码Base64数据</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="07%E5%87%BD%E6%95%B0.html">2.4. 函数</a><ul>
@@ -512,6 +520,142 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
+</section>
+<section id="xml">
+<h2><span class="section-number">2.3.3. </span>解析简单的XML数据<a class="headerlink" href="#xml" title="Link to this heading"></a></h2>
+<p>可以使用 <code class="docutils literal notranslate"><span class="pre">xml.etree.ElementTree</span></code> 模块从简单的XML文档中提取数据。</p>
+<p>对于更高级的应用程序，你需要考虑使用 lxml</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+<span class="kn">from</span> <span class="nn">xml.etree.ElementTree</span> <span class="kn">import</span> <span class="n">parse</span>
+
+<span class="c1"># Download the RSS feed and parse it</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="s1">&#39;http://planet.python.org/rss20.xml&#39;</span><span class="p">)</span>
+<span class="n">doc</span> <span class="o">=</span> <span class="n">parse</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+
+<span class="c1"># Extract and output tags of interest</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">iterfind</span><span class="p">(</span><span class="s1">&#39;channel/item&#39;</span><span class="p">):</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">findtext</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">findtext</span><span class="p">(</span><span class="s1">&#39;pubDate&#39;</span><span class="p">)</span>
+    <span class="n">link</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">findtext</span><span class="p">(</span><span class="s1">&#39;link&#39;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2><span class="section-number">2.3.4. </span>增量式解析大型XML文件<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">etree</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span>  <span class="n">StringIO</span>
+
+<span class="k">class</span> <span class="nc">ElementHandler</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tag</span><span class="p">,</span> <span class="n">attrib</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_tag</span> <span class="o">=</span> <span class="n">tag</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;start tag:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_tag</span><span class="p">))</span>
+    <span class="k">def</span> <span class="nf">end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tag</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">tag</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_tag</span><span class="p">:</span>
+             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;end tag:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_tag</span><span class="p">))</span>
+    <span class="k">def</span> <span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Data:&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;End of document&#39;</span><span class="p">)</span>
+<span class="n">handler</span> <span class="o">=</span> <span class="n">ElementHandler</span><span class="p">()</span>
+<span class="n">parser</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XMLParser</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">handler</span><span class="p">)</span>
+<span class="n">xml_data</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">&lt;root&gt;</span>
+<span class="s2">    &lt;element key=&quot;value&quot;&gt;Text content&lt;/element&gt;</span>
+<span class="s2">    &lt;element key=&quot;another_value&quot;&gt;Another text content&lt;/element&gt;</span>
+<span class="s2">&lt;/root&gt;</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">etree</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">StringIO</span><span class="p">(</span><span class="n">xml_data</span><span class="p">),</span> <span class="n">parser</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2><span class="section-number">2.3.5. </span>将字典转换为XML<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;GOOG&#39;</span><span class="p">,</span> <span class="s1">&#39;shares&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;price&#39;</span><span class="p">:</span><span class="mf">490.1</span> <span class="p">}</span>
+<span class="kn">from</span> <span class="nn">xml.etree.ElementTree</span> <span class="kn">import</span> <span class="n">Element</span>
+<span class="kn">from</span> <span class="nn">xml.etree.ElementTree</span> <span class="kn">import</span> <span class="n">tostring</span>
+
+<span class="k">def</span> <span class="nf">dict2xml</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span><span class="n">d</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    将字典转换为XML</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">xml</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&lt;</span><span class="si">{}</span><span class="s1">&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tag</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">xml</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;&lt;</span><span class="si">{0}</span><span class="s1">&gt;</span><span class="si">{1}</span><span class="s1">&lt;/</span><span class="si">{0}</span><span class="s1">&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">))</span>
+    <span class="n">xml</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;&lt;/</span><span class="si">{}</span><span class="s1">&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tag</span><span class="p">))</span>
+    <span class="k">return</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">xml</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">dict2xmlv2</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span><span class="n">d</span><span class="p">):</span>
+    <span class="n">elem</span> <span class="o">=</span> <span class="n">Element</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">child</span> <span class="o">=</span> <span class="n">Element</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+        <span class="n">child</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">v</span> 
+        <span class="n">elem</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">elem</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="n">dict2xml</span><span class="p">(</span><span class="s2">&quot;root&quot;</span><span class="p">,</span><span class="n">s</span><span class="p">))</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">dict2xmlv2</span><span class="p">(</span><span class="s2">&quot;root&quot;</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tostring</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h2><span class="section-number">2.3.6. </span>解析和修改XML<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p>修改一个XML文档结构是很容易的，但是你必须牢记的是所有的修改都是针对父节点元素， 将它作为一个列表来处理。例如，如果你删除某个元素，通过调用父节点的 remove() 方法从它的直接父节点中删除。 如果你插入或增加新的元素，你同样使用父节点元素的 insert() 和 append() 方法。
+还能对元素使用索引和切片操作，比如 element[i] 或 element[i:j]</p>
+</section>
+<section id="id5">
+<h2><span class="section-number">2.3.7. </span>利用命名空间解析XML文档<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<p>todo , 建议使用 <code class="docutils literal notranslate"><span class="pre">lxml</span></code> 解析。</p>
+</section>
+<section id="id6">
+<h2><span class="section-number">2.3.8. </span>与关系型数据库的交互<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">stocks</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;GOOG&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mf">490.1</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;AAPL&#39;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mf">545.75</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;FB&#39;</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mf">7.45</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;HPQ&#39;</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mf">33.2</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="kn">import</span> <span class="nn">sqlite3</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;database.db&#39;</span><span class="p">)</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;create table portfolio (symbol text, shares integer, price real)&#39;</span><span class="p">)</span>
+<span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+<span class="n">c</span><span class="o">.</span><span class="n">executemany</span><span class="p">(</span><span class="s1">&#39;insert into portfolio values (?,?,?)&#39;</span><span class="p">,</span> <span class="n">stocks</span><span class="p">)</span>
+<span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;select * from portfolio&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id7">
+<h2><span class="section-number">2.3.9. </span>编码和解码十六进制数<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<p>函数 <code class="docutils literal notranslate"><span class="pre">base64.b16decode()</span></code> 和 <code class="docutils literal notranslate"><span class="pre">base64.b16encode()</span></code> 只能操作大写形式的十六进制字母， 而 <code class="docutils literal notranslate"><span class="pre">binascii</span></code> 模块中的函数大小写都能处理。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">s</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;hello&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">binascii</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">h</span> <span class="o">=</span> <span class="n">binascii</span><span class="o">.</span><span class="n">b2a_hex</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">h</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="sa">b</span><span class="s1">&#39;68656c6c6f&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span>  <span class="n">binascii</span><span class="o">.</span><span class="n">a2b_hex</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="sa">b</span><span class="s1">&#39;hello&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="base64">
+<h2><span class="section-number">2.3.10. </span>编码解码Base64数据<a class="headerlink" href="#base64" title="Link to this heading"></a></h2>
+<p>base64 模块中有两个函数 <code class="docutils literal notranslate"><span class="pre">b64encode()</span></code> and <code class="docutils literal notranslate"><span class="pre">b64decode()</span></code></p>
 </section>
 </section>
 

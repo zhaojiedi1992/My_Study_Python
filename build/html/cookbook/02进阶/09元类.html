@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2.6. 元类 &mdash; My_Study_Python v0.1 文档</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=d7bb714b"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/translations.js?v=beaddf03"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="2.7. 模块和包" href="10%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85.html" />
+    <link rel="prev" title="2.5. 类和对象" href="08%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            My_Study_Python
+          </a>
+              <div class="version">
+                v0.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">PYTHON学习笔记</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/index.html">python入门</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/index.html">1. python基础</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/01%E5%AE%89%E8%A3%85%E5%87%86%E5%A4%87python.html">1.1. 环境准备</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/01%E5%AE%89%E8%A3%85%E5%87%86%E5%A4%87python.html#macpython">1.1.1. mac安装python</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/01%E5%AE%89%E8%A3%85%E5%87%86%E5%A4%87python.html#id2">1.1.2. 环境配置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/01%E5%AE%89%E8%A3%85%E5%87%86%E5%A4%87python.html#python">1.1.3. python解释器</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/02%E8%BF%90%E8%A1%8C%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F.html">1.2. 运行第一个程序</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/02%E8%BF%90%E8%A1%8C%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F.html#id2">1.2.1. 编写文件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/02%E8%BF%90%E8%A1%8C%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F.html#hello-world">1.2.2. 运行hello world</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html">1.3. Python基础</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html#id1">1.3.1. 数据类型</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html#id2">1.3.2. 变量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html#id3">1.3.3. 字符编码</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html#id4">1.3.4. 转化</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html#len">1.3.5. len函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html#id5">1.3.6. 强制编码</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html#id6">1.3.7. 字符串格式化</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html#list">1.3.8. list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html#tuple">1.3.9. tuple</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html#if">1.3.10. if</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html#match">1.3.11. match</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html#id7">1.3.12. 循环</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html#dict">1.3.13. dict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/03python%E5%9F%BA%E7%A1%80.html#set">1.3.14. set</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/04%E5%87%BD%E6%95%B0.html">1.4. 函数</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/04%E5%87%BD%E6%95%B0.html#id2">1.4.1. 调用函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/04%E5%87%BD%E6%95%B0.html#id3">1.4.2. 定义函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/04%E5%87%BD%E6%95%B0.html#id4">1.4.3. 空函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/04%E5%87%BD%E6%95%B0.html#id5">1.4.4. 参数校验</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/04%E5%87%BD%E6%95%B0.html#id6">1.4.5. 多返回值</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/04%E5%87%BD%E6%95%B0.html#id7">1.4.6. 函数默认值</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/04%E5%87%BD%E6%95%B0.html#id8">1.4.7. 可变参数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/04%E5%87%BD%E6%95%B0.html#id9">1.4.8. 关键字参数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/04%E5%87%BD%E6%95%B0.html#id10">1.4.9. 参数组合</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/01%E5%9F%BA%E7%A1%80/04%E5%87%BD%E6%95%B0.html#id11">1.4.10. 递归函数</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/index.html">2. python进阶</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/07%E6%A8%A1%E5%9D%97.html">2.1. 模块</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/07%E6%A8%A1%E5%9D%97.html#id2">2.1.1. 编写模块</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/07%E6%A8%A1%E5%9D%97.html#id3">2.1.2. 安装第三方包</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/08%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html">2.2. 面向对象编程</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/08%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html#demo">2.2.1. 类demo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/08%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html#id2">2.2.2. 类和实例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/08%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html#id3">2.2.3. 访问限制</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/08%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html#id4">2.2.4. 继承和多态</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/08%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html#id5">2.2.5. 获取对象类型信息</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/08%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html#id6">2.2.6. 获取对象属性和方法信息</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/08%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html#id7">2.2.7. 实例属性和类属性</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/10%E9%94%99%E8%AF%AF%E8%B0%83%E8%AF%95%E6%B5%8B%E8%AF%95.html">2.3. 错误调试测试</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/10%E9%94%99%E8%AF%AF%E8%B0%83%E8%AF%95%E6%B5%8B%E8%AF%95.html#id2">2.3.1. 捕捉异常</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/10%E9%94%99%E8%AF%AF%E8%B0%83%E8%AF%95%E6%B5%8B%E8%AF%95.html#id3">2.3.2. 抛出异常</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/10%E9%94%99%E8%AF%AF%E8%B0%83%E8%AF%95%E6%B5%8B%E8%AF%95.html#id4">2.3.3. 调试方法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/10%E9%94%99%E8%AF%AF%E8%B0%83%E8%AF%95%E6%B5%8B%E8%AF%95.html#id5">2.3.4. 单元测试</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/11IO%E7%BC%96%E7%A8%8B.html">2.4. IO编程</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/11IO%E7%BC%96%E7%A8%8B.html#id1">2.4.1. 文件读写</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/11IO%E7%BC%96%E7%A8%8B.html#stringiobytesio">2.4.2. StringIO和BytesIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/11IO%E7%BC%96%E7%A8%8B.html#id2">2.4.3. 操作文件和目录</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/11IO%E7%BC%96%E7%A8%8B.html#id3">2.4.4. 序列化</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/12%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B.html">2.5. 进程线程</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/12%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B.html#fork">2.5.1. fork</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/12%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B.html#multiprocess">2.5.2. multiprocess</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/12%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B.html#pool">2.5.3. pool</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/12%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B.html#subprocess">2.5.4. subprocess</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/12%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B.html#ipc">2.5.5. ipc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/12%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B.html#id2">2.5.6. 多线程</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/12%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B.html#id3">2.5.7. 分布式进程</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/13%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.html">2.6. 正则表达式</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/13%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.html#id3">2.6.1. 是否匹配</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/13%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.html#id4">2.6.2. 切分字符串</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/13%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.html#id5">2.6.3. 分组</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/13%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.html#id6">2.6.4. 编译正则</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/14%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97.html">2.7. 常见模块</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/14%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97.html#datetime">2.7.1. datetime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/14%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97.html#collections">2.7.2. collections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/14%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97.html#argparser">2.7.3. argparser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/14%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97.html#base64">2.7.4. base64</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/14%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97.html#struct">2.7.5. struct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/14%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97.html#hashlib">2.7.6. hashlib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/14%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97.html#hmac">2.7.7. hmac</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/14%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97.html#itertools">2.7.8. itertools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/14%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97.html#contextlib">2.7.9. contextlib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/14%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97.html#request">2.7.10. request</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/15%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B.html">2.8. 网络编程</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/15%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B.html#tcp-client">2.8.1. tcp client</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/15%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B.html#tcp-server">2.8.2. tcp server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/15%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B.html#wsgi">2.8.3. wsgi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/15%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B.html#flask">2.8.4. flask</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/16%E9%82%AE%E4%BB%B6%E6%94%B6%E5%8F%91.html">2.9. 邮件收发</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/02%E8%BF%9B%E9%98%B6/17%E6%95%B0%E6%8D%AE%E5%BA%93.html">2.10. 数据库</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/index.html">3. python高级</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/05%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7.html">3.1. 高级特性</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/05%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7.html#id2">3.1.1. 切片</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/05%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7.html#id3">3.1.2. 是否可以迭代判定</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/05%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7.html#id4">3.1.3. 常见类型的遍历方法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/05%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7.html#id5">3.1.4. 列表生成式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/05%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7.html#id6">3.1.5. 生成器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/05%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7.html#id7">3.1.6. 自己定义一个生成器函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/05%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7.html#id8">3.1.7. 迭代器</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/06%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B.html">3.2. 函数式编程</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/06%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B.html#id2">3.2.1. 函数调用和函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/06%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B.html#id3">3.2.2. 传入函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/06%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B.html#mapreduce">3.2.3. mapreduce</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/06%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B.html#filter">3.2.4. filter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/06%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B.html#sorted">3.2.5. sorted</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/06%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B.html#id4">3.2.6. 函数作为返回值</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/06%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B.html#id5">3.2.7. 闭包</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/06%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B.html#id6">3.2.8. 匿名函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/06%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B.html#id7">3.2.9. 装饰器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/06%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B.html#id8">3.2.10. 偏函数</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/09%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html">3.3. 面向对象高级编程</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/09%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html#id2">3.3.1. 给类绑定一个方法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/09%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html#slot">3.3.2. slot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/09%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html#property">3.3.3. &#64;property</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/09%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html#id3">3.3.4. 多重继承</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/09%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html#id4">3.3.5. 定制类</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/09%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html#id5">3.3.6. 枚举</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/09%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html#id6">3.3.7. 元类</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/18%E5%BC%82%E6%AD%A5IO.html">3.4. 异步IO</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/18%E5%BC%82%E6%AD%A5IO.html#id1">3.4.1. 协程</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/18%E5%BC%82%E6%AD%A5IO.html#async-await">3.4.2. async/await</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/18%E5%BC%82%E6%AD%A5IO.html#id2">3.4.3. 同步和异步对比</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../python%E6%95%99%E7%A8%8B/03%E9%AB%98%E7%BA%A7/18%E5%BC%82%E6%AD%A5IO.html#aiohttp">3.4.4. aiohttp</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cookbook学习记录</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/index.html">1. cookbook基础</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html">1.1. 数据结构和算法</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id2">1.1.1. 解压序列赋值给多个变量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id3">1.1.2. 解压可迭代对象赋值给多个变量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#n">1.1.3. 保留最后 N 个元素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id4">1.1.4. 查找最大或最小的 N 个元素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id5">1.1.5. 实现一个优先级队列</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id6">1.1.6. 字典中的键映射多个值</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id7">1.1.7. 字典排序</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id8">1.1.8. 查找两字典的相同点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id9">1.1.9. 删除序列相同元素并保持顺序</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id10">1.1.10. 命名切片</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id11">1.1.11. 序列中出现次数最多的元素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id12">1.1.12. 通过某个关键字排序一个字典列表</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id13">1.1.13. 通过某个字段将记录分组</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id14">1.1.14. 过滤序列元素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id15">1.1.15. 从字典中提取子集</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id16">1.1.16. 映射名称到序列元素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id17">1.1.17. 转换并同时计算数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95.html#id18">1.1.18. 合并多个字典或映射</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/02%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%96%87%E6%9C%AC.html">1.2. 字符串和文本</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/02%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%96%87%E6%9C%AC.html#id2">1.2.1. 使用多个界定符分割字符串</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/02%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%96%87%E6%9C%AC.html#id3">1.2.2. 字符串开头或结尾匹配</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/02%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%96%87%E6%9C%AC.html#id4">1.2.3. 字符串匹配和搜索</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/02%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%96%87%E6%9C%AC.html#id5">1.2.4. 字符串搜索和替换</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/02%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%96%87%E6%9C%AC.html#id6">1.2.5. 字符串忽略大小写的搜索替换</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/02%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%96%87%E6%9C%AC.html#unicode">1.2.6. 将Unicode文本标准化</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/02%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%96%87%E6%9C%AC.html#id7">1.2.7. 删除字符串中不需要的字符</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/02%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%96%87%E6%9C%AC.html#id8">1.2.8. 审查清理文本字符串</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/02%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%96%87%E6%9C%AC.html#id9">1.2.9. 字符串对齐</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/02%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%96%87%E6%9C%AC.html#id10">1.2.10. 合并字符串</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/02%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%96%87%E6%9C%AC.html#id11">1.2.11. 字符串中插入变量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/02%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%96%87%E6%9C%AC.html#id12">1.2.12. 以指定列宽格式化字符串</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/02%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%96%87%E6%9C%AC.html#htmlxml">1.2.13. 在字符串中处理html和xml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/02%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%96%87%E6%9C%AC.html#id13">1.2.14. 字符串令牌解析</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html">1.3. 数字日期时间</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#id2">1.3.1. 数字的四舍五入</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#id3">1.3.2. 执行精确的浮点数运算</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#id4">1.3.3. 数字的格式化输出</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#id5">1.3.4. 二八十六进制整数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#id6">1.3.5. 字节到大整数的打包与解包</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#id7">1.3.6. 复数的数学运算</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#nan">1.3.7. 无穷大与NaN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#id8">1.3.8. 分数运算</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#id9">1.3.9. 大型数组运算</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#id10">1.3.10. 随机选择</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#id11">1.3.11. 基本的日期与时间转换</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#id12">1.3.12. 计算最后一个周五的日期</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#id13">1.3.13. 计算当前月份的日期范围</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#id14">1.3.14. 字符串转换为日期</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01%E5%9F%BA%E7%A1%80/03%E6%95%B0%E5%AD%97%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4.html#id15">1.3.15. 结合时区的日期操作</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">2. cookbook进阶</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html">2.1. 迭代器与生成器</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id2">2.1.1. 手动遍历迭代器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id3">2.1.2. 代理迭代</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id4">2.1.3. 使用生成器创建新的迭代模式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id5">2.1.4. 实现迭代器协议</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id6">2.1.5. 反向迭代</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id7">2.1.6. 带有外部状态的生成器函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id8">2.1.7. 迭代器切片</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id9">2.1.8. 跳过可迭代对象的开始部分</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id10">2.1.9. 排列组合的迭代</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id11">2.1.10. 序列上索引值迭代</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id12">2.1.11. 同时迭代多个序列</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id13">2.1.12. 不同集合上元素的迭代</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id14">2.1.13. 创建数据处理管道</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id15">2.1.14. 展开嵌套的序列</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id16">2.1.15. 顺序迭代合并后的排序迭代对象</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="05.%E6%96%87%E4%BB%B6%E5%92%8CIO.html">2.2. 文件和IO</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="05.%E6%96%87%E4%BB%B6%E5%92%8CIO.html#id1">2.2.1. 读写文本数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="05.%E6%96%87%E4%BB%B6%E5%92%8CIO.html#id2">2.2.2. 使用其他分隔符或行终止符打印</a></li>
+<li class="toctree-l4"><a class="reference internal" href="05.%E6%96%87%E4%BB%B6%E5%92%8CIO.html#id3">2.2.3. 读写字节数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="05.%E6%96%87%E4%BB%B6%E5%92%8CIO.html#i-o">2.2.4. 字符串的I/O操作</a></li>
+<li class="toctree-l4"><a class="reference internal" href="05.%E6%96%87%E4%BB%B6%E5%92%8CIO.html#id4">2.2.5. 读写压缩文件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="05.%E6%96%87%E4%BB%B6%E5%92%8CIO.html#id5">2.2.6. 固定大小记录的文件迭代</a></li>
+<li class="toctree-l4"><a class="reference internal" href="05.%E6%96%87%E4%BB%B6%E5%92%8CIO.html#id6">2.2.7. 读取二进制数据到可变缓冲区中</a></li>
+<li class="toctree-l4"><a class="reference internal" href="05.%E6%96%87%E4%BB%B6%E5%92%8CIO.html#id7">2.2.8. 内存映射的二进制文件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="05.%E6%96%87%E4%BB%B6%E5%92%8CIO.html#id8">2.2.9. 文件路径名的操作</a></li>
+<li class="toctree-l4"><a class="reference internal" href="05.%E6%96%87%E4%BB%B6%E5%92%8CIO.html#id9">2.2.10. 测试文件是否存在</a></li>
+<li class="toctree-l4"><a class="reference internal" href="05.%E6%96%87%E4%BB%B6%E5%92%8CIO.html#id10">2.2.11. 获取文件夹中的文件列表</a></li>
+<li class="toctree-l4"><a class="reference internal" href="05.%E6%96%87%E4%BB%B6%E5%92%8CIO.html#id11">2.2.12. 增加或改变已打开文件的编码</a></li>
+<li class="toctree-l4"><a class="reference internal" href="05.%E6%96%87%E4%BB%B6%E5%92%8CIO.html#id12">2.2.13. 将字节写入文本文件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="05.%E6%96%87%E4%BB%B6%E5%92%8CIO.html#id13">2.2.14. 将文件描述符包装成文件对象</a></li>
+<li class="toctree-l4"><a class="reference internal" href="05.%E6%96%87%E4%BB%B6%E5%92%8CIO.html#id14">2.2.15. 创建临时文件和文件夹</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="06%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E5%92%8C%E5%A4%84%E7%90%86.html">2.3. 数据编码和处理</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="06%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E5%92%8C%E5%A4%84%E7%90%86.html#csv">2.3.1. 读写CSV数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E5%92%8C%E5%A4%84%E7%90%86.html#json">2.3.2. 读写JSON数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E5%92%8C%E5%A4%84%E7%90%86.html#xml">2.3.3. 解析简单的XML数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E5%92%8C%E5%A4%84%E7%90%86.html#id2">2.3.4. 增量式解析大型XML文件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E5%92%8C%E5%A4%84%E7%90%86.html#id3">2.3.5. 将字典转换为XML</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E5%92%8C%E5%A4%84%E7%90%86.html#id4">2.3.6. 解析和修改XML</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E5%92%8C%E5%A4%84%E7%90%86.html#id5">2.3.7. 利用命名空间解析XML文档</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E5%92%8C%E5%A4%84%E7%90%86.html#id6">2.3.8. 与关系型数据库的交互</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E5%92%8C%E5%A4%84%E7%90%86.html#id7">2.3.9. 编码和解码十六进制数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E5%92%8C%E5%A4%84%E7%90%86.html#base64">2.3.10. 编码解码Base64数据</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="07%E5%87%BD%E6%95%B0.html">2.4. 函数</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="07%E5%87%BD%E6%95%B0.html#id2">2.4.1. 可接受任意数量参数的函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="07%E5%87%BD%E6%95%B0.html#id3">2.4.2. 只接受关键字参数的函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="07%E5%87%BD%E6%95%B0.html#id4">2.4.3. 给函数参数增加元信息</a></li>
+<li class="toctree-l4"><a class="reference internal" href="07%E5%87%BD%E6%95%B0.html#id5">2.4.4. 返回多个值的函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="07%E5%87%BD%E6%95%B0.html#id6">2.4.5. 定义有默认参数的函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="07%E5%87%BD%E6%95%B0.html#id7">2.4.6. 定义匿名或内联函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="07%E5%87%BD%E6%95%B0.html#id8">2.4.7. 匿名函数捕获变量值</a></li>
+<li class="toctree-l4"><a class="reference internal" href="07%E5%87%BD%E6%95%B0.html#id9">2.4.8. 减少可调用对象的参数个数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="07%E5%87%BD%E6%95%B0.html#id10">2.4.9. 将单方法的类转换为函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="07%E5%87%BD%E6%95%B0.html#id11">2.4.10. 带额外状态信息的回调函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="07%E5%87%BD%E6%95%B0.html#id12">2.4.11. 内联回调函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="07%E5%87%BD%E6%95%B0.html#id13">2.4.12. 访问闭包中定义的变量</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="08%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1.html">2.5. 类和对象</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="08%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1.html#id2">2.5.1. 改变对象的字符串显示</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1.html#id3">2.5.2. 自定义字符串显示</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1.html#id4">2.5.3. 让对象支持上下文管理协议</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1.html#id5">2.5.4. 创建大量对象时节省内存方法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1.html#id6">2.5.5. 在类中封装属性名</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1.html#id7">2.5.6. 创建可管理的属性</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1.html#id8">2.5.7. 调用父类方法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1.html#property">2.5.8. 子类中扩展property</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1.html#id9">2.5.9. 创建新的类或实例属性</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1.html#id10">2.5.10. 使用延迟计算属性</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1.html#id11">2.5.11. 简化数据结构的初始化</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1.html#id12">2.5.12. 定义接口或者抽象基类</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1.html#id13">2.5.13. 实现自定义容器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1.html#id14">2.5.14. 代理属性</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1.html#id15">2.5.15. 在类中定义多个构造器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1.html#mixins">2.5.16. 利用Mixins扩展类功能</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1.html#id16">2.5.17. 实现状态对象或者状态机</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1.html#id17">2.5.18. 通过字符串调用对象方法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1.html#id18">2.5.19. 实现访问者模式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1.html#id19">2.5.20. 不用递归实现访问者模式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1.html#id20">2.5.21. 让类支持比较操作</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.6. 元类</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">2.6.1. 在函数上添加包装器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">2.6.2. 解除一个装饰器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">2.6.3. 带可选参数的装饰器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">2.6.4. 利用装饰器强制函数上的类型检查</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">2.6.5. 将装饰器定义为类的一部分</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">2.6.6. 为类和静态方法提供装饰器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">2.6.7. 装饰器为被包装函数增加参数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">2.6.8. 使用装饰器扩充类的功能</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">2.6.9. 使用元类控制实例的创建</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">2.6.10. 定义有可选参数的元类</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#args-kwargs">2.6.11. *args和**kwargs的强制参数签名</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">2.6.12. 在类上强制使用编程规约</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15">2.6.13. 以编程方式定义类</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">2.6.14. 利用函数注解实现方法重载</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id17">2.6.15. 避免重复的属性方法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id18">2.6.16. 定义上下文管理器的简单方法</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="10%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85.html">2.7. 模块和包</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="10%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85.html#id2">2.7.1. 构建一个模块的层级包</a></li>
+<li class="toctree-l4"><a class="reference internal" href="10%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85.html#id3">2.7.2. 控制模块被全部导入的内容</a></li>
+<li class="toctree-l4"><a class="reference internal" href="10%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85.html#id4">2.7.3. 使用相对路径名导入包中子模块</a></li>
+<li class="toctree-l4"><a class="reference internal" href="10%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85.html#id5">2.7.4. 将模块分割成多个文件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="10%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85.html#id6">2.7.5. 重新加载模块</a></li>
+<li class="toctree-l4"><a class="reference internal" href="10%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85.html#id7">2.7.6. 运行目录或压缩文件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="10%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85.html#sys-path">2.7.7. 将文件夹加入到sys.path</a></li>
+<li class="toctree-l4"><a class="reference internal" href="10%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85.html#id8">2.7.8. 通过字符串名导入模块</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../03%E9%AB%98%E7%BA%A7/index.html">3. cookbook高级</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">My_Study_Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Cookbook学习记录</a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">2. </span>cookbook进阶</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2.6. </span>元类</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/zhaojiedi1992/My_Study_Python/blob/../edit/master/source/cookbook/02进阶/09元类.rst" class="fa fa-github"> 在 GitHub 上编辑</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="顺序式页面导航">
+        <a href="08%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1.html" class="btn btn-neutral float-left" title="2.5. 类和对象" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="10%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85.html" class="btn btn-neutral float-right" title="2.7. 模块和包" accesskey="n">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1><span class="section-number">2.6. </span>元类<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<section id="id2">
+<h2><span class="section-number">2.6.1. </span>在函数上添加包装器<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
+ 
+<span class="k">def</span> <span class="nf">addtime</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="n">start</span> <span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1"> run time: </span><span class="si">{</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="k">def</span> <span class="nf">addtimev2</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="n">start</span> <span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1"> run time: </span><span class="si">{</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nd">@addtime</span>
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="nd">@addtimev2</span>
+<span class="k">def</span> <span class="nf">add2</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">add2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="nb">print</span>
+
+
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2><span class="section-number">2.6.2. </span>解除一个装饰器<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+</section>
+<section id="id4">
+<h2><span class="section-number">2.6.3. </span>带可选参数的装饰器<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
+
+<span class="k">def</span> <span class="nf">logged</span><span class="p">(</span><span class="n">level</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">message</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">decorate</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+        <span class="n">logname</span> <span class="o">=</span> <span class="n">name</span> <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">func</span><span class="o">.</span><span class="vm">__module__</span>
+        <span class="n">log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">logname</span><span class="p">)</span>
+        <span class="n">log_msg</span> <span class="o">=</span> <span class="n">message</span> <span class="k">if</span> <span class="n">message</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span>
+
+ 
+        <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">level</span><span class="p">,</span><span class="n">log_msg</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">wrapper</span>
+    <span class="k">return</span> <span class="n">decorate</span>
+
+
+<span class="nd">@logged</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">CRITICAL</span><span class="p">,</span><span class="s1">&#39;example&#39;</span><span class="p">,</span><span class="s1">&#39;Adding two numbers&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span> 
+
+<span class="nd">@logged</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">CRITICAL</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">add2</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span> 
+<span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">add2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h2><span class="section-number">2.6.4. </span>利用装饰器强制函数上的类型检查<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">signature</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
+
+<span class="k">def</span> <span class="nf">typeassert</span><span class="p">(</span><span class="o">*</span><span class="n">ty_args</span><span class="p">,</span> <span class="o">**</span><span class="n">ty_kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">decorate</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+        <span class="c1"># If in optimized mode, disable type checking</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">__debug__</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">func</span>
+
+        <span class="c1"># Map function argument names to supplied types</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">ty_args</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">ty_kwargs</span><span class="p">)</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="n">signature</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+        <span class="n">bound_types</span> <span class="o">=</span> <span class="n">sig</span><span class="o">.</span><span class="n">bind_partial</span><span class="p">(</span><span class="o">*</span><span class="n">ty_args</span><span class="p">,</span> <span class="o">**</span><span class="n">ty_kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">arguments</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">bound_types</span><span class="p">)</span>
+
+        <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="n">bound_values</span> <span class="o">=</span> <span class="n">sig</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">bound_types</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">bound_values</span><span class="o">.</span><span class="n">arguments</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+        
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">bound_values</span><span class="o">.</span><span class="n">arguments</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">bound_types</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">bound_types</span><span class="p">[</span><span class="n">name</span><span class="p">]):</span>
+                        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                            <span class="s1">&#39;Argument </span><span class="si">{}</span><span class="s1"> must be </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">bound_types</span><span class="p">[</span><span class="n">name</span><span class="p">])</span>
+                            <span class="p">)</span>
+            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">wrapper</span>
+    <span class="k">return</span> <span class="n">decorate</span>
+
+<span class="nd">@typeassert</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">int</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+
+
+<span class="k">def</span> <span class="nf">spam</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="mi">42</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</section>
+<section id="id6">
+<h2><span class="section-number">2.6.5. </span>将装饰器定义为类的一部分<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">decorator1</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">func</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;decorator1&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">wrapper</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">decorator2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span><span class="n">func</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;decorator2&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">wrapper</span>
+    
+<span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+
+<span class="nd">@a</span><span class="o">.</span><span class="n">decorator1</span>
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span> 
+
+<span class="nd">@A</span><span class="o">.</span><span class="n">decorator2</span>
+<span class="k">def</span> <span class="nf">add2</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span> 
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">add2</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="id7">
+<h2><span class="section-number">2.6.6. </span>为类和静态方法提供装饰器<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<p>需要我们将类的装饰器放到最前面</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Spam</span><span class="p">:</span>
+
+   <span class="nd">@classmethod</span>
+   <span class="nd">@timethis</span>
+   <span class="k">def</span> <span class="nf">class_method</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+      <span class="nb">print</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+      <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+<section id="id8">
+<h2><span class="section-number">2.6.7. </span>装饰器为被包装函数增加参数<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
+
+<span class="k">def</span> <span class="nf">optional_debug</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">debug</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Debug Calling&#39;</span><span class="p">,</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nd">@optional_debug</span>
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span> 
+
+
+
+<span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id9">
+<h2><span class="section-number">2.6.8. </span>使用装饰器扩充类的功能<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">log_getattribute</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+    <span class="c1"># Get the original implementation</span>
+    <span class="n">orig_getattribute</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="fm">__getattribute__</span>
+
+    <span class="c1"># Make a new definition</span>
+    <span class="k">def</span> <span class="nf">new_getattribute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;getting:&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">orig_getattribute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+    <span class="c1"># Attach to the class and return</span>
+    <span class="bp">cls</span><span class="o">.</span><span class="fm">__getattribute__</span> <span class="o">=</span> <span class="n">new_getattribute</span>
+    <span class="k">return</span> <span class="bp">cls</span>
+
+<span class="c1"># Example use</span>
+<span class="nd">@log_getattribute</span>
+<span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="k">def</span> <span class="nf">spam</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+
+<span class="n">a</span> <span class="o">=</span><span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">spam</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="id10">
+<h2><span class="section-number">2.6.9. </span>使用元类控制实例的创建<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NoInstances</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Can&#39;t instantiate directly&quot;</span><span class="p">)</span>
+
+<span class="c1"># Example</span>
+<span class="k">class</span> <span class="nc">Spam</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">NoInstances</span><span class="p">):</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">grok</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Spam.grok&#39;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Singleton</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__instance</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__instance</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__instance</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__instance</span>
+    
+<span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">Singleton</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="c1"># Example</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">Student</span><span class="p">()</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="n">Student</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span> <span class="ow">is</span> <span class="n">s2</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id11">
+<h2><span class="section-number">2.6.10. </span>定义有可选参数的元类<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyMeta</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+    <span class="c1"># Optional</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="fm">__prepare__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">synchronize</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__prepare__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">)</span>
+
+    <span class="c1"># Required</span>
+    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">ns</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">synchronize</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">ns</span><span class="p">)</span>
+
+    <span class="c1"># Required</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">ns</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">synchronize</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">ns</span><span class="p">)</span>
+
+
+
+<span class="k">class</span> <span class="nc">Spam</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">MyMeta</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">synchronize</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">Spam</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="args-kwargs">
+<h2><span class="section-number">2.6.11. </span><a href="#id12"><span class="problematic" id="id13">*</span></a>args和**kwargs的强制参数签名<a class="headerlink" href="#args-kwargs" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">Signature</span><span class="p">,</span> <span class="n">Parameter</span>
+
+<span class="c1"># Make a signature for a func(x, y=42, *, z=None)</span>
+<span class="n">sig</span> <span class="o">=</span> <span class="n">Signature</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="n">Parameter</span><span class="o">.</span><span class="n">POSITIONAL_OR_KEYWORD</span><span class="p">),</span>
+         <span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="n">Parameter</span><span class="o">.</span><span class="n">POSITIONAL_OR_KEYWORD</span><span class="p">,</span><span class="n">default</span><span class="o">=</span><span class="mi">42</span><span class="p">),</span>
+          <span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="n">Parameter</span><span class="o">.</span><span class="n">KEYWORD_ONLY</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> 
+
+    <span class="p">]</span>
+<span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sig</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">bound_values</span> <span class="o">=</span> <span class="n">sig</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">bound_values</span><span class="o">.</span><span class="n">arguments</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">value</span><span class="p">)</span>
+
+<span class="n">func</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">z</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">make_sig</span><span class="p">(</span><span class="o">*</span><span class="n">names</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">Signature</span><span class="p">([</span><span class="n">Parameter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">Parameter</span><span class="o">.</span><span class="n">POSITIONAL_OR_KEYWORD</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">])</span>
+
+<span class="k">class</span> <span class="nc">StructureMeta</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">clsname</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">clsdict</span><span class="p">):</span>
+        <span class="n">clsdict</span><span class="p">[</span><span class="s1">&#39;__signature__&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">make_sig</span><span class="p">(</span><span class="o">*</span><span class="n">clsdict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_fields&#39;</span><span class="p">,[]))</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">clsname</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">clsdict</span><span class="p">)</span>
+    
+<span class="k">class</span> <span class="nc">Structure</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">StructureMeta</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">bound_values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__signature__</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">bound_values</span><span class="o">.</span><span class="n">arguments</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Point</span><span class="p">(</span><span class="n">Structure</span><span class="p">):</span>
+   <span class="n">_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">]</span>
+
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">x</span><span class="p">,</span><span class="n">p</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</section>
+<section id="id14">
+<h2><span class="section-number">2.6.12. </span>在类上强制使用编程规约<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NoMixedCaseMeta</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">clsname</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">clsdict</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">clsdict</span><span class="p">:</span>
+            <span class="k">if</span>  <span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">!=</span> <span class="n">name</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;Bad attribute name: &#39;</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">clsname</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">clsdict</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">NoMixedCase</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">NoMixedCaseMeta</span><span class="p">):</span>
+     
+     <span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+          <span class="k">pass</span>
+     <span class="k">def</span> <span class="nf">AbcD</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+          <span class="k">pass</span>
+     
+<span class="n">c</span> <span class="o">=</span> <span class="n">NoMixedCase</span><span class="p">()</span>
+<span class="n">c</span><span class="o">.</span><span class="n">AbcD</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="id15">
+<h2><span class="section-number">2.6.13. </span>以编程方式定义类<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># stock.py</span>
+<span class="c1"># Example of making a class manually from parts</span>
+
+<span class="c1"># Methods</span>
+<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">shares</span><span class="p">,</span> <span class="n">price</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">shares</span> <span class="o">=</span> <span class="n">shares</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">price</span> <span class="o">=</span> <span class="n">price</span>
+<span class="k">def</span> <span class="nf">cost</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shares</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">price</span>
+
+<span class="n">cls_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;__init__&#39;</span> <span class="p">:</span> <span class="fm">__init__</span><span class="p">,</span>
+    <span class="s1">&#39;cost&#39;</span> <span class="p">:</span> <span class="n">cost</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1"># Make a class</span>
+<span class="kn">import</span> <span class="nn">types</span>
+
+<span class="n">Stock</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">new_class</span><span class="p">(</span><span class="s1">&#39;Stock&#39;</span><span class="p">,</span> <span class="p">(),</span> <span class="p">{},</span> <span class="k">lambda</span> <span class="n">ns</span><span class="p">:</span> <span class="n">ns</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">cls_dict</span><span class="p">))</span>
+<span class="n">Stock</span><span class="o">.</span><span class="vm">__module__</span> <span class="o">=</span> <span class="vm">__name__</span>
+
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">Stock</span><span class="p">(</span><span class="s1">&#39;ACME&#39;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mf">91.1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">cost</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<section id="id16">
+<h2><span class="section-number">2.6.14. </span>利用函数注解实现方法重载<a class="headerlink" href="#id16" title="Link to this heading"></a></h2>
+</section>
+<section id="id17">
+<h2><span class="section-number">2.6.15. </span>避免重复的属性方法<a class="headerlink" href="#id17" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span> <span class="p">,</span><span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
+
+    <span class="nd">@name</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;name must be a string&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_age</span>
+
+    <span class="nd">@age</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">age</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;age must be an int&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_age</span> <span class="o">=</span> <span class="n">value</span>
+
+
+<span class="k">class</span> <span class="nc">Person2</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span> <span class="p">,</span><span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+
+    <span class="k">def</span> <span class="fm">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;name must be a string&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;age must be an int&#39;</span><span class="p">)</span>
+            
+<span class="k">class</span> <span class="nc">Descriptor</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">opts</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__set__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="n">instance</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+<span class="k">class</span> <span class="nc">Typed</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="n">expected_type</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__set__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">expected_type</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;expected &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expected_type</span><span class="p">))</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__set__</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">String</span><span class="p">(</span><span class="n">Typed</span><span class="p">):</span>
+    <span class="n">expected_type</span> <span class="o">=</span> <span class="nb">str</span>
+
+<span class="k">class</span> <span class="nc">Interger</span><span class="p">(</span><span class="n">Typed</span><span class="p">):</span>
+    <span class="n">expected_type</span> <span class="o">=</span> <span class="nb">int</span>
+
+
+<span class="k">class</span> <span class="nc">Person3</span><span class="p">:</span> 
+    <span class="n">name</span> <span class="o">=</span> <span class="n">String</span><span class="p">()</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="n">Interger</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+
+
+<span class="k">def</span> <span class="nf">typed_property</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">expected_type</span><span class="p">):</span>
+    <span class="n">storage_name</span> <span class="o">=</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="n">name</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">prop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">storage_name</span><span class="p">)</span>
+
+    <span class="nd">@prop</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">prop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">expected_type</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> must be a </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">expected_type</span><span class="p">))</span>
+        <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">storage_name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">prop</span>
+
+<span class="k">class</span> <span class="nc">Person4</span><span class="p">:</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">typed_property</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="n">typed_property</span><span class="p">(</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+
+
+</pre></div>
+</div>
+</section>
+<section id="id18">
+<h2><span class="section-number">2.6.16. </span>定义上下文管理器的简单方法<a class="headerlink" href="#id18" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="08%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1.html" class="btn btn-neutral float-left" title="2.5. 类和对象" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="10%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85.html" class="btn btn-neutral float-right" title="2.7. 模块和包" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2018, zhaojiedi1992@outlook.com。</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

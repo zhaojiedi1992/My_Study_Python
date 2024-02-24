@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2.1. 迭代器与生成器 &mdash; My_Study_Python v0.1 文档</title>
+  <title>2.9. 并发编程 &mdash; My_Study_Python v0.1 文档</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
 
@@ -22,8 +22,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="2.2. 文件和IO" href="05.%E6%96%87%E4%BB%B6%E5%92%8CIO.html" />
-    <link rel="prev" title="2. cookbook进阶" href="index.html" /> 
+    <link rel="next" title="2.10. 脚本编程" href="13%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B.html" />
+    <link rel="prev" title="2.8. WEB编程" href="11WEB.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -272,22 +272,22 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">2. cookbook进阶</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">2.1. 迭代器与生成器</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id2">2.1.1. 手动遍历迭代器</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id3">2.1.2. 代理迭代</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id4">2.1.3. 使用生成器创建新的迭代模式</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id5">2.1.4. 实现迭代器协议</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id6">2.1.5. 反向迭代</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id7">2.1.6. 带有外部状态的生成器函数</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id8">2.1.7. 迭代器切片</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id9">2.1.8. 跳过可迭代对象的开始部分</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id10">2.1.9. 排列组合的迭代</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id11">2.1.10. 序列上索引值迭代</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id12">2.1.11. 同时迭代多个序列</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id13">2.1.12. 不同集合上元素的迭代</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id14">2.1.13. 创建数据处理管道</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id15">2.1.14. 展开嵌套的序列</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id16">2.1.15. 顺序迭代合并后的排序迭代对象</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html">2.1. 迭代器与生成器</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id2">2.1.1. 手动遍历迭代器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id3">2.1.2. 代理迭代</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id4">2.1.3. 使用生成器创建新的迭代模式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id5">2.1.4. 实现迭代器协议</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id6">2.1.5. 反向迭代</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id7">2.1.6. 带有外部状态的生成器函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id8">2.1.7. 迭代器切片</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id9">2.1.8. 跳过可迭代对象的开始部分</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id10">2.1.9. 排列组合的迭代</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id11">2.1.10. 序列上索引值迭代</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id12">2.1.11. 同时迭代多个序列</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id13">2.1.12. 不同集合上元素的迭代</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id14">2.1.13. 创建数据处理管道</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id15">2.1.14. 展开嵌套的序列</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8.html#id16">2.1.15. 顺序迭代合并后的排序迭代对象</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="05.%E6%96%87%E4%BB%B6%E5%92%8CIO.html">2.2. 文件和IO</a><ul>
@@ -398,18 +398,18 @@
 <li class="toctree-l4"><a class="reference internal" href="11WEB.html#xml-rpc">2.8.5. 通过XML-RPC实现简单的远程调用</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B.html">2.9. 并发编程</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B.html#id2">2.9.1. 启动与停止线程</a></li>
-<li class="toctree-l4"><a class="reference internal" href="12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B.html#id3">2.9.2. 判断线程是否已经启动</a></li>
-<li class="toctree-l4"><a class="reference internal" href="12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B.html#id4">2.9.3. 线程间通信</a></li>
-<li class="toctree-l4"><a class="reference internal" href="12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B.html#id5">2.9.4. 线程访问加锁</a></li>
-<li class="toctree-l4"><a class="reference internal" href="12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B.html#id6">2.9.5. 防止死锁的加锁机制</a></li>
-<li class="toctree-l4"><a class="reference internal" href="12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B.html#id7">2.9.6. 保存线程的状态信息</a></li>
-<li class="toctree-l4"><a class="reference internal" href="12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B.html#id8">2.9.7. 创建一个线程池</a></li>
-<li class="toctree-l4"><a class="reference internal" href="12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B.html#actor">2.9.8. 定义一个Actor任务</a></li>
-<li class="toctree-l4"><a class="reference internal" href="12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B.html#id9">2.9.9. 实现消息发布订阅模式</a></li>
-<li class="toctree-l4"><a class="reference internal" href="12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B.html#id10">2.9.10. 使用生成器代替线程</a></li>
-<li class="toctree-l4"><a class="reference internal" href="12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B.html#id11">2.9.11. 多个线程队列轮询</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.9. 并发编程</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">2.9.1. 启动与停止线程</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">2.9.2. 判断线程是否已经启动</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">2.9.3. 线程间通信</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">2.9.4. 线程访问加锁</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">2.9.5. 防止死锁的加锁机制</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">2.9.6. 保存线程的状态信息</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">2.9.7. 创建一个线程池</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#actor">2.9.8. 定义一个Actor任务</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">2.9.9. 实现消息发布订阅模式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">2.9.10. 使用生成器代替线程</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">2.9.11. 多个线程队列轮询</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="13%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B.html">2.10. 脚本编程</a><ul>
@@ -448,13 +448,13 @@
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">Cookbook学习记录</a></li>
           <li class="breadcrumb-item"><a href="index.html"><span class="section-number">2. </span>cookbook进阶</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">2.1. </span>迭代器与生成器</li>
+      <li class="breadcrumb-item active"><span class="section-number">2.9. </span>并发编程</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/zhaojiedi1992/My_Study_Python/blob/../edit/master/source/cookbook/02进阶/04迭代器与生成器.rst" class="fa fa-github"> 在 GitHub 上编辑</a>
+              <a href="https://github.com/zhaojiedi1992/My_Study_Python/blob/../edit/master/source/cookbook/02进阶/12并发编程.rst" class="fa fa-github"> 在 GitHub 上编辑</a>
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="顺序式页面导航">
-        <a href="index.html" class="btn btn-neutral float-left" title="2. cookbook进阶" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
-        <a href="05.%E6%96%87%E4%BB%B6%E5%92%8CIO.html" class="btn btn-neutral float-right" title="2.2. 文件和IO" accesskey="n">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="11WEB.html" class="btn btn-neutral float-left" title="2.8. WEB编程" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="13%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B.html" class="btn btn-neutral float-right" title="2.10. 脚本编程" accesskey="n">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
   <hr/>
 </div>
@@ -462,358 +462,336 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1><span class="section-number">2.1. </span>迭代器与生成器<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<h1><span class="section-number">2.9. </span>并发编程<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
 <section id="id2">
-<h2><span class="section-number">2.1.1. </span>手动遍历迭代器<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">a</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<h2><span class="section-number">2.9.1. </span>启动与停止线程<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">import</span> <span class="nn">time</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="nb">next</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="mi">1</span>
+<span class="k">def</span> <span class="nf">countdown</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;T-minus&#39;</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+        <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="nb">next</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="mi">2</span>
+<span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Thread</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">countdown</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,))</span>
+<span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="nb">next</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="o">---------------------------------------------------------------------------</span>
-<span class="ne">StopIteration</span>                             <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="o">----&gt;</span> <span class="mi">1</span> <span class="nb">next</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 
-<span class="ne">StopIteration</span><span class="p">:</span>
+<span class="k">class</span> <span class="nc">CountDown</span><span class="p">(</span><span class="n">Thread</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="n">n</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="n">b</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="kc">None</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;T-minus&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="n">b</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="n">b</span> <span class="ow">is</span> <span class="kc">None</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="kc">True</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">CountDown</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>
 <section id="id3">
-<h2><span class="section-number">2.1.2. </span>代理迭代<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Node</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_children</span> <span class="o">=</span> <span class="p">[]</span>
+<h2><span class="section-number">2.9.2. </span>判断线程是否已经启动<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Thread</span><span class="p">,</span> <span class="n">Event</span>
 
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Node(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="si">}</span><span class="s1">)&#39;</span>
+<span class="k">def</span> <span class="nf">countdown</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;T-minus&#39;</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+        <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">add_child</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_children</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Thread</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">countdown</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,))</span>
+<span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_children</span><span class="p">)</span>
-    
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">root</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">child1</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-    <span class="n">child2</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">root</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">child1</span><span class="p">)</span>
-    <span class="n">root</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">child2</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">root</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">CountDown</span><span class="p">(</span><span class="n">Thread</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span><span class="n">event</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="n">n</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Countdown is running 1&#39;</span><span class="p">)</span>
+        <span class="n">event</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;T-minus&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">event</span> <span class="o">=</span> <span class="n">Event</span><span class="p">()</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">CountDown</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="n">event</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="n">event</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Countdown is running 2 &#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="id4">
-<h2><span class="section-number">2.1.3. </span>使用生成器创建新的迭代模式<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">frange</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">increment</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">start</span>
-    <span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">stop</span><span class="p">:</span>
-        <span class="k">yield</span> <span class="n">x</span>
-        <span class="n">x</span> <span class="o">+=</span> <span class="n">increment</span>
+<h2><span class="section-number">2.9.3. </span>线程间通信<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">time</span> 
+<span class="k">def</span> <span class="nf">producer</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">q</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">))</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 
+<span class="k">def</span> <span class="nf">consumer</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">countdown</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;start &#39;</span><span class="p">)</span>
-    <span class="k">while</span> <span class="n">n</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
-        <span class="k">yield</span> <span class="n">n</span> 
-        <span class="n">n</span><span class="o">-=</span><span class="mi">1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">frange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">queue</span> <span class="kn">import</span> <span class="n">Queue</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
+    <span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Thread</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">consumer</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">q</span><span class="p">,))</span>
+    <span class="n">t2</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">producer</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">q</span><span class="p">,))</span>
+    <span class="n">t1</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">t2</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
     
-<span class="c1"># symbol: frange</span>
-<span class="c1"># hover info: (function) def frange(</span>
-<span class="c1">#     start: Any,</span>
-<span class="c1">#     stop: Any</span>
 </pre></div>
 </div>
 </section>
 <section id="id5">
-<h2><span class="section-number">2.1.4. </span>实现迭代器协议<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Node</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span> 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_child</span> <span class="o">=</span> <span class="p">[</span> <span class="p">]</span>
-    
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s1">&#39;Node(</span><span class="si">{!r}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">)</span>
+<h2><span class="section-number">2.9.4. </span>线程访问加锁<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Lock</span>
+<span class="k">class</span> <span class="nc">ShareCount</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">start_cnt</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_cnt</span> <span class="o">=</span> <span class="n">start_cnt</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lock</span> <span class="o">=</span> <span class="n">Lock</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">add_child</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">node</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_child</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">inc</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">lock</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">start_cnt</span> <span class="o">+=</span> <span class="mi">1</span>
 
-    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_child</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">depth_first</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">yield</span> <span class="bp">self</span>
-        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
-            <span class="k">yield from</span> <span class="n">c</span><span class="o">.</span><span class="n">depth_first</span><span class="p">()</span>
-    <span class="c1"># def width_first(self):</span>
-    <span class="c1">#     # yield self</span>
-    <span class="c1">#     yield from self._child</span>
-    <span class="c1">#     for c in self:</span>
-    <span class="c1">#         yield from c.width_first()</span>
+    <span class="k">def</span> <span class="nf">dec</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lock</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_cnt</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lock</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
 
-<span class="k">class</span> <span class="nc">NodeV2</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_child</span> <span class="o">=</span> <span class="p">[</span> <span class="p">]</span>
-    
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s1">&#39;Node(</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+       
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_cnt</span>
+        
 
-    <span class="k">def</span> <span class="nf">add_child</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">node</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_child</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_child</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">depth_first</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">DepthFirstIterator</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-    
-<span class="c1"># todo DepDepthFirstIterator</span>
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">root</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">child1</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">child2</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">root</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">child1</span><span class="p">)</span>
-    <span class="n">root</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">child2</span><span class="p">)</span>
-    <span class="n">child1</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">Node</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
-    <span class="n">child1</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">Node</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
-    <span class="n">child2</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">Node</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
-
-<span class="c1">#            0</span>
-<span class="c1">#         1      2</span>
-<span class="c1">#       3  4   5</span>
-<span class="c1"># </span>
-    <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">root</span><span class="o">.</span><span class="n">depth_first</span><span class="p">():</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">20</span><span class="p">)</span>
-    <span class="c1"># for ch in root.width_first():</span>
-    <span class="c1">#     print(ch)</span>
-
-    
 </pre></div>
 </div>
 </section>
 <section id="id6">
-<h2><span class="section-number">2.1.5. </span>反向迭代<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
-<p>使用内置的 reversed() 函数 。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Countdown</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">start</span> <span class="o">=</span> <span class="n">start</span>
-
-    <span class="c1"># Forward iterator</span>
-    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start</span>
-        <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">yield</span> <span class="n">n</span>
-            <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
-
-    <span class="c1"># Reverse iterator</span>
-    <span class="k">def</span> <span class="fm">__reversed__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="k">while</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">:</span>
-            <span class="k">yield</span> <span class="n">n</span>
-            <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
-
-<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">Countdown</span><span class="p">(</span><span class="mi">30</span><span class="p">)):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
-
-</pre></div>
-</div>
+<h2><span class="section-number">2.9.5. </span>防止死锁的加锁机制<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<p>可以对资源进行排序，加锁顺序按照顺序来申请。 避免交叉等待。</p>
 </section>
 <section id="id7">
-<h2><span class="section-number">2.1.6. </span>带有外部状态的生成器函数<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
-<span class="k">class</span> <span class="nc">linehistory</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">lines</span><span class="p">,</span><span class="n">max_size</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">lines</span> <span class="o">=</span> <span class="n">lines</span> 
-        <span class="bp">self</span><span class="o">.</span><span class="n">max_size</span> <span class="o">=</span> <span class="n">max_size</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">history</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="n">maxlen</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_size</span><span class="p">)</span>
-    
-    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">lineno</span><span class="p">,</span><span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">history</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">lineno</span><span class="p">,</span><span class="n">line</span><span class="p">))</span>
-            <span class="k">yield</span> <span class="n">line</span> 
-        
-    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">history</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<h2><span class="section-number">2.9.6. </span>保存线程的状态信息<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<p>每个 threading.local() 实例为每个线程维护着一个单独的实例字典。 所有普通实例操作比如获取、修改和删除值仅仅操作这个字典。 每个线程使用一个独立的字典就可以保证数据的隔离了。</p>
+</section>
+<section id="id8">
+<h2><span class="section-number">2.9.7. </span>创建一个线程池<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ThreadPoolExecutor</span>
+<span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./somefile.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">lines</span> <span class="o">=</span> <span class="n">linehistory</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
-            <span class="k">if</span> <span class="s1">&#39;python&#39;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
-                <span class="k">for</span> <span class="n">lineno</span><span class="p">,</span><span class="n">hline</span> <span class="ow">in</span> <span class="n">lines</span><span class="o">.</span><span class="n">history</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">lineno</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">hline</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">fetch_url</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">u</span><span class="o">.</span><span class="n">text</span>
+
+<span class="n">pool</span> <span class="o">=</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="c1"># Submit work to the pool</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">fetch_url</span><span class="p">,</span> <span class="s1">&#39;http://www.python.org&#39;</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">fetch_url</span><span class="p">,</span> <span class="s1">&#39;http://www.pypy.org&#39;</span><span class="p">)</span>
+
+<span class="c1"># Get the results back</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
-<section id="id8">
-<h2><span class="section-number">2.1.7. </span>迭代器切片<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">countdown</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;start &#39;</span><span class="p">)</span>
-    <span class="k">while</span> <span class="n">n</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
-        <span class="k">yield</span> <span class="n">n</span> 
-        <span class="n">n</span><span class="o">-=</span><span class="mi">1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+<section id="actor">
+<h2><span class="section-number">2.9.8. </span>定义一个Actor任务<a class="headerlink" href="#actor" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">queue</span> <span class="kn">import</span> <span class="n">Queue</span>
+<span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Event</span><span class="p">,</span> <span class="n">Thread</span>
+
+<span class="k">class</span> <span class="nc">ActorExit</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="k">pass</span>
+<span class="k">class</span> <span class="nc">Actor</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">queue</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_terminated</span> <span class="o">=</span> <span class="n">Event</span> <span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">task</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">ActorExit</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">send</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">recv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">msg</span> <span class="ow">is</span> <span class="n">ActorExit</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ActorExit</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">msg</span>
+
+    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># self.event.set()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">task</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_bootstrap</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">daemon</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">_bootstrap</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+        <span class="k">except</span> <span class="n">ActorExit</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_terminated</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+                
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="k">def</span> <span class="nf">join</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_terminated</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">PrintActor</span><span class="p">(</span><span class="n">Actor</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Got:&#39;</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
 
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">c</span> <span class="o">=</span> <span class="n">countdown</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-    <span class="c1"># c[0:3]</span>
-
-    <span class="kn">import</span> <span class="nn">itertools</span>
-    <span class="n">res</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">islice</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">res</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">PrintActor</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s1">&#39;World&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>
 <section id="id9">
-<h2><span class="section-number">2.1.8. </span>跳过可迭代对象的开始部分<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">countdown</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;start &#39;</span><span class="p">)</span>
-    <span class="k">while</span> <span class="n">n</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
-        <span class="k">yield</span> <span class="n">n</span> 
-        <span class="n">n</span><span class="o">-=</span><span class="mi">1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+<h2><span class="section-number">2.9.9. </span>实现消息发布订阅模式<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
+<span class="k">class</span> <span class="nc">Exchange</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">subscribers</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">attach</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">task</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">subscribers</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">detach</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">task</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">subscribers</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">send</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">msg</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">subscriber</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">subscribers</span><span class="p">:</span>
+            <span class="n">subscriber</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">attach_tasks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="o">*</span><span class="n">tasks</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">tasks</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">detach_tasks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="o">*</span><span class="n">tasks</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">tasks</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">detach</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">subscribe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">task</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+    
+    <span class="nd">@contextmanager</span>
+    <span class="k">def</span> <span class="nf">subscribe_tasks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="o">*</span><span class="n">tasks</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">attach_tasks</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">yield</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">detach_tasks</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">subscribers</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">get_subs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">subscribers</span>
+
+<span class="n">_exchanges</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="n">Exchange</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">get_exchange</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">_exchanges</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+
+<span class="k">class</span> <span class="nc">Task</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">send</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">get_exchange</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">)</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">Task</span><span class="p">()</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">Task</span><span class="p">()</span>
+<span class="n">d</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
+<span class="n">d</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span>
+<span class="n">d</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
+<span class="n">d</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s1">&#39;world&#39;</span><span class="p">)</span>
+<span class="n">d</span><span class="o">.</span><span class="n">detach</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">get_subs</span><span class="p">())</span>
+<span class="n">d</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">get_subs</span><span class="p">())</span>
 
 
-<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">dropwhile</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">dropwhile</span><span class="p">(</span><span class="k">lambda</span> <span class="n">n</span><span class="p">:</span><span class="n">n</span><span class="o">&gt;=</span><span class="mi">5</span><span class="p">,</span><span class="n">countdown</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">res</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">d</span><span class="o">.</span><span class="n">subscribe_tasks</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span><span class="n">t2</span><span class="p">):</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s1">&#39;world&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">get_subs</span><span class="p">())</span>
+
+
+
 </pre></div>
 </div>
 </section>
 <section id="id10">
-<h2><span class="section-number">2.1.9. </span>排列组合的迭代<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
-<ul class="simple">
-<li><p>排列： <code class="docutils literal notranslate"><span class="pre">itertools.permutations()</span></code></p></li>
-<li><p>组合： <code class="docutils literal notranslate"><span class="pre">itertools.combinations()</span></code></p></li>
-<li><p>带重复： <code class="docutils literal notranslate"><span class="pre">itertools.combinations_with_replacement()</span></code></p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<h2><span class="section-number">2.9.10. </span>使用生成器代替线程<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+<span class="k">def</span> <span class="nf">count_down</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;T-minus&#39;</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+        <span class="k">yield</span>
+        <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="k">def</span> <span class="nf">count_up</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Counting up&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+        <span class="k">yield</span>
+        <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">itertools</span>
+<span class="k">class</span> <span class="nc">TaskScheduler</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tasks</span> <span class="o">=</span><span class="n">deque</span><span class="p">()</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">combinations</span><span class="p">(</span><span class="n">items</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="p">[(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)]</span>
+    <span class="k">def</span> <span class="nf">new_task</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">task</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">combinations_with_replacement</span><span class="p">(</span><span class="n">items</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="p">[(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)]</span>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">tasks</span><span class="p">:</span>
+            <span class="n">task</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="nb">next</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+                <span class="k">pass</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">permutations</span><span class="p">(</span><span class="n">items</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="p">[(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)]</span>
+<span class="n">sched</span> <span class="o">=</span> <span class="n">TaskScheduler</span><span class="p">()</span>
+<span class="n">sched</span><span class="o">.</span><span class="n">new_task</span><span class="p">(</span><span class="n">count_down</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">sched</span><span class="o">.</span><span class="n">new_task</span><span class="p">(</span><span class="n">count_down</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">sched</span><span class="o">.</span><span class="n">new_task</span><span class="p">(</span><span class="n">count_up</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>
+<span class="n">sched</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>
 <section id="id11">
-<h2><span class="section-number">2.1.10. </span>序列上索引值迭代<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="k">for</span> <span class="n">lineno</span><span class="p">,</span><span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
-<span class="o">...</span><span class="p">:</span>     <span class="nb">print</span><span class="p">(</span><span class="n">lineno</span><span class="p">,</span><span class="n">item</span><span class="p">)</span>
-<span class="o">...</span><span class="p">:</span>
-<span class="mi">1</span> <span class="n">a</span>
-<span class="mi">2</span> <span class="n">b</span>
-<span class="mi">3</span> <span class="n">c</span>
-</pre></div>
-</div>
-</section>
-<section id="id12">
-<h2><span class="section-number">2.1.11. </span>同时迭代多个序列<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="n">l2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">]</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="n">l3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span><span class="n">l2</span><span class="p">,</span><span class="n">l3</span><span class="p">):</span>
-    <span class="o">...</span><span class="p">:</span>     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-    <span class="o">...</span><span class="p">:</span>
-<span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span><span class="n">l2</span><span class="p">))</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="s1">&#39;C&#39;</span><span class="p">}</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">14</span><span class="p">]:</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span><span class="n">l2</span><span class="p">):</span>
-    <span class="o">...</span><span class="p">:</span>     <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
-    <span class="o">...</span><span class="p">:</span>
-<span class="n">a</span> <span class="n">A</span>
-<span class="n">b</span> <span class="n">B</span>
-<span class="n">c</span> <span class="n">C</span>
-</pre></div>
-</div>
-</section>
-<section id="id13">
-<h2><span class="section-number">2.1.12. </span>不同集合上元素的迭代<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inefficent</span>
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">:</span>
-    <span class="o">...</span>
-
-<span class="c1"># Better</span>
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">chain</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-</pre></div>
-</div>
-</section>
-<section id="id14">
-<h2><span class="section-number">2.1.13. </span>创建数据处理管道<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
-<p>todo</p>
-</section>
-<section id="id15">
-<h2><span class="section-number">2.1.14. </span>展开嵌套的序列<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections.abc</span> <span class="kn">import</span> <span class="n">Iterable</span>
-
-<span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="n">ignore_types</span><span class="o">=</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="nb">bytes</span><span class="p">)):</span>
-    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">item</span><span class="p">:</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">ignore_types</span><span class="p">):</span>
-            <span class="k">yield</span> <span class="n">x</span>
-        <span class="k">elif</span>  <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">)</span> <span class="p">:</span>
-            <span class="k">yield from</span> <span class="n">flatten</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span> 
-            <span class="k">yield</span> <span class="n">x</span> 
-
-<span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="mi">7</span><span class="p">],</span> <span class="mi">8</span><span class="p">,</span><span class="s1">&#39;abc&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">flatten</span><span class="p">(</span><span class="n">item</span><span class="o">=</span><span class="n">items</span><span class="p">)))</span>
-    
-</pre></div>
-</div>
-</section>
-<section id="id16">
-<h2><span class="section-number">2.1.15. </span>顺序迭代合并后的排序迭代对象<a class="headerlink" href="#id16" title="Link to this heading"></a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">b</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span>  <span class="kn">import</span> <span class="nn">heapq</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="nb">list</span><span class="p">(</span><span class="n">heapq</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
-</pre></div>
-</div>
+<h2><span class="section-number">2.9.11. </span>多个线程队列轮询<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
+<p>一个套接字被传给 select() 或类似的一个轮询数据到达的函数</p>
 </section>
 </section>
 
@@ -821,8 +799,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
-        <a href="index.html" class="btn btn-neutral float-left" title="2. cookbook进阶" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
-        <a href="05.%E6%96%87%E4%BB%B6%E5%92%8CIO.html" class="btn btn-neutral float-right" title="2.2. 文件和IO" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="11WEB.html" class="btn btn-neutral float-left" title="2.8. WEB编程" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="13%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B.html" class="btn btn-neutral float-right" title="2.10. 脚本编程" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

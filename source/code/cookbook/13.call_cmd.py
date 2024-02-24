@@ -24,4 +24,4 @@ stdout, stderr = p.communicate(text)
 
 # To interpret as text, decode
 out = stdout.decode('utf-8')
-err = stderr.decode('utf-8')
+err =stderr.decode('utf-8')

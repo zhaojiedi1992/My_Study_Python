@@ -1,0 +1,65 @@
+脚本编程
+====================================================================
+
+通过重定向/管道/文件接受输入
+----------------------------------------------
+.. literalinclude:: ../../code/cookbook/13.fileinput.py
+   :encoding: utf-8
+   :language: python
+
+
+终止程序并给出错误信息
+----------------------------------------------
+
+.. code-block:: python 
+
+   # f1
+   import sys
+   sys.stderr.write('It failed!\n')
+   raise SystemExit(1)
+
+   # f2
+   raise SystemExit('It failed!')
+
+解析命令行选项
+----------------------------------------------
+
+.. literalinclude:: ../../code/cookbook/13.serch.py
+   :encoding: utf-8
+   :language: python
+
+运行时弹出密码输入提示
+----------------------------------------------
+
+.. literalinclude:: ../../code/cookbook/13.password.py
+   :encoding: utf-8
+   :language: python
+
+获取终端的大小
+----------------------------------------------
+
+
+.. code-block:: python 
+
+   >>> import os 
+   >>> os.get_terminal_size()
+   os.terminal_size(columns=135, lines=18)
+
+
+执行外部命令并获取它的输出
+----------------------------------------------
+
+.. literalinclude:: ../../code/cookbook/13.call_cmd.py
+   :encoding: utf-8
+   :language: python
+
+
+复制或者移动文件和目录
+----------------------------------------------
+
+.. literalinclude:: ../../code/cookbook/13.file.py
+   :encoding: utf-8
+   :language: python
+
+创建和解压归档文件
+----------------------------------------------

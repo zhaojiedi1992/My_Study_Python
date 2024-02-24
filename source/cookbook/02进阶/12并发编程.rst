@@ -1,0 +1,69 @@
+并发编程
+====================================================================
+
+启动与停止线程
+----------------------------------------------
+.. literalinclude:: ../../code/cookbook/12.thread.py
+   :encoding: utf-8
+   :language: python
+
+判断线程是否已经启动
+----------------------------------------------
+.. literalinclude:: ../../code/cookbook/12.thread_start.py
+   :encoding: utf-8
+   :language: python
+
+线程间通信
+----------------------------------------------
+.. literalinclude:: ../../code/cookbook/12.pc.py
+   :encoding: utf-8
+   :language: python
+
+线程访问加锁
+----------------------------------------------
+
+.. literalinclude:: ../../code/cookbook/12.lock.py
+   :encoding: utf-8
+   :language: python
+
+防止死锁的加锁机制
+----------------------------------------------
+可以对资源进行排序，加锁顺序按照顺序来申请。 避免交叉等待。
+
+
+保存线程的状态信息
+----------------------------------------------
+
+每个 threading.local() 实例为每个线程维护着一个单独的实例字典。 所有普通实例操作比如获取、修改和删除值仅仅操作这个字典。 每个线程使用一个独立的字典就可以保证数据的隔离了。
+
+创建一个线程池
+----------------------------------------------
+
+.. literalinclude:: ../../code/cookbook/12.pool.py
+   :encoding: utf-8
+   :language: python
+
+
+定义一个Actor任务
+----------------------------------------------
+.. literalinclude:: ../../code/cookbook/12.actor.py
+   :encoding: utf-8
+   :language: python
+
+实现消息发布订阅模式
+----------------------------------------------
+.. literalinclude:: ../../code/cookbook/12.pubsub.py
+   :encoding: utf-8
+   :language: python
+
+
+使用生成器代替线程
+----------------------------------------------
+
+.. literalinclude:: ../../code/cookbook/12.yield.py
+   :encoding: utf-8
+   :language: python
+
+多个线程队列轮询
+----------------------------------------------
+一个套接字被传给 select() 或类似的一个轮询数据到达的函数

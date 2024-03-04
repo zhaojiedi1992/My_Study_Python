@@ -1,0 +1,101 @@
+测试调试
+====================================================================
+
+在单元测试中测试异常情况
+----------------------------------------------
+
+.. literalinclude:: ../../code/cookbook/14.test_raise.py
+   :encoding: utf-8
+   :language: python
+
+
+将测试输出用日志记录到文件中
+----------------------------------------------
+
+.. literalinclude:: ../../code/cookbook/14.log_test.py
+   :encoding: utf-8
+   :language: python
+
+
+忽略或期望测试失败
+----------------------------------------------
+
+.. literalinclude:: ../../code/cookbook/14.log_err.py
+   :encoding: utf-8
+   :language: python
+
+
+处理多个异常
+----------------------------------------------
+
+.. code-block:: python 
+
+   try:
+      f = open(filename)
+   except (FileNotFoundError, PermissionError):
+      pass
+
+
+
+   try:
+      f = open(filename)
+   except OSError:
+      pass
+
+捕获所有异常
+----------------------------------------------
+
+.. code-block:: python 
+
+   try:
+      ...
+   except Exception as e:
+      ...
+      log('Reason:', e)       # Important!
+
+创建自定义异常
+----------------------------------------------
+
+需要继承 ``Exception``
+
+
+捕获异常后抛出另外的异常
+----------------------------------------------
+
+.. code-block:: python 
+
+   try:
+      ...
+   except SomeException as e:
+      raise DifferentException() from e
+
+重新抛出被捕获的异常
+----------------------------------------------
+
+.. code-block:: python 
+
+   try:
+      ...
+   except SomeException as e:
+      raise 
+
+
+输出警告信息
+----------------------------------------------
+
+.. code-block:: python 
+
+   import warnings
+
+   def func(x, y, logfile=None, debug=False):
+      if logfile is not None:
+            warnings.warn('logfile argument deprecated', DeprecationWarning)
+      ...
+
+
+调试基本的程序崩溃错误
+----------------------------------------------
+
+1. print 
+2. pdb
+3. traceback.print_stack()

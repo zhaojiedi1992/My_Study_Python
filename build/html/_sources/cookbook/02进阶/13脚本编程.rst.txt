@@ -63,3 +63,63 @@
 
 创建和解压归档文件
 ----------------------------------------------
+shutil 模块拥有两个函数—— make_archive() 和 unpack_archive() 可派上用场
+
+通过文件名查找文件
+----------------------------------------------
+
+.. literalinclude:: ../../code/cookbook/13.find.py
+   :encoding: utf-8
+   :language: python
+
+
+读取配置文件
+----------------------------------------------
+configparser 模块能被用来读取配置文件。
+
+.. literalinclude:: ../../code/cookbook/13.config.py
+   :encoding: utf-8
+   :language: python
+
+
+给简单脚本增加日志功能
+----------------------------------------------
+.. literalinclude:: ../../code/cookbook/13.log.py
+   :encoding: utf-8
+   :language: python
+
+
+给函数库增加日志功能
+----------------------------------------------
+
+.. literalinclude:: ../../code/cookbook/13.func.addlog.py
+   :encoding: utf-8
+   :language: python
+
+实现一个计时器
+----------------------------------------------
+
+.. literalinclude:: ../../code/cookbook/13.timer.py
+   :encoding: utf-8
+   :language: python
+
+限制cpu和mem
+----------------------------------------------
+
+.. literalinclude:: ../../code/cookbook/13.limit_cpu.py
+   :encoding: utf-8
+   :language: python
+
+
+启动一个WEB浏览器
+----------------------------------------------
+
+.. code-block:: python 
+
+   In [1]: import webbrowser
+
+   In [2]: webbrowser.open('http://www.python.org')
+   Out[2]: True
+
+
+   
